@@ -286,6 +286,9 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="t6V-lb-SUB"/>
                                         </constraints>
                                         <state key="normal" title="Sign up"/>
+                                        <connections>
+                                            <action selector="signUpButtonTapped:" destination="F0P-2e-M4j" eventType="touchUpInside" id="Ghw-XZ-gWr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90928819439999997" green="0.90928819439999997" blue="0.90928819439999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -315,7 +318,9 @@
                     </view>
                     <connections>
                         <outlet property="keyboardHeight" destination="iKR-Ug-bBV" id="QvW-7o-6PK"/>
-                        <outlet property="usernameTextField" destination="Jo8-7Z-ygV" id="X6c-Xx-4Az"/>
+                        <outlet property="passRepeatTextfield" destination="hbr-TY-GrO" id="VCG-Uo-d9j"/>
+                        <outlet property="passwordTextField" destination="8Z5-cM-VEB" id="3kq-sO-K55"/>
+                        <outlet property="usernameTextField" destination="Jo8-7Z-ygV" id="UWS-sp-pMJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebR-DM-Db2" userLabel="First Responder" sceneMemberID="firstResponder"/>
