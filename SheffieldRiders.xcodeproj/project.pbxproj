@@ -16,6 +16,7 @@
 		7E7081FE1C6B52EF00F8B44A /* SheffieldRidersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7081FD1C6B52EF00F8B44A /* SheffieldRidersTests.swift */; };
 		7E7082091C6B52EF00F8B44A /* SheffieldRidersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7082081C6B52EF00F8B44A /* SheffieldRidersUITests.swift */; };
 		7E9EDAC61C930043000D8863 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9EDAC51C930043000D8863 /* LoginViewController.swift */; };
+		7E9EDAC81C930EDA000D8863 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9EDAC71C930EDA000D8863 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		7E7082081C6B52EF00F8B44A /* SheffieldRidersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheffieldRidersUITests.swift; sourceTree = "<group>"; };
 		7E70820A1C6B52EF00F8B44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E9EDAC51C930043000D8863 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = controller/LoginViewController.swift; sourceTree = "<group>"; };
+		7E9EDAC71C930EDA000D8863 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = controller/SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			children = (
 				7E7081E71C6B52EF00F8B44A /* ViewController.swift */,
 				7E9EDAC51C930043000D8863 /* LoginViewController.swift */,
+				7E9EDAC71C930EDA000D8863 /* SignUpViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				7E7081E81C6B52EF00F8B44A /* ViewController.swift in Sources */,
 				7E7081EE1C6B52EF00F8B44A /* SheffieldRiders.xcdatamodeld in Sources */,
 				7E7081E61C6B52EF00F8B44A /* AppDelegate.swift in Sources */,
+				7E9EDAC81C930EDA000D8863 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

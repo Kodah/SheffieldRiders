@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  SignUpViewController.swift
 //  SheffieldRiders
 //
 //  Created by Tom Sugarex on 11/03/2016.
@@ -8,10 +8,11 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class SignUpViewController: UIViewController {
 
     @IBOutlet weak var keyboardHeight: NSLayoutConstraint!
     @IBOutlet weak var usernameTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class LoginViewController: UIViewController {
     @IBAction func dismissKeyboard(sender: AnyObject) {
         self.view.endEditing(true)
     }
+    
     func observeKeyboard() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
@@ -50,7 +52,7 @@ class LoginViewController: UIViewController {
         }
         
     }
-
+    
     func keyboardWillHide(notification: NSNotification){
         let info : NSDictionary = notification.userInfo!
         let animationDuration: NSTimeInterval = (info.objectForKey(UIKeyboardAnimationDurationUserInfoKey)?.doubleValue)!
@@ -60,4 +62,6 @@ class LoginViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
+
+
 }

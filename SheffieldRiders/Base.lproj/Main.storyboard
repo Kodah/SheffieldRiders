@@ -200,18 +200,27 @@
                             <constraint firstItem="Fjl-9C-tOT" firstAttribute="leading" secondItem="SiO-iv-Ryj" secondAttribute="leadingMargin" id="r8r-je-LMy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Qel-ox-0Ax" secondAttribute="trailing" id="ylD-qT-BZc"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="y0G-qb-KQJ" appends="YES" id="49n-Zs-mcc"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="keyboardHeight" destination="eYI-Fd-3ke" id="p2f-uM-SzW"/>
+                        <outlet property="usernameTextField" destination="Nvo-8z-65b" id="ou5-Eg-4IP"/>
                     </connections>
                 </viewController>
+                <tapGestureRecognizer id="y0G-qb-KQJ">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="jrR-EA-xMY" id="8IC-G8-6yF"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="674" y="-343"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="nNo-Ls-j8w">
             <objects>
-                <viewController id="F0P-2e-M4j" sceneMemberID="viewController">
+                <viewController id="F0P-2e-M4j" customClass="SignUpViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8oe-sG-X5B"/>
                         <viewControllerLayoutGuide type="bottom" id="hjr-pA-bzD"/>
@@ -219,10 +228,102 @@
                     <view key="view" contentMode="scaleToFill" id="KZM-Ia-HST">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="n91-Se-nft">
+                                <rect key="frame" x="20" y="84" width="560" height="133"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up to Sheffield Riders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbf-pV-ka3">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username or email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jo8-7Z-ygV">
+                                        <rect key="frame" x="0.0" y="35" width="560" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Z5-cM-VEB">
+                                        <rect key="frame" x="0.0" y="69" width="560" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password repeat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hbr-TY-GrO">
+                                        <rect key="frame" x="0.0" y="104" width="560" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Qbf-pV-ka3" secondAttribute="trailing" id="6Q9-FJ-872"/>
+                                    <constraint firstItem="8Z5-cM-VEB" firstAttribute="leading" secondItem="n91-Se-nft" secondAttribute="leading" id="Gza-vT-y8d"/>
+                                    <constraint firstItem="Jo8-7Z-ygV" firstAttribute="leading" secondItem="n91-Se-nft" secondAttribute="leading" id="JQB-Wp-Ea4"/>
+                                    <constraint firstAttribute="trailing" secondItem="hbr-TY-GrO" secondAttribute="trailing" id="VB5-Ln-2Uz"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Z5-cM-VEB" secondAttribute="trailing" id="Zq7-7V-Pqr"/>
+                                    <constraint firstItem="hbr-TY-GrO" firstAttribute="leading" secondItem="n91-Se-nft" secondAttribute="leading" id="db7-ja-nPA"/>
+                                    <constraint firstAttribute="height" constant="133" id="hzt-2I-bYE"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jo8-7Z-ygV" secondAttribute="trailing" id="n72-bx-OH0"/>
+                                    <constraint firstItem="Qbf-pV-ka3" firstAttribute="leading" secondItem="n91-Se-nft" secondAttribute="leading" id="xJx-Ua-Vco"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTe-m1-8v3">
+                                <rect key="frame" x="20" y="20" width="48" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="sNf-KD-1JM"/>
+                                </constraints>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="dismissView:" destination="F0P-2e-M4j" eventType="touchUpInside" id="bBu-bo-eUQ"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NpW-IB-UUy">
+                                <rect key="frame" x="0.0" y="570" width="600" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neI-Q7-rOX">
+                                        <rect key="frame" x="541" y="0.0" width="52" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="dem-7n-dlt"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="t6V-lb-SUB"/>
+                                        </constraints>
+                                        <state key="normal" title="Sign up"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90928819439999997" green="0.90928819439999997" blue="0.90928819439999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ANs-Dy-V32"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Kxd-4e-4WW"/>
+                                    <constraint firstAttribute="bottom" secondItem="neI-Q7-rOX" secondAttribute="bottom" id="VyX-Z6-yHv"/>
+                                    <constraint firstItem="neI-Q7-rOX" firstAttribute="top" secondItem="NpW-IB-UUy" secondAttribute="top" id="ne0-XP-rrb"/>
+                                    <constraint firstAttribute="trailing" secondItem="neI-Q7-rOX" secondAttribute="trailing" constant="12" id="yQR-FE-IA5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n91-Se-nft" firstAttribute="leading" secondItem="KZM-Ia-HST" secondAttribute="leadingMargin" id="SiH-2Y-Pgf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n91-Se-nft" secondAttribute="trailing" id="TPZ-ix-J3K"/>
+                            <constraint firstItem="n91-Se-nft" firstAttribute="top" secondItem="zTe-m1-8v3" secondAttribute="bottom" constant="34" id="ee4-qn-dm7"/>
+                            <constraint firstItem="hjr-pA-bzD" firstAttribute="top" secondItem="NpW-IB-UUy" secondAttribute="bottom" id="iKR-Ug-bBV"/>
+                            <constraint firstItem="NpW-IB-UUy" firstAttribute="leading" secondItem="KZM-Ia-HST" secondAttribute="leading" id="n87-3L-96L"/>
+                            <constraint firstItem="zTe-m1-8v3" firstAttribute="leading" secondItem="KZM-Ia-HST" secondAttribute="leadingMargin" id="qmU-Jc-QC4"/>
+                            <constraint firstItem="zTe-m1-8v3" firstAttribute="top" secondItem="8oe-sG-X5B" secondAttribute="bottom" id="ueZ-7P-vch"/>
+                            <constraint firstAttribute="trailing" secondItem="NpW-IB-UUy" secondAttribute="trailing" id="w3B-il-PYT"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="9sP-OM-SIb" appends="YES" id="QDQ-Jy-vbx"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="keyboardHeight" destination="iKR-Ug-bBV" id="QvW-7o-6PK"/>
+                        <outlet property="usernameTextField" destination="Jo8-7Z-ygV" id="X6c-Xx-4Az"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebR-DM-Db2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9sP-OM-SIb">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="F0P-2e-M4j" id="MyZ-Lk-y3l"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1334" y="-344"/>
         </scene>
