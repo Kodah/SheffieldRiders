@@ -407,6 +407,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sug.SheffieldRiders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -418,6 +419,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sug.SheffieldRiders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -488,6 +490,7 @@
 				7E70820F1C6B52EF00F8B44A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E7082101C6B52EF00F8B44A /* Build configuration list for PBXNativeTarget "SheffieldRidersTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +499,7 @@
 				7E7082121C6B52EF00F8B44A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E7082131C6B52EF00F8B44A /* Build configuration list for PBXNativeTarget "SheffieldRidersUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +508,7 @@
 				7E7082151C6B52EF00F8B44A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
