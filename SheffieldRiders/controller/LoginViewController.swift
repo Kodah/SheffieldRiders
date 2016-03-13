@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var keyboardHeight: NSLayoutConstraint!
     @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,4 +61,42 @@ class LoginViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
+    
+    @IBAction func logInButtonTapped(sender: AnyObject) {
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: Constants.apiBaseURL + "authentication")!)
+        request.HTTPMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let jsonDictionary:[String:String] = ["username": usernameTextField.text!,
+            "password": passwordTextField.text!]
+        do {
+            let jsonBody = try NSJSONSerialization.dataWithJSONObject(jsonDictionary, options: [])
+                request.HTTPBody = jsonBody
+        } catch {
+            print("Error")
+        }
+        
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {data, response, error in
+            guard data != nil else {
+                print("No response data")
+                return
+            }
+            
+            do {
+                let responseString = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! String
+                
+                print(responseString)
+            } catch {
+                
+            }
+            
+            
+        }
+        
+        task.resume()
+        
+    }
+    
 }

@@ -118,7 +118,6 @@ class SignUpViewController: UIViewController {
             
             do{
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
-                print(json.valueForKeyPath("errors.*.message"))
 
             } catch {}
 //            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)

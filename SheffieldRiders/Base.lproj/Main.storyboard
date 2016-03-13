@@ -92,7 +92,6 @@
         <!--Login View Controller-->
         <scene sceneID="9el-Lc-6yA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xTY-nl-H71" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="jrR-EA-xMY" customClass="LoginViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z2J-PS-YQ5"/>
@@ -166,6 +165,9 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="lrj-tg-xSS"/>
                                         </constraints>
                                         <state key="normal" title="Log in"/>
+                                        <connections>
+                                            <action selector="logInButtonTapped:" destination="jrR-EA-xMY" eventType="touchUpInside" id="WLn-c1-DDY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90928819444444442" green="0.90928819444444442" blue="0.90928819444444442" alpha="1" colorSpace="calibratedRGB"/>
@@ -206,9 +208,11 @@
                     </view>
                     <connections>
                         <outlet property="keyboardHeight" destination="eYI-Fd-3ke" id="p2f-uM-SzW"/>
+                        <outlet property="passwordTextField" destination="J6W-QV-1UX" id="JbS-Xl-Bq4"/>
                         <outlet property="usernameTextField" destination="Nvo-8z-65b" id="ou5-Eg-4IP"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xTY-nl-H71" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="y0G-qb-KQJ">
                     <connections>
                         <action selector="dismissKeyboard:" destination="jrR-EA-xMY" id="8IC-G8-6yF"/>
