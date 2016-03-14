@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42BFFD71F09598EDC7380F78 /* Pods_SheffieldRiders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75483DD31034D05EAD0BB20 /* Pods_SheffieldRiders.framework */; };
 		7E7081E61C6B52EF00F8B44A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7081E51C6B52EF00F8B44A /* AppDelegate.swift */; };
 		7E7081E81C6B52EF00F8B44A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7081E71C6B52EF00F8B44A /* ViewController.swift */; };
 		7E7081EB1C6B52EF00F8B44A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E7081E91C6B52EF00F8B44A /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4BA28F7DB531C99736E60883 /* Pods-SheffieldRiders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheffieldRiders.release.xcconfig"; path = "Pods/Target Support Files/Pods-SheffieldRiders/Pods-SheffieldRiders.release.xcconfig"; sourceTree = "<group>"; };
 		7E7081E21C6B52EF00F8B44A /* SheffieldRiders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SheffieldRiders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7081E51C6B52EF00F8B44A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E7081E71C6B52EF00F8B44A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,8 @@
 		7E9EDAC51C930043000D8863 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = controller/LoginViewController.swift; sourceTree = "<group>"; };
 		7E9EDAC71C930EDA000D8863 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = controller/SignUpViewController.swift; sourceTree = "<group>"; };
 		7E9EDAC91C9331D3000D8863 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = resources/Constants.swift; sourceTree = "<group>"; };
+		8720B064D3B112C20E1DA3E9 /* Pods-SheffieldRiders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheffieldRiders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SheffieldRiders/Pods-SheffieldRiders.debug.xcconfig"; sourceTree = "<group>"; };
+		B75483DD31034D05EAD0BB20 /* Pods_SheffieldRiders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SheffieldRiders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42BFFD71F09598EDC7380F78 /* Pods_SheffieldRiders.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +94,8 @@
 				7E7081FC1C6B52EF00F8B44A /* SheffieldRidersTests */,
 				7E7082071C6B52EF00F8B44A /* SheffieldRidersUITests */,
 				7E7081E31C6B52EF00F8B44A /* Products */,
+				CFD94D3583A34C1058399D78 /* Pods */,
+				CB0219823A68B0DD6253D2D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,6 +168,23 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		CB0219823A68B0DD6253D2D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B75483DD31034D05EAD0BB20 /* Pods_SheffieldRiders.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFD94D3583A34C1058399D78 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8720B064D3B112C20E1DA3E9 /* Pods-SheffieldRiders.debug.xcconfig */,
+				4BA28F7DB531C99736E60883 /* Pods-SheffieldRiders.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E70820D1C6B52EF00F8B44A /* Build configuration list for PBXNativeTarget "SheffieldRiders" */;
 			buildPhases = (
+				A09B0CE4D530CBB690DB6A9B /* Check Pods Manifest.lock */,
 				7E7081DE1C6B52EF00F8B44A /* Sources */,
 				7E7081DF1C6B52EF00F8B44A /* Frameworks */,
 				7E7081E01C6B52EF00F8B44A /* Resources */,
+				5C63C1AB6CBFA14239F29090 /* Embed Pods Frameworks */,
+				CABAA646E267A058A76E8FDF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -287,6 +314,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C63C1AB6CBFA14239F29090 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SheffieldRiders/Pods-SheffieldRiders-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A09B0CE4D530CBB690DB6A9B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CABAA646E267A058A76E8FDF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SheffieldRiders/Pods-SheffieldRiders-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7E7081DE1C6B52EF00F8B44A /* Sources */ = {
@@ -438,6 +513,7 @@
 		};
 		7E70820E1C6B52EF00F8B44A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8720B064D3B112C20E1DA3E9 /* Pods-SheffieldRiders.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -451,6 +527,7 @@
 		};
 		7E70820F1C6B52EF00F8B44A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BA28F7DB531C99736E60883 /* Pods-SheffieldRiders.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

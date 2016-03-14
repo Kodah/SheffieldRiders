@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class LoginViewController: UIViewController {
 
@@ -87,16 +88,30 @@ class LoginViewController: UIViewController {
             do {
                 let responseString = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! String
                 
-                print(responseString)
+                
+                
+                let saveSuccessful: Bool = KeychainWrapper.setString(responseString, forKey: "authenticationToken")
+
+//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                    self.performSegueWithIdentifier("SegToMainStoryboard", sender: self)
+//                        
+//                })
+
+
+                
+                
+
+                // save token in keychain
+                // dismiss login view controller
+                // load main app storyboard and present
+                
+                print(responseString, saveSuccessful)
             } catch {
                 
             }
-            
-            
         }
         
         task.resume()
-        
     }
     
 }
