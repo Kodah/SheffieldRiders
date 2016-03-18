@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SwiftKeychainWrapper
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+              
+        let retrievedString: String? = KeychainWrapper.stringForKey("authenticationToken")
+        
+        
+        if ((retrievedString ?? "").isEmpty) {
+            
+            print("needs to login or register")
+            
+            
+            if let window = self.window {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let logInVC = storyboard.instantiateViewControllerWithIdentifier("authenticationVC")
+                window.rootViewController = logInVC
+            }
+            
+        } else {
+            
+            print("logged in", retrievedString)
+            
+            
+        }
+
         return true
     }
 
@@ -41,6 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
+        
+        KeychainWrapper.removeObjectForKey("authenticationToken")
         self.saveContext()
     }
 

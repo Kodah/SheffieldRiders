@@ -88,24 +88,24 @@ class LoginViewController: UIViewController {
             do {
                 let responseString = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! String
                 
-                
-                
                 let saveSuccessful: Bool = KeychainWrapper.setString(responseString, forKey: "authenticationToken")
-
-//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                    self.performSegueWithIdentifier("SegToMainStoryboard", sender: self)
-//                        
-//                })
-
-
                 
-                
+                if let window = UIApplication.sharedApplication().keyWindow
+                {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let mainVC = storyboard.instantiateViewControllerWithIdentifier("mainNavController")
+                    
+                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                        dispatch_async(dispatch_get_main_queue(), {
+                            window.rootViewController = mainVC
+                        })
+                    })
+                    
+                    
+                    
+                }
+                               
 
-                // save token in keychain
-                // dismiss login view controller
-                // load main app storyboard and present
-                
-                print(responseString, saveSuccessful)
             } catch {
                 
             }
