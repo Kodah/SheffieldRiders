@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		42BFFD71F09598EDC7380F78 /* Pods_SheffieldRiders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75483DD31034D05EAD0BB20 /* Pods_SheffieldRiders.framework */; };
+		7E07BD1F1CA34D0D00124AC2 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E07BD1E1CA34D0D00124AC2 /* news.json */; };
+		7E07BD211CA3527A00124AC2 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E07BD201CA3527A00124AC2 /* NewsTableViewCell.swift */; };
 		7E7081E61C6B52EF00F8B44A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7081E51C6B52EF00F8B44A /* AppDelegate.swift */; };
 		7E7081EB1C6B52EF00F8B44A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E7081E91C6B52EF00F8B44A /* Main.storyboard */; };
 		7E7081EE1C6B52EF00F8B44A /* SheffieldRiders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E7081EC1C6B52EF00F8B44A /* SheffieldRiders.xcdatamodeld */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		4BA28F7DB531C99736E60883 /* Pods-SheffieldRiders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheffieldRiders.release.xcconfig"; path = "Pods/Target Support Files/Pods-SheffieldRiders/Pods-SheffieldRiders.release.xcconfig"; sourceTree = "<group>"; };
+		7E07BD1E1CA34D0D00124AC2 /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = news.json; path = assets/news.json; sourceTree = "<group>"; };
+		7E07BD201CA3527A00124AC2 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewCell.swift; path = controller/NewsTableViewCell.swift; sourceTree = "<group>"; };
 		7E7081E21C6B52EF00F8B44A /* SheffieldRiders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SheffieldRiders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7081E51C6B52EF00F8B44A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E7081EA1C6B52EF00F8B44A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E07BD1D1CA34CE400124AC2 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7E7081EF1C6B52EF00F8B44A /* Assets.xcassets */,
+				7E07BD1E1CA34D0D00124AC2 /* news.json */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		7E7081D91C6B52EF00F8B44A = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +134,7 @@
 				7E9EDAC31C92F260000D8863 /* View */,
 				7E9EDAC21C92F256000D8863 /* Model */,
 				7EA394A81CA2B22900338F4C /* Helpers */,
-				7E7081EF1C6B52EF00F8B44A /* Assets.xcassets */,
+				7E07BD1D1CA34CE400124AC2 /* Assets */,
 				7E7081F41C6B52EF00F8B44A /* Info.plist */,
 				7E9EDAC91C9331D3000D8863 /* Constants.swift */,
 			);
@@ -170,6 +183,7 @@
 				7E9EDAC71C930EDA000D8863 /* SignUpViewController.swift */,
 				7EA394AD1CA2B75D00338F4C /* ProfileViewController.swift */,
 				7EA394B31CA3080600338F4C /* NewsTableViewController.swift */,
+				7E07BD201CA3527A00124AC2 /* NewsTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -309,6 +323,7 @@
 			files = (
 				7E7081F31C6B52EF00F8B44A /* LaunchScreen.storyboard in Resources */,
 				7E7081F01C6B52EF00F8B44A /* Assets.xcassets in Resources */,
+				7E07BD1F1CA34D0D00124AC2 /* news.json in Resources */,
 				7E7081EB1C6B52EF00F8B44A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +405,7 @@
 				7EA394AE1CA2B75D00338F4C /* ProfileViewController.swift in Sources */,
 				7E9EDACA1C9331D3000D8863 /* Constants.swift in Sources */,
 				7EA394AA1CA2B29900338F4C /* DropDownMenu.swift in Sources */,
+				7E07BD211CA3527A00124AC2 /* NewsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

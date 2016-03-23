@@ -402,46 +402,47 @@
             </objects>
             <point key="canvasLocation" x="807" y="1103"/>
         </scene>
-        <!--Table View Controller-->
+        <!--News Table View Controller-->
         <scene sceneID="I7O-j1-NEI">
             <objects>
-                <tableViewController storyboardIdentifier="NewsViewController" id="MdD-ax-ifz" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="141" sectionHeaderHeight="28" sectionFooterHeight="28" id="izi-6A-Oah">
+                <tableViewController storyboardIdentifier="NewsViewController" id="MdD-ax-ifz" customClass="NewsTableViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="141" sectionHeaderHeight="28" sectionFooterHeight="28" id="izi-6A-Oah">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.092182360199999994" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="141" id="o6M-Jm-hsT">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="141" id="o6M-Jm-hsT" customClass="NewsTableViewCell" customModule="SheffieldRiders" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="141"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o6M-Jm-hsT" id="quK-0o-v3b">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxB-KW-41E">
-                                            <rect key="frame" x="144" y="8" width="448" height="34"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxB-KW-41E">
+                                            <rect key="frame" x="144" y="8" width="448" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="34" id="Pg6-2o-snJ"/>
+                                                <constraint firstAttribute="height" constant="50" id="Pg6-2o-snJ"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pd8-Xu-d0T">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Pd8-Xu-d0T">
                                             <rect key="frame" x="542" y="82" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="CUF-aK-0n0"/>
                                                 <constraint firstAttribute="width" constant="50" id="tWV-A4-4Ju"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pt5-ud-sHQ">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pt5-ud-sHQ">
                                             <rect key="frame" x="8" y="8" width="128" height="124"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Pt5-ud-sHQ" secondAttribute="height" multiplier="32:31" id="n0t-5k-use"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bS1-57-lcr">
-                                            <rect key="frame" x="144" y="50" width="390" height="82"/>
+                                            <rect key="frame" x="144" y="66" width="390" height="66"/>
                                             <string key="text">saldjvbalsdjuvbnaslkdvbaslkvjbasdlkvbasldivbjaslkdvhbasldjkhvbasl vbasldkhkv basl dhvbasldkvh baslkdhbaslkhv basdljhv basljdvhbasldjv hbasljdkhvbas</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -465,6 +466,11 @@
                                         <constraint firstItem="fxB-KW-41E" firstAttribute="leading" secondItem="Pt5-ud-sHQ" secondAttribute="trailing" constant="8" id="uWq-Ky-4XP"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="newsBody" destination="bS1-57-lcr" id="8lj-hT-hdf"/>
+                                    <outlet property="newsImage" destination="Pt5-ud-sHQ" id="dsK-yG-ZD5"/>
+                                    <outlet property="newsTitle" destination="fxB-KW-41E" id="FLI-4C-PUK"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -478,4 +484,7 @@
             <point key="canvasLocation" x="807" y="1834"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plusIcon" width="512" height="512"/>
+    </resources>
 </document>

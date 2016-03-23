@@ -53,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let userInfo = notification.userInfo,
             selectedControllerName = userInfo["selectedController"] as? String
         {
+            print(selectedControllerName)
             
             let navController = self.window?.rootViewController as! UINavigationController
             

@@ -16,13 +16,15 @@ struct Constants {
     
 }
 
-enum MainViewControllers : Int {
-    case Profile = 1
-    case News
-    case Events
-    case Locations
-    case Projects
-    case polls
+
+
+enum MainViewControllers : String {
+    case Profile = "Profile"
+    case News = "News"
+    case Events = "Events"
+    case Locations = "Locations"
+    case Projects = "Projects"
+    case polls = "Polls"
     
     func stringIdentifier () -> String {
         switch self {

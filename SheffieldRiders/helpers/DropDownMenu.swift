@@ -20,7 +20,10 @@ class DropDownMenu : NSObject {
         super.init()
         buildDummyCustomMenu()
     
-        menuButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: "showRightDropDown")
+        let menuBut = UIButton(frame: CGRectMake(0, 0, 30, 30))
+        menuBut.addTarget(self, action: "showRightDropDown", forControlEvents: .TouchUpInside)
+        menuBut.setBackgroundImage(UIImage(named: "burgerMenu"), forState: .Normal)
+        menuButton = UIBarButtonItem(customView: menuBut)        
     }
     
     func showRightDropDown() {
@@ -38,14 +41,14 @@ class DropDownMenu : NSObject {
     }
     
     func buildDummyCustomMenu() -> AZDropdownMenu {
-        let dataSource = createDummyDatasource()
+        let dataSource = createDatasource()
         self.menu = AZDropdownMenu(dataSource: dataSource )
         
         if let menu = self.menu
         {
             menu.cellTapHandler = { [weak self] (indexPath: NSIndexPath) -> Void in
                 
-                if let selectedController = MainViewControllers(rawValue: indexPath.row)?.stringIdentifier() {
+                if let selectedController = MainViewControllers(rawValue: dataSource[indexPath.row].title)?.stringIdentifier() {
                     
                     NSNotificationCenter.defaultCenter().postNotificationName("menuOptionSelected", object: self, userInfo: ["selectedController" : selectedController])
                 }
@@ -61,20 +64,21 @@ class DropDownMenu : NSObject {
             menu.overlayAlpha = 0.3
             menu.itemAlignment = .Center
             menu.itemImagePosition = .Postfix
-            menu.menuSeparatorStyle = .None
+            menu.menuSeparatorStyle = .Singleline
             menu.shouldDismissMenuOnDrag = true
         }
         
         return menu!
     }
     
-    private func createDummyDatasource() -> [AZDropdownMenuItemData] {
+    private func createDatasource() -> [AZDropdownMenuItemData] {
         var dataSource: [AZDropdownMenuItemData] = []
-        dataSource.append(AZDropdownMenuItemData(title:"Action With Icon 1", icon:UIImage(imageLiteral: "cog")))
-        dataSource.append(AZDropdownMenuItemData(title:"Action With Icon 2", icon:UIImage(imageLiteral: "cog")))
-        dataSource.append(AZDropdownMenuItemData(title:"Action With Icon 3", icon:UIImage(imageLiteral: "cog")))
-        dataSource.append(AZDropdownMenuItemData(title:"Action With Icon 4", icon:UIImage(imageLiteral: "cog")))
-        dataSource.append(AZDropdownMenuItemData(title:"Action With Icon 5", icon:UIImage(imageLiteral: "cog")))
+        dataSource.append(AZDropdownMenuItemData(title:"Profile", icon:UIImage(imageLiteral: "cog")))
+        dataSource.append(AZDropdownMenuItemData(title:"News", icon:UIImage(imageLiteral: "cog")))
+        dataSource.append(AZDropdownMenuItemData(title:"Events", icon:UIImage(imageLiteral: "cog")))
+        dataSource.append(AZDropdownMenuItemData(title:"Locations", icon:UIImage(imageLiteral: "cog")))
+        dataSource.append(AZDropdownMenuItemData(title:"Projects", icon:UIImage(imageLiteral: "cog")))
+        dataSource.append(AZDropdownMenuItemData(title:"Polls", icon:UIImage(imageLiteral: "cog")))
         return dataSource
     }
 }
