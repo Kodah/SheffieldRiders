@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -334,12 +335,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9v-aj-fA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1169" y="675"/>
+            <point key="canvasLocation" x="37" y="1103"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile-->
         <scene sceneID="1LB-xF-1Zo">
             <objects>
-                <viewController id="TsO-LA-aPz" sceneMemberID="viewController">
+                <viewController id="TsO-LA-aPz" customClass="ProfileViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eu3-BN-6XQ"/>
                         <viewControllerLayoutGuide type="bottom" id="3Fx-be-EHP"/>
@@ -348,20 +349,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logged in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1T-dH-yUH">
-                                <rect key="frame" x="223" y="336" width="76" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ub2-90-LMv">
+                                <rect key="frame" x="20" y="72" width="560" height="128"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GaP-0L-t2S">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <color key="backgroundColor" red="0.56253918038220685" green="0.52183329914511556" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="GaP-0L-t2S" secondAttribute="height" multiplier="1:1" id="gnw-ll-QPr"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dAf-wK-Fre">
+                                        <rect key="frame" x="134" y="0.0" width="426" height="42"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tom Sugarev" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM1-Fy-Z5R">
+                                                <rect key="frame" x="0.0" y="0.0" width="426" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discipline: Downhill, Freeride" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfB-e0-qWz">
+                                                <rect key="frame" x="0.0" y="21" width="426" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dAf-wK-Fre" firstAttribute="leading" secondItem="ub2-90-LMv" secondAttribute="leading" constant="134" id="2MT-zH-k7X"/>
+                                    <constraint firstItem="GaP-0L-t2S" firstAttribute="top" secondItem="ub2-90-LMv" secondAttribute="top" id="63d-fN-WyJ"/>
+                                    <constraint firstItem="GaP-0L-t2S" firstAttribute="leading" secondItem="ub2-90-LMv" secondAttribute="leading" id="s8A-0u-DeX"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ub2-90-LMv" firstAttribute="top" secondItem="eu3-BN-6XQ" secondAttribute="bottom" constant="8" id="hQy-c0-lmT"/>
+                            <constraint firstItem="ub2-90-LMv" firstAttribute="leading" secondItem="12G-95-WGh" secondAttribute="leadingMargin" id="iHp-Cx-62C"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ub2-90-LMv" secondAttribute="trailing" id="rsC-Is-n3I"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mfb-yX-saE"/>
+                    <navigationItem key="navigationItem" title="Profile" id="mfb-yX-saE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aR-5p-If4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1939" y="675"/>
+            <point key="canvasLocation" x="807" y="1103"/>
         </scene>
     </scenes>
 </document>

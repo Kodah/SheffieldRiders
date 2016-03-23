@@ -18,6 +18,8 @@
 		7E9EDAC61C930043000D8863 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9EDAC51C930043000D8863 /* LoginViewController.swift */; };
 		7E9EDAC81C930EDA000D8863 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9EDAC71C930EDA000D8863 /* SignUpViewController.swift */; };
 		7E9EDACA1C9331D3000D8863 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9EDAC91C9331D3000D8863 /* Constants.swift */; };
+		7EA394AA1CA2B29900338F4C /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA394A91CA2B29900338F4C /* DropDownMenu.swift */; };
+		7EA394AE1CA2B75D00338F4C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA394AD1CA2B75D00338F4C /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		7E9EDAC51C930043000D8863 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = controller/LoginViewController.swift; sourceTree = "<group>"; };
 		7E9EDAC71C930EDA000D8863 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = controller/SignUpViewController.swift; sourceTree = "<group>"; };
 		7E9EDAC91C9331D3000D8863 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = resources/Constants.swift; sourceTree = "<group>"; };
+		7EA394A91CA2B29900338F4C /* DropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DropDownMenu.swift; path = helpers/DropDownMenu.swift; sourceTree = "<group>"; };
+		7EA394AD1CA2B75D00338F4C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = controller/ProfileViewController.swift; sourceTree = "<group>"; };
 		8720B064D3B112C20E1DA3E9 /* Pods-SheffieldRiders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheffieldRiders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SheffieldRiders/Pods-SheffieldRiders.debug.xcconfig"; sourceTree = "<group>"; };
 		B75483DD31034D05EAD0BB20 /* Pods_SheffieldRiders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SheffieldRiders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,6 +118,7 @@
 				7E9EDAC41C92F264000D8863 /* Controller */,
 				7E9EDAC31C92F260000D8863 /* View */,
 				7E9EDAC21C92F256000D8863 /* Model */,
+				7EA394A81CA2B22900338F4C /* Helpers */,
 				7E7081EF1C6B52EF00F8B44A /* Assets.xcassets */,
 				7E7081F41C6B52EF00F8B44A /* Info.plist */,
 				7E9EDAC91C9331D3000D8863 /* Constants.swift */,
@@ -161,8 +166,17 @@
 			children = (
 				7E9EDAC51C930043000D8863 /* LoginViewController.swift */,
 				7E9EDAC71C930EDA000D8863 /* SignUpViewController.swift */,
+				7EA394AD1CA2B75D00338F4C /* ProfileViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		7EA394A81CA2B22900338F4C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7EA394A91CA2B29900338F4C /* DropDownMenu.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		CB0219823A68B0DD6253D2D7 /* Frameworks */ = {
@@ -369,7 +383,9 @@
 				7E7081EE1C6B52EF00F8B44A /* SheffieldRiders.xcdatamodeld in Sources */,
 				7E7081E61C6B52EF00F8B44A /* AppDelegate.swift in Sources */,
 				7E9EDAC81C930EDA000D8863 /* SignUpViewController.swift in Sources */,
+				7EA394AE1CA2B75D00338F4C /* ProfileViewController.swift in Sources */,
 				7E9EDACA1C9331D3000D8863 /* Constants.swift in Sources */,
+				7EA394AA1CA2B29900338F4C /* DropDownMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
