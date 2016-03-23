@@ -44,11 +44,12 @@ class DropDownMenu : NSObject {
         if let menu = self.menu
         {
             menu.cellTapHandler = { [weak self] (indexPath: NSIndexPath) -> Void in
-                NSNotificationCenter.defaultCenter().postNotificationName("menuOptionSelected", object: self, userInfo: ["indexPath" : indexPath.row])
                 
-                print(indexPath.row) 
-                
-//                self?.pushNewViewController(dataSource[indexPath.row])
+                if let selectedController = MainViewControllers(rawValue: indexPath.row)?.stringIdentifier() {
+                    
+                    NSNotificationCenter.defaultCenter().postNotificationName("menuOptionSelected", object: self, userInfo: ["selectedController" : selectedController])
+                }
+
                 
             }
             menu.itemHeight = 70

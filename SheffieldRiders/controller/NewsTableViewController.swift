@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  NewsTableViewController.swift
 //  SheffieldRiders
 //
 //  Created by Tom Sugarex on 23/03/2016.
@@ -8,14 +8,13 @@
 
 import UIKit
 
+class NewsTableViewController: UITableViewController {
 
-class ProfileViewController: UIViewController {
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Profile"
+        navigationItem.title = "News"
         
         navigationItem.rightBarButtonItem = DropDownMenu.sharedInstance.menuButton
         
@@ -26,5 +25,4 @@ class ProfileViewController: UIViewController {
     func showMenu() {
         DropDownMenu.sharedInstance.showMenu(self.view)
     }
-
 }
