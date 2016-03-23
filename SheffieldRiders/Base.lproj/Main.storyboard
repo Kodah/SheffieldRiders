@@ -323,7 +323,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Ore-Ni-NcN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B9v-aj-fA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="mainNavController" id="EwH-lD-AZI" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3zN-Ja-BYd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -333,6 +332,7 @@
                         <segue destination="TsO-LA-aPz" kind="relationship" relationship="rootViewController" id="uqy-IS-WZj"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B9v-aj-fA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1169" y="675"/>
         </scene>
@@ -351,7 +351,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logged in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1T-dH-yUH">
                                 <rect key="frame" x="223" y="336" width="76" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
