@@ -10,6 +10,7 @@
 		42BFFD71F09598EDC7380F78 /* Pods_SheffieldRiders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75483DD31034D05EAD0BB20 /* Pods_SheffieldRiders.framework */; };
 		7E07BD1F1CA34D0D00124AC2 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E07BD1E1CA34D0D00124AC2 /* news.json */; };
 		7E07BD211CA3527A00124AC2 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E07BD201CA3527A00124AC2 /* NewsTableViewCell.swift */; };
+		7E5853671CA36BCC00AAE8D1 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5853661CA36BCC00AAE8D1 /* ProfileTableViewController.swift */; };
 		7E7081E61C6B52EF00F8B44A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7081E51C6B52EF00F8B44A /* AppDelegate.swift */; };
 		7E7081EB1C6B52EF00F8B44A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E7081E91C6B52EF00F8B44A /* Main.storyboard */; };
 		7E7081EE1C6B52EF00F8B44A /* SheffieldRiders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E7081EC1C6B52EF00F8B44A /* SheffieldRiders.xcdatamodeld */; };
@@ -21,7 +22,6 @@
 		7E9EDAC81C930EDA000D8863 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9EDAC71C930EDA000D8863 /* SignUpViewController.swift */; };
 		7E9EDACA1C9331D3000D8863 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9EDAC91C9331D3000D8863 /* Constants.swift */; };
 		7EA394AA1CA2B29900338F4C /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA394A91CA2B29900338F4C /* DropDownMenu.swift */; };
-		7EA394AE1CA2B75D00338F4C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA394AD1CA2B75D00338F4C /* ProfileViewController.swift */; };
 		7EA394B41CA3080600338F4C /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA394B31CA3080600338F4C /* NewsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +46,7 @@
 		4BA28F7DB531C99736E60883 /* Pods-SheffieldRiders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheffieldRiders.release.xcconfig"; path = "Pods/Target Support Files/Pods-SheffieldRiders/Pods-SheffieldRiders.release.xcconfig"; sourceTree = "<group>"; };
 		7E07BD1E1CA34D0D00124AC2 /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = news.json; path = assets/news.json; sourceTree = "<group>"; };
 		7E07BD201CA3527A00124AC2 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewCell.swift; path = controller/NewsTableViewCell.swift; sourceTree = "<group>"; };
+		7E5853661CA36BCC00AAE8D1 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewController.swift; path = controller/ProfileTableViewController.swift; sourceTree = "<group>"; };
 		7E7081E21C6B52EF00F8B44A /* SheffieldRiders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SheffieldRiders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7081E51C6B52EF00F8B44A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E7081EA1C6B52EF00F8B44A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		7E9EDAC71C930EDA000D8863 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = controller/SignUpViewController.swift; sourceTree = "<group>"; };
 		7E9EDAC91C9331D3000D8863 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = resources/Constants.swift; sourceTree = "<group>"; };
 		7EA394A91CA2B29900338F4C /* DropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DropDownMenu.swift; path = helpers/DropDownMenu.swift; sourceTree = "<group>"; };
-		7EA394AD1CA2B75D00338F4C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = controller/ProfileViewController.swift; sourceTree = "<group>"; };
 		7EA394B31CA3080600338F4C /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewController.swift; path = controller/NewsTableViewController.swift; sourceTree = "<group>"; };
 		8720B064D3B112C20E1DA3E9 /* Pods-SheffieldRiders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheffieldRiders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SheffieldRiders/Pods-SheffieldRiders.debug.xcconfig"; sourceTree = "<group>"; };
 		B75483DD31034D05EAD0BB20 /* Pods_SheffieldRiders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SheffieldRiders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,9 +181,9 @@
 			children = (
 				7E9EDAC51C930043000D8863 /* LoginViewController.swift */,
 				7E9EDAC71C930EDA000D8863 /* SignUpViewController.swift */,
-				7EA394AD1CA2B75D00338F4C /* ProfileViewController.swift */,
 				7EA394B31CA3080600338F4C /* NewsTableViewController.swift */,
 				7E07BD201CA3527A00124AC2 /* NewsTableViewCell.swift */,
+				7E5853661CA36BCC00AAE8D1 /* ProfileTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -397,12 +397,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E5853671CA36BCC00AAE8D1 /* ProfileTableViewController.swift in Sources */,
 				7E9EDAC61C930043000D8863 /* LoginViewController.swift in Sources */,
 				7E7081EE1C6B52EF00F8B44A /* SheffieldRiders.xcdatamodeld in Sources */,
 				7E7081E61C6B52EF00F8B44A /* AppDelegate.swift in Sources */,
 				7E9EDAC81C930EDA000D8863 /* SignUpViewController.swift in Sources */,
 				7EA394B41CA3080600338F4C /* NewsTableViewController.swift in Sources */,
-				7EA394AE1CA2B75D00338F4C /* ProfileViewController.swift in Sources */,
 				7E9EDACA1C9331D3000D8863 /* Constants.swift in Sources */,
 				7EA394AA1CA2B29900338F4C /* DropDownMenu.swift in Sources */,
 				7E07BD211CA3527A00124AC2 /* NewsTableViewCell.swift in Sources */,
