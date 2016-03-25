@@ -22,7 +22,7 @@ class ProfileTableViewController: UITableViewController {
         
         navigationItem.title = "Profile"
         
-        navigationItem.rightBarButtonItem = DropDownMenu.sharedInstance.menuButton
+        navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showMenu", name: "showMenu", object: nil)
     }

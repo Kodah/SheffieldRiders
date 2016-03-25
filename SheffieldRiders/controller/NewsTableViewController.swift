@@ -17,7 +17,7 @@ class NewsTableViewController: UITableViewController {
         
         navigationItem.title = "News"
         
-        navigationItem.rightBarButtonItem = DropDownMenu.sharedInstance.menuButton
+        navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
         
         loadJson()
         
