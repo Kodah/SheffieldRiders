@@ -38,6 +38,13 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>ec2-54-171-175-217.eu-west-1.compute.amazonaws.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
 			<key>localhost</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>

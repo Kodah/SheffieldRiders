@@ -11,7 +11,12 @@ import Foundation
 
 struct Constants {
     
-    static let apiBaseURL = "http://localhost:3000/"
+    // Dev
+//    static let apiBaseURL = "http://localhost:9000/"
+    
+    // Live
+    static let apiBaseURL = "http://ec2-54-171-175-217.eu-west-1.compute.amazonaws.com:9000/"
+    
     
     
 }
