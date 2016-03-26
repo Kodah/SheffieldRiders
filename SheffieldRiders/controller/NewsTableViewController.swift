@@ -12,6 +12,8 @@ class NewsTableViewController: UITableViewController {
     
     var newsArray = [Dictionary<String, String>]()
     
+    var selectedArticle:Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,6 +56,26 @@ class NewsTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.selectedArticle = indexPath.row
+        self.performSegueWithIdentifier("showNewsSegue", sender: self)
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if (identifier == "showNewsSegue"){
+                
+                let viewController = segue.destinationViewController as! NewsViewController
+                
+                viewController.newsArticle = newsArray[selectedArticle]
+                
+                
+            }
+        }
+        
+    }
+    
     func loadJson(){
         
         if let path = NSBundle.mainBundle().pathForResource("news", ofType: "json")
@@ -72,6 +94,8 @@ class NewsTableViewController: UITableViewController {
             }
         }
     }
+    
+    
     
     
     
