@@ -24,6 +24,7 @@
 		7E9EDACA1C9331D3000D8863 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9EDAC91C9331D3000D8863 /* Constants.swift */; };
 		7EA394AA1CA2B29900338F4C /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA394A91CA2B29900338F4C /* DropDownMenu.swift */; };
 		7EA394B41CA3080600338F4C /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA394B31CA3080600338F4C /* NewsTableViewController.swift */; };
+		7EAF7FF81CA95DC700378700 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EAF7FF71CA95DC700378700 /* locations.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		7E9EDAC91C9331D3000D8863 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = resources/Constants.swift; sourceTree = "<group>"; };
 		7EA394A91CA2B29900338F4C /* DropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DropDownMenu.swift; path = helpers/DropDownMenu.swift; sourceTree = "<group>"; };
 		7EA394B31CA3080600338F4C /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewController.swift; path = controller/NewsTableViewController.swift; sourceTree = "<group>"; };
+		7EAF7FF71CA95DC700378700 /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = locations.json; path = assets/locations.json; sourceTree = "<group>"; };
 		8720B064D3B112C20E1DA3E9 /* Pods-SheffieldRiders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheffieldRiders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SheffieldRiders/Pods-SheffieldRiders.debug.xcconfig"; sourceTree = "<group>"; };
 		B75483DD31034D05EAD0BB20 /* Pods_SheffieldRiders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SheffieldRiders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -102,6 +104,7 @@
 			children = (
 				7E7081EF1C6B52EF00F8B44A /* Assets.xcassets */,
 				7E07BD1E1CA34D0D00124AC2 /* news.json */,
+				7EAF7FF71CA95DC700378700 /* locations.json */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			files = (
 				7E7081F31C6B52EF00F8B44A /* LaunchScreen.storyboard in Resources */,
 				7E7081F01C6B52EF00F8B44A /* Assets.xcassets in Resources */,
+				7EAF7FF81CA95DC700378700 /* locations.json in Resources */,
 				7E07BD1F1CA34D0D00124AC2 /* news.json in Resources */,
 				7E7081EB1C6B52EF00F8B44A /* Main.storyboard in Resources */,
 			);

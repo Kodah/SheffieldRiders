@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="Difficulty" representedClassName="Difficulty" syncable="YES">
+        <attribute name="black" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="blue" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="doubleBlack" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="red" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="difficulty" inverseEntity="Location" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="discipline" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numberOfRoutes" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="difficulty" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Difficulty" inverseName="location" inverseEntity="Difficulty" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Location" positionX="-497" positionY="-36" width="128" height="178"/>
+        <element name="Difficulty" positionX="-54" positionY="27" width="128" height="118"/>
+    </elements>
 </model>

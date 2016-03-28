@@ -1,0 +1,114 @@
+ [
+  {
+  "name": "Wharncliffe Woods",
+  "latitude": 53.460577,
+  "longitude": -1.549912,
+  "area": 1.2,
+  "dicipline": "Downhill/Freeride",
+  "imageName": "Wharncliffe",
+  "numberOfRoutes": 10,
+  "difficulty": {
+  "doubleBlack": 1,
+  "black": 1,
+  "red": 0,
+  "blue": 0,
+  "green": 0
+  }
+  },
+  {
+  "name": "Blacka Moor",
+  "latitude": 53.321530,
+  "longitude": -1.586449,
+  "area": 3,
+  "dicipline": "Downhill/Enduro",
+  "imageName": "BlackaMoor",
+  "numberOfRoutes": 2,
+  "difficulty": {
+  "doubleBlack": 0,
+  "black": 0,
+  "red": 1,
+  "blue": 0,
+  "green": 0
+  }
+  },
+  {
+  "name": "Lady Canning",
+  "latitude": 53.346515,
+  "longitude": -1.571845,
+  "area": 3,
+  "dicipline": "Enduro/XC",
+  "imageName": "LadyCanning",
+  "numberOfRoutes": 2,
+  "difficulty": {
+  "doubleBlack": 0,
+  "black": 0,
+  "red": 0,
+  "blue": 1,
+  "green": 0
+  }
+  },
+  {
+  "name": "Grenocide Woods",
+  "latitude": 53.452997,
+  "longitude": -1.507015,
+  "area": 1.2,
+  "dicipline": "Downhill/Enduro",
+  "imageName": "GrenocideWoods",
+  "numberOfRoutes": 2,
+  "difficulty": {
+  "doubleBlack": 0,
+  "black": 1,
+  "red": 1,
+  "blue": 0,
+  "green": 0
+  }
+  },
+  {
+  "name": "Parkwood Springs",
+  "latitude": 53.398529,
+  "longitude": -1.475134,
+  "area": 1,
+  "dicipline": "Enduro/XC",
+  "imageName": "Parkwood Springs",
+  "numberOfRoutes": 2,
+  "difficulty": {
+  "doubleBlack": 0,
+  "black": 0,
+  "red": 1,
+  "blue": 1,
+  "green": 0
+  }
+  },
+  {
+  "name": "Monkey Bumps",
+  "latitude": 53.339694,
+  "longitude": -1.500955,
+  "area": 1,
+  "dicipline": "Dirt Jumping",
+  "imageName": "MonkeyBumps",
+  "numberOfRoutes": 0,
+  "difficulty": {
+  "doubleBlack": 1,
+  "black": 0,
+  "red": 0,
+  "blue": 0,
+  "green": 0
+  }
+  },
+  {
+  "name": "Bowl hills",
+  "latitude": 53.391335,
+  "longitude": -1.509283,
+  "area": 0.5,
+  "dicipline": "Dirt Jumping/Pump Track",
+  "imageName": "Bowl hills",
+  "numberOfRoutes": 0,
+  "difficulty": {
+  "doubleBlack": 0,
+  "black": 0,
+  "red": 1,
+  "blue": 0,
+  "green": 0
+  }
+  }
+  ]
