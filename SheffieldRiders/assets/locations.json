@@ -4,7 +4,7 @@
   "latitude": 53.460577,
   "longitude": -1.549912,
   "area": 1.2,
-  "dicipline": "Downhill/Freeride",
+  "discipline": "Downhill/Freeride",
   "imageName": "Wharncliffe",
   "numberOfRoutes": 10,
   "difficulty": {
@@ -20,7 +20,7 @@
   "latitude": 53.321530,
   "longitude": -1.586449,
   "area": 3,
-  "dicipline": "Downhill/Enduro",
+  "discipline": "Downhill/Enduro",
   "imageName": "BlackaMoor",
   "numberOfRoutes": 2,
   "difficulty": {
@@ -36,7 +36,7 @@
   "latitude": 53.346515,
   "longitude": -1.571845,
   "area": 3,
-  "dicipline": "Enduro/XC",
+  "discipline": "Enduro/XC",
   "imageName": "LadyCanning",
   "numberOfRoutes": 2,
   "difficulty": {
@@ -52,7 +52,7 @@
   "latitude": 53.452997,
   "longitude": -1.507015,
   "area": 1.2,
-  "dicipline": "Downhill/Enduro",
+  "discipline": "Downhill/Enduro",
   "imageName": "GrenocideWoods",
   "numberOfRoutes": 2,
   "difficulty": {
@@ -68,7 +68,7 @@
   "latitude": 53.398529,
   "longitude": -1.475134,
   "area": 1,
-  "dicipline": "Enduro/XC",
+  "discipline": "Enduro/XC",
   "imageName": "Parkwood Springs",
   "numberOfRoutes": 2,
   "difficulty": {
@@ -84,7 +84,7 @@
   "latitude": 53.339694,
   "longitude": -1.500955,
   "area": 1,
-  "dicipline": "Dirt Jumping",
+  "discipline": "Dirt Jumping",
   "imageName": "MonkeyBumps",
   "numberOfRoutes": 0,
   "difficulty": {
@@ -100,7 +100,7 @@
   "latitude": 53.391335,
   "longitude": -1.509283,
   "area": 0.5,
-  "dicipline": "Dirt Jumping/Pump Track",
+  "discipline": "Dirt Jumping/Pump Track",
   "imageName": "Bowl hills",
   "numberOfRoutes": 0,
   "difficulty": {
