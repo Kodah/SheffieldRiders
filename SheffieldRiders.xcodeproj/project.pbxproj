@@ -25,6 +25,7 @@
 		7EA394AA1CA2B29900338F4C /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA394A91CA2B29900338F4C /* DropDownMenu.swift */; };
 		7EA394B41CA3080600338F4C /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA394B31CA3080600338F4C /* NewsTableViewController.swift */; };
 		7EAF7FF81CA95DC700378700 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EAF7FF71CA95DC700378700 /* locations.json */; };
+		7EAF7FFA1CA9674700378700 /* LocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF7FF91CA9674700378700 /* LocationTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		7EA394A91CA2B29900338F4C /* DropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DropDownMenu.swift; path = helpers/DropDownMenu.swift; sourceTree = "<group>"; };
 		7EA394B31CA3080600338F4C /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewController.swift; path = controller/NewsTableViewController.swift; sourceTree = "<group>"; };
 		7EAF7FF71CA95DC700378700 /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = locations.json; path = assets/locations.json; sourceTree = "<group>"; };
+		7EAF7FF91CA9674700378700 /* LocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTableViewController.swift; path = controller/LocationTableViewController.swift; sourceTree = "<group>"; };
 		8720B064D3B112C20E1DA3E9 /* Pods-SheffieldRiders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheffieldRiders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SheffieldRiders/Pods-SheffieldRiders.debug.xcconfig"; sourceTree = "<group>"; };
 		B75483DD31034D05EAD0BB20 /* Pods_SheffieldRiders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SheffieldRiders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -190,6 +192,7 @@
 				7E07BD201CA3527A00124AC2 /* NewsTableViewCell.swift */,
 				7E5853661CA36BCC00AAE8D1 /* ProfileTableViewController.swift */,
 				7E2D75661CA6054200C7E140 /* NewsViewController.swift */,
+				7EAF7FF91CA9674700378700 /* LocationTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				7E2D75671CA6054200C7E140 /* NewsViewController.swift in Sources */,
 				7E7081E61C6B52EF00F8B44A /* AppDelegate.swift in Sources */,
 				7E9EDAC81C930EDA000D8863 /* SignUpViewController.swift in Sources */,
+				7EAF7FFA1CA9674700378700 /* LocationTableViewController.swift in Sources */,
 				7EA394B41CA3080600338F4C /* NewsTableViewController.swift in Sources */,
 				7E9EDACA1C9331D3000D8863 /* Constants.swift in Sources */,
 				7EA394AA1CA2B29900338F4C /* DropDownMenu.swift in Sources */,

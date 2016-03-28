@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGp-lv-RcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21" y="273"/>
+            <point key="canvasLocation" x="-867" y="563"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="9el-Lc-6yA">
@@ -204,7 +204,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="720" y="-407"/>
+            <point key="canvasLocation" x="-168" y="-117"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="nNo-Ls-j8w">
@@ -319,7 +319,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="720" y="273"/>
+            <point key="canvasLocation" x="-168" y="563"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ore-Ni-NcN">
@@ -335,7 +335,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9v-aj-fA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37" y="1103"/>
+            <point key="canvasLocation" x="629" y="563"/>
         </scene>
         <!--Profile Table View Controller-->
         <scene sceneID="ewv-UU-fcG">
@@ -682,7 +682,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4oR-ui-tGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="1100"/>
+            <point key="canvasLocation" x="1408" y="560"/>
         </scene>
         <!--News Table View Controller-->
         <scene sceneID="I7O-j1-NEI">
@@ -766,7 +766,59 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8w-gr-X3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="807" y="1834"/>
+            <point key="canvasLocation" x="1399" y="1294"/>
+        </scene>
+        <!--Location Table View Controller-->
+        <scene sceneID="SLr-q0-4a7">
+            <objects>
+                <tableViewController storyboardIdentifier="LocationsViewController" id="stV-bk-drQ" customClass="LocationTableViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="fGJ-tr-8cm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="67" id="BWV-lb-lSk">
+                                <rect key="frame" x="0.0" y="28" width="600" height="67"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BWV-lb-lSk" id="Hhw-RS-Kln">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="oe3-IW-F6E">
+                                            <rect key="frame" x="542" y="8" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="XRp-w0-xO4"/>
+                                                <constraint firstAttribute="height" constant="50" id="YEl-La-mLi"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyx-8V-ZgG">
+                                            <rect key="frame" x="8" y="8" width="526" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="uyx-8V-ZgG" firstAttribute="leading" secondItem="Hhw-RS-Kln" secondAttribute="leadingMargin" id="Bqz-cT-QCx"/>
+                                        <constraint firstItem="oe3-IW-F6E" firstAttribute="bottom" secondItem="Hhw-RS-Kln" secondAttribute="bottomMargin" id="L5Y-Rg-yXE"/>
+                                        <constraint firstItem="oe3-IW-F6E" firstAttribute="top" secondItem="Hhw-RS-Kln" secondAttribute="topMargin" id="Xws-6o-iol"/>
+                                        <constraint firstItem="oe3-IW-F6E" firstAttribute="trailing" secondItem="Hhw-RS-Kln" secondAttribute="trailingMargin" id="YiU-1l-qn3"/>
+                                        <constraint firstItem="uyx-8V-ZgG" firstAttribute="bottom" secondItem="Hhw-RS-Kln" secondAttribute="bottomMargin" id="fwA-j7-z0G"/>
+                                        <constraint firstItem="uyx-8V-ZgG" firstAttribute="top" secondItem="Hhw-RS-Kln" secondAttribute="topMargin" id="mjZ-fx-9qN"/>
+                                        <constraint firstItem="oe3-IW-F6E" firstAttribute="leading" secondItem="uyx-8V-ZgG" secondAttribute="trailing" constant="8" id="n2b-u2-yQ9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="stV-bk-drQ" id="tno-PM-oF0"/>
+                            <outlet property="delegate" destination="stV-bk-drQ" id="Svi-m9-juQ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Go6-pz-mJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1408" y="2068"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="Sdd-SR-OpP">
@@ -836,7 +888,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OwX-lP-suS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="1826"/>
+            <point key="canvasLocation" x="2185" y="1286"/>
         </scene>
     </scenes>
     <resources>
