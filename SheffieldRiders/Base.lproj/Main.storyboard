@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EwH-lD-AZI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EwH-lD-AZI">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -793,7 +795,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfe-Jg-F1A">
                                                             <rect key="frame" x="0.0" y="0.0" width="534" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTA-FD-syJ">
@@ -874,18 +876,26 @@
                                         <rect key="frame" x="0.0" y="290" width="600" height="290"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nob-um-U6c">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="290"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="245"/>
                                                 <connections>
                                                     <segue destination="zcy-wh-4e0" kind="embed" identifier="locationDetailCollectionSegue" id="lSC-n3-865"/>
                                                 </connections>
                                             </containerView>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="QdJ-fZ-hJb">
+                                                <rect key="frame" x="8" y="253" width="584" height="37"/>
+                                                <color key="pageIndicatorTintColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </pageControl>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="QdJ-fZ-hJb" firstAttribute="leading" secondItem="Kqm-Bo-CB4" secondAttribute="leadingMargin" id="9F5-No-sX4"/>
+                                            <constraint firstItem="QdJ-fZ-hJb" firstAttribute="top" secondItem="Nob-um-U6c" secondAttribute="bottom" constant="8" id="D5a-MD-SQv"/>
+                                            <constraint firstItem="QdJ-fZ-hJb" firstAttribute="bottom" secondItem="Kqm-Bo-CB4" secondAttribute="bottomMargin" constant="8" id="DBS-pE-5Lp"/>
                                             <constraint firstItem="Nob-um-U6c" firstAttribute="top" secondItem="Kqm-Bo-CB4" secondAttribute="top" id="KVw-xt-hDh"/>
                                             <constraint firstAttribute="trailing" secondItem="Nob-um-U6c" secondAttribute="trailing" id="LqN-sp-DJp"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="QdJ-fZ-hJb" secondAttribute="trailing" id="Z8A-rZ-60j"/>
                                             <constraint firstItem="Nob-um-U6c" firstAttribute="leading" secondItem="Kqm-Bo-CB4" secondAttribute="leading" id="ury-P6-2sA"/>
-                                            <constraint firstAttribute="bottom" secondItem="Nob-um-U6c" secondAttribute="bottom" id="z7s-NX-DoG"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -899,10 +909,13 @@
                             <constraint firstAttribute="trailing" secondItem="Bsq-Ob-fDs" secondAttribute="trailing" id="oKO-G8-sAR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="QdJ-fZ-hJb" id="AAT-dI-8zl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lb1-KP-BTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2070" y="2065"/>
+            <point key="canvasLocation" x="2185" y="2068"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="Sdd-SR-OpP">
@@ -979,7 +992,7 @@
             <objects>
                 <collectionViewController id="zcy-wh-4e0" customClass="LocationInfoCollectionViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="VIE-DT-Axi">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="290"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="245"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="1" minimumInteritemSpacing="1" id="RDG-P3-vcE" customClass="CenterCellCollectionViewFlowLayout" customModule="SheffieldRiders" customModuleProvider="target">
@@ -990,10 +1003,10 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="descriptionCell" id="e5g-zd-3sU" customClass="LocationDescriptionCollectionViewCell" customModule="SheffieldRiders" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="290"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="245"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="290"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="245"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJ3-WY-NJG">
@@ -1002,11 +1015,11 @@
                                                 <constraint firstAttribute="height" constant="21" id="F0t-BB-Wc8"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TR-qw-w0M">
-                                            <rect key="frame" x="8" y="37" width="584" height="245"/>
+                                            <rect key="frame" x="8" y="37" width="584" height="200"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1023,80 +1036,81 @@
                                     <constraint firstItem="4TR-qw-w0M" firstAttribute="leading" secondItem="e5g-zd-3sU" secondAttribute="leadingMargin" id="oZ1-Yt-oCT"/>
                                     <constraint firstItem="4TR-qw-w0M" firstAttribute="top" secondItem="gJ3-WY-NJG" secondAttribute="bottom" constant="8" id="xjT-SY-bqH"/>
                                 </constraints>
-                                <size key="customSize" width="600" height="290"/>
+                                <size key="customSize" width="600" height="245"/>
                                 <connections>
                                     <outlet property="summaryTextView" destination="4TR-qw-w0M" id="ZCE-gF-IcW"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="statsCell" id="lBF-Ne-bgX" customClass="LocationStatsCollectionViewCell" customModule="SheffieldRiders" customModuleProvider="target">
-                                <rect key="frame" x="601" y="0.0" width="600" height="290"/>
+                                <rect key="frame" x="601" y="0.0" width="600" height="245"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="290"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="245"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nKj-Dz-YNs">
-                                            <rect key="frame" x="16" y="8" width="268" height="21"/>
+                                            <rect key="frame" x="16" y="8" width="268" height="29"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Riding discipline: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgD-Uw-3at">
-                                                    <rect key="frame" x="0.0" y="0.0" width="134" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="134" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downhill/Freeride" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUJ-Z6-nfH">
-                                                    <rect key="frame" x="134" y="0.0" width="134" height="21"/>
+                                                    <rect key="frame" x="134" y="0.0" width="134" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyB-jf-D8u">
-                                            <rect key="frame" x="16" y="37" width="153" height="21"/>
+                                            <rect key="frame" x="16" y="45" width="153" height="21"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of tracks: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piG-BZ-G7s">
                                                     <rect key="frame" x="0.0" y="0.0" width="142" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4l3-dg-eUF">
                                                     <rect key="frame" x="142" y="0.0" width="11" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="piG-BZ-G7s" firstAttribute="baseline" secondItem="4l3-dg-eUF" secondAttribute="firstBaseline" id="6GH-tM-yOE"/>
                                                 <constraint firstItem="piG-BZ-G7s" firstAttribute="leading" secondItem="gyB-jf-D8u" secondAttribute="leading" id="kEa-dd-TDr"/>
                                                 <constraint firstItem="piG-BZ-G7s" firstAttribute="top" secondItem="gyB-jf-D8u" secondAttribute="top" id="zVS-q8-BF4"/>
                                             </constraints>
                                         </stackView>
                                         <view contentMode="scaleToFill" horizontalHuggingPriority="247" verticalHuggingPriority="248" translatesAutoresizingMaskIntoConstraints="NO" id="TEj-pr-aaA" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="95" width="584" height="187"/>
+                                            <rect key="frame" x="8" y="74" width="584" height="163"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="s7t-0O-jFU">
-                                                    <rect key="frame" x="8" y="8" width="568" height="171"/>
+                                                    <rect key="frame" x="8" y="8" width="568" height="147"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="k9o-Xf-g3h">
-                                                            <rect key="frame" x="0.0" y="0.0" width="568" height="31"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="568" height="26"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" text="Double Black" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6u-RB-EAM">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="31"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="26"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="254" translatesAutoresizingMaskIntoConstraints="NO" id="7kY-ST-6yv" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
-                                                                    <rect key="frame" x="109" y="0.0" width="31" height="31"/>
+                                                                    <rect key="frame" x="109" y="0.0" width="26" height="26"/>
                                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                             <real key="value" value="1"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="20"/>
+                                                                            <real key="value" value="15"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                             <color key="value" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1104,14 +1118,14 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="254" translatesAutoresizingMaskIntoConstraints="NO" id="iCg-pT-QJY" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
-                                                                    <rect key="frame" x="148" y="0.0" width="31" height="31"/>
+                                                                    <rect key="frame" x="143" y="0.0" width="26" height="26"/>
                                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                             <real key="value" value="1"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="20"/>
+                                                                            <real key="value" value="15"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                             <color key="value" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1119,17 +1133,25 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZ8-4b-jpu">
-                                                                    <rect key="frame" x="187" y="0.0" width="58" height="31"/>
+                                                                    <rect key="frame" x="177" y="0.0" width="63" height="26"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZKA-py-2XX">
-                                                                    <rect key="frame" x="253" y="0.0" width="315" height="31"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZKA-py-2XX" customClass="InspectableLabel" customModule="SheffieldRiders" customModuleProvider="target">
+                                                                    <rect key="frame" x="248" y="0.0" width="320" height="26"/>
                                                                     <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="8"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
@@ -1150,23 +1172,23 @@
                                                             </variation>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AUc-6o-bww">
-                                                            <rect key="frame" x="0.0" y="35" width="568" height="31"/>
+                                                            <rect key="frame" x="0.0" y="30" width="568" height="26"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Black" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQx-QJ-GI3">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="31"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="26"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8qp-vH-kfq" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
-                                                                    <rect key="frame" x="109" y="0.0" width="31" height="31"/>
+                                                                    <rect key="frame" x="109" y="0.0" width="26" height="26"/>
                                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                             <real key="value" value="1"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="20"/>
+                                                                            <real key="value" value="15"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                             <color key="value" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1174,17 +1196,25 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Advanced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBc-ug-clP">
-                                                                    <rect key="frame" x="148" y="0.0" width="97" height="31"/>
+                                                                    <rect key="frame" x="143" y="0.0" width="97" height="26"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="Unavailable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jwj-NO-Xy5">
-                                                                    <rect key="frame" x="253" y="0.0" width="315" height="31"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="Unavailable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jwj-NO-Xy5" customClass="InspectableLabel" customModule="SheffieldRiders" customModuleProvider="target">
+                                                                    <rect key="frame" x="248" y="0.0" width="320" height="26"/>
                                                                     <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.4926361908783784" colorSpace="calibratedRGB"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="8"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
@@ -1200,23 +1230,23 @@
                                                             </variation>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="50J-nG-kC8">
-                                                            <rect key="frame" x="0.0" y="70" width="568" height="31"/>
+                                                            <rect key="frame" x="0.0" y="60" width="568" height="27"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B61-0h-Km2">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="31"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="27"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTU-ti-fTG" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
-                                                                    <rect key="frame" x="109" y="0.0" width="31" height="31"/>
+                                                                    <rect key="frame" x="109" y="0.0" width="26" height="27"/>
                                                                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                             <real key="value" value="1"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="20"/>
+                                                                            <real key="value" value="15"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                             <color key="value" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1224,16 +1254,24 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Intermediate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRU-8p-gtL">
-                                                                    <rect key="frame" x="148" y="0.0" width="97" height="31"/>
+                                                                    <rect key="frame" x="143" y="0.0" width="97" height="27"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="Unavailable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wCR-AS-u5K">
-                                                                    <rect key="frame" x="253" y="0.0" width="315" height="31"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="Unavailable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wCR-AS-u5K" customClass="InspectableLabel" customModule="SheffieldRiders" customModuleProvider="target">
+                                                                    <rect key="frame" x="248" y="0.0" width="320" height="27"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="8"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
@@ -1249,23 +1287,23 @@
                                                             </variation>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YVC-qL-PmC">
-                                                            <rect key="frame" x="0.0" y="105" width="568" height="31"/>
+                                                            <rect key="frame" x="0.0" y="91" width="568" height="26"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tr8-hf-oF7">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="31"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="26"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cte-cC-wch" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
-                                                                    <rect key="frame" x="109" y="0.0" width="31" height="31"/>
+                                                                    <rect key="frame" x="109" y="0.0" width="26" height="26"/>
                                                                     <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                             <real key="value" value="1"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="20"/>
+                                                                            <real key="value" value="15"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                             <color key="value" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1273,16 +1311,24 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Moderate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFt-pI-zti">
-                                                                    <rect key="frame" x="148" y="0.0" width="97" height="31"/>
+                                                                    <rect key="frame" x="143" y="0.0" width="97" height="26"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="Unavailable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bLL-Kv-T0P">
-                                                                    <rect key="frame" x="253" y="0.0" width="315" height="31"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="Unavailable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bLL-Kv-T0P" customClass="InspectableLabel" customModule="SheffieldRiders" customModuleProvider="target">
+                                                                    <rect key="frame" x="248" y="0.0" width="320" height="26"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="8"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
@@ -1291,16 +1337,16 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MTj-GS-vka">
-                                                            <rect key="frame" x="0.0" y="140" width="568" height="31"/>
+                                                            <rect key="frame" x="0.0" y="121" width="568" height="26"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIy-11-dYs">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="31"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="26"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffb-h9-TY9" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
-                                                                    <rect key="frame" x="109" y="0.0" width="31" height="31"/>
+                                                                    <rect key="frame" x="109" y="0.0" width="26" height="26"/>
                                                                     <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -1315,16 +1361,24 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Easy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sa-LU-XYJ">
-                                                                    <rect key="frame" x="148" y="0.0" width="97" height="31"/>
+                                                                    <rect key="frame" x="143" y="0.0" width="97" height="26"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GCY-Gc-5De">
-                                                                    <rect key="frame" x="253" y="0.0" width="315" height="31"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GCY-Gc-5De" customClass="InspectableLabel" customModule="SheffieldRiders" customModuleProvider="target">
+                                                                    <rect key="frame" x="248" y="0.0" width="320" height="26"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="8"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
@@ -1354,7 +1408,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="s7t-0O-jFU" firstAttribute="leading" secondItem="TEj-pr-aaA" secondAttribute="leading" constant="8" id="5dJ-QU-Nw1"/>
-                                                <constraint firstAttribute="height" constant="187" id="9RM-yk-mcV"/>
+                                                <constraint firstAttribute="height" constant="163" id="9RM-yk-mcV"/>
                                                 <constraint firstAttribute="trailing" secondItem="s7t-0O-jFU" secondAttribute="trailing" constant="8" id="azA-hM-knG"/>
                                                 <constraint firstAttribute="bottom" secondItem="s7t-0O-jFU" secondAttribute="bottom" constant="8" id="bOX-Cd-5eL"/>
                                                 <constraint firstItem="s7t-0O-jFU" firstAttribute="top" secondItem="TEj-pr-aaA" secondAttribute="top" constant="8" id="iSy-mR-SPs"/>
@@ -1371,30 +1425,20 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty Grid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDM-0y-oYQ">
-                                            <rect key="frame" x="16" y="66" width="106" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="uOE-0x-nok"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="TEj-pr-aaA" firstAttribute="bottom" secondItem="lBF-Ne-bgX" secondAttribute="bottomMargin" id="106-CB-Qqh"/>
-                                    <constraint firstItem="dDM-0y-oYQ" firstAttribute="leading" secondItem="lBF-Ne-bgX" secondAttribute="leadingMargin" constant="8" id="3l1-cF-9yl"/>
                                     <constraint firstItem="gyB-jf-D8u" firstAttribute="leading" secondItem="lBF-Ne-bgX" secondAttribute="leadingMargin" constant="8" id="8F5-7r-KfT"/>
+                                    <constraint firstItem="TEj-pr-aaA" firstAttribute="top" secondItem="gyB-jf-D8u" secondAttribute="bottom" constant="8" id="A0u-jv-sGD"/>
                                     <constraint firstItem="nKj-Dz-YNs" firstAttribute="top" secondItem="lBF-Ne-bgX" secondAttribute="topMargin" id="M2D-TF-yVl"/>
-                                    <constraint firstItem="dDM-0y-oYQ" firstAttribute="top" secondItem="gyB-jf-D8u" secondAttribute="bottom" constant="8" id="Y5U-Te-hKF"/>
                                     <constraint firstItem="TEj-pr-aaA" firstAttribute="trailing" secondItem="lBF-Ne-bgX" secondAttribute="trailingMargin" id="qB2-dE-Sl5"/>
                                     <constraint firstItem="gyB-jf-D8u" firstAttribute="top" secondItem="nKj-Dz-YNs" secondAttribute="bottom" constant="8" id="rvx-E9-2Jb"/>
                                     <constraint firstItem="TEj-pr-aaA" firstAttribute="leading" secondItem="lBF-Ne-bgX" secondAttribute="leadingMargin" id="tfg-Qd-SrA"/>
                                     <constraint firstItem="nKj-Dz-YNs" firstAttribute="leading" secondItem="lBF-Ne-bgX" secondAttribute="leadingMargin" constant="8" id="zn6-I3-OeH"/>
                                 </constraints>
-                                <size key="customSize" width="600" height="290"/>
+                                <size key="customSize" width="600" height="245"/>
                                 <connections>
                                     <outlet property="blackLabel" destination="Jwj-NO-Xy5" id="6qC-RX-RkQ"/>
                                     <outlet property="blueLabel" destination="bLL-Kv-T0P" id="KF0-IU-Ak5"/>
@@ -1414,7 +1458,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSF-3c-eI8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2105" y="2708"/>
+            <point key="canvasLocation" x="2185" y="2593.5"/>
         </scene>
     </scenes>
     <resources>

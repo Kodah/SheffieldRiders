@@ -8,10 +8,12 @@
 
 import UIKit
 
-class LocationViewController: UIViewController {
+class LocationViewController: UIViewController, LocationInfoCollectionViewDelegate {
     
     var location = Dictionary<String, NSObject>()
 
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +26,10 @@ class LocationViewController: UIViewController {
         
     }
     
+    func didChangeCollectionViewPage(page: Int) {
+        pageControl.currentPage = page
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
@@ -31,6 +37,7 @@ class LocationViewController: UIViewController {
                 
                 let viewController = segue.destinationViewController as! LocationInfoCollectionViewController
                 
+                viewController.delegate = self;
                 viewController.location = self.location
                 
                 

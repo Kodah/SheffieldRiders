@@ -11,13 +11,22 @@ import UIKit
 private let descriptionCellIdentifier = "descriptionCell"
 private let statsCellIdentifier = "statsCell"
 
+protocol LocationInfoCollectionViewDelegate: class {
+    func didChangeCollectionViewPage(page: Int)
+}
 
 class LocationInfoCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var location = Dictionary<String, NSObject>()
-    
+    weak var delegate: LocationInfoCollectionViewDelegate?
 
-    
+    override func scrollViewDidEndDecelerating(scrollView: UIScrollView)
+    {
+        let pageWidth = collectionView!.frame.size.width
+        
+        let page = Int(collectionView!.contentOffset.x / pageWidth)
+        delegate?.didChangeCollectionViewPage(page)
+    }
     
     
     override func viewDidLoad() {
@@ -41,6 +50,8 @@ class LocationInfoCollectionViewController: UICollectionViewController, UICollec
     {
         return collectionView.frame.size
     }
+    
+    
     
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

@@ -9,6 +9,11 @@
 import UIKit
 
 @IBDesignable class InspectableLabel: UILabel {
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.layer.masksToBounds = true
+    }
 
     @IBInspectable var borderColor: UIColor = UIColor.clearColor() {
         didSet {
