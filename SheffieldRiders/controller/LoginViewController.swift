@@ -28,8 +28,8 @@ class LoginViewController: UIViewController {
         self.view.endEditing(true)
     }
     func observeKeyboard() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     @IBAction func dismissView(sender: UIButton) {
@@ -88,7 +88,7 @@ class LoginViewController: UIViewController {
             do {
                 let responseString = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! String
                 
-                let saveSuccessful: Bool = KeychainWrapper.setString(responseString, forKey: "authenticationToken")
+                KeychainWrapper.setString(responseString, forKey: "authenticationToken")
                 
                 if let window = UIApplication.sharedApplication().keyWindow
                 {

@@ -12,6 +12,7 @@ import CoreData
 class LocationTableViewController: UITableViewController {
     
     var locationsArray = [Dictionary<String, NSObject>]()
+    var selectedLocation:Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,7 @@ class LocationTableViewController: UITableViewController {
         
         navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showMenu", name: "showMenu", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LocationTableViewController.showMenu), name: "showMenu", object: nil)
         
         loadJson()
 
@@ -50,6 +51,11 @@ class LocationTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.selectedLocation = indexPath.row
+        self.performSegueWithIdentifier("locationDetailSegue", sender: self)
+    }
 
     func loadJson(){
         
@@ -72,16 +78,21 @@ class LocationTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
-            if (identifier == "showLocation"){
+            if (identifier == "locationDetailSegue"){
                 
-                let viewController = segue.destinationViewController as! NewsViewController
+                let viewController = segue.destinationViewController as! LocationViewController
                 
-                viewController.newsArticle = newsArray[selectedArticle]
-                
-                
+                viewController.location = locationsArray[selectedLocation]
             }
         }
         
+    }
+    
+    func showMenu() {
+        
+        tableView.setContentOffset(CGPointMake(0.0, -tableView.contentInset.top), animated:true)
+        
+        DropDownMenu.sharedInstance.showMenu(self.view)
     }
 
 }

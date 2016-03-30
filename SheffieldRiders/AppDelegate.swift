@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func navControllerListeners () {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeNavRootView:", name: "menuOptionSelected", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.changeNavRootView(_:)), name: "menuOptionSelected", object: nil)
     }
     
     func changeNavRootView (notification:NSNotification)
