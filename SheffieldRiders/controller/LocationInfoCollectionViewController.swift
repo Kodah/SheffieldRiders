@@ -68,7 +68,6 @@ class LocationInfoCollectionViewController: UICollectionViewController, UICollec
         case 1:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(statsCellIdentifier, forIndexPath: indexPath) as! LocationStatsCollectionViewCell
             
-            print(location)
             cell.disciplineLabel.text = location["discipline"] as? String
             cell.numTracksLabel.text = String(location["numberOfRoutes"]!)
             
