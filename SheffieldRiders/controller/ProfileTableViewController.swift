@@ -14,7 +14,7 @@ import DATAStack
 
 
 class ProfileTableViewController: UITableViewController {
-
+    
     @IBOutlet weak var headerCell: UITableViewCell!
     @IBOutlet weak var locationVisitedCell: UITableViewCell!
     @IBOutlet weak var statisticsCell: UITableViewCell!
@@ -28,22 +28,33 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var disciplineLabel: UILabel!
     @IBOutlet weak var riderRepLabel: UILabel!
     
-//    var userProfile : UserProfile?
+    var userProfile : UserProfile?
+    var spotsVisited: [Spot]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Profile"
-                
+        
         navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.showMenu), name: "showMenu", object: nil)
-
-//        DataSynchroniser.sharedInstance.synchroniseAll()
-//        DataSynchroniser.sharedInstance.syncProfile()
-//        DataSynchroniser.sharedInstance.syncUsers()
+        refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl!.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.refreshUI), name: "userProfileUpdated", object: nil)
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.showMenu), name: "showMenu", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.fetchProfile), name: "userProfileUpdated", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserverForName("userProfileUpdated", object: nil, queue: nil) { _ in
+            self.fetchProfile()
+            self.updateUI()
+            self.refreshControl?.endRefreshing()
+        }
+        
+        fetchProfile()
+        updateUI()
         
     }
     
@@ -51,21 +62,39 @@ class ProfileTableViewController: UITableViewController {
         super.viewDidAppear(animated)
     }
     
-    func refreshUI(){
+    func fetchProfile(){
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let dataStack:DATAStack = appDelegate.dataStack
         
-        let request = NSFetchRequest(entityName: "UserProfile")
-        let userProfile:[UserProfile] = try! dataStack.mainContext.executeFetchRequest(request) as! [UserProfile]
-        
-        
-        let requestSpots = NSFetchRequest(entityName: "Spot")
-        requestSpots.predicate = NSPredicate(format: "userProfile = %@", userProfile.first!)
-        let spotsVisited:[Spot] = (try! dataStack.mainContext.executeFetchRequest(requestSpots)) as! [Spot]
-        
-       
-        
+        let loggedInUserName = NSUserDefaults.standardUserDefaults().objectForKey(Constants.LoggedInUser) as? String
+        if let loggedInUserName = loggedInUserName {
+            
+            let request = NSFetchRequest(entityName: "UserProfile")
+            request.predicate = NSPredicate(format: "username == %@", loggedInUserName)
+            request.fetchLimit = 1
+            let profileResults:[UserProfile] = try! dataStack.mainContext.executeFetchRequest(request) as! [UserProfile]
+            
+            userProfile = profileResults.first
+            
+            if let userProfile = userProfile {
+                let requestSpots = NSFetchRequest(entityName: "Spot")
+                requestSpots.predicate = NSPredicate(format: "userProfile = %@", userProfile)
+                spotsVisited = (try! dataStack.mainContext.executeFetchRequest(requestSpots)) as? [Spot]
+            }
+        }
+    }
+    
+    func updateUI() {
+        usernameLabel.text = userProfile?.username
+        quoteLabel.text = userProfile?.quote
+        disciplineLabel.text = userProfile?.discipline
+        riderRepLabel.text = "\(userProfile?.riderRep!)"
+    }
+    
+    func refresh()
+    {
+        DataSynchroniser.sharedInstance.syncProfile(nil)
     }
     
     

@@ -17,7 +17,7 @@ struct Constants {
     // Live
 //    static let apiBaseURL = "http://ec2-54-171-175-217.eu-west-1.compute.amazonaws.com:9000/"
     
-    
+    static let LoggedInUser = "LoggedInUser"
     
 }
 

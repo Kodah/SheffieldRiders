@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         observeKeyboard()
@@ -105,6 +106,7 @@ class LoginViewController: UIViewController {
                 do {
                     let responseString = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! String
                     
+                    NSUserDefaults.standardUserDefaults().setObject(self.usernameTextField.text, forKey: Constants.LoggedInUser)
                     KeychainWrapper.setString(responseString, forKey: "authenticationToken")
                     SwiftSpinner.show("Syncing Data")
                     DataSynchroniser.sharedInstance.synchroniseAll()
