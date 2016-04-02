@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftKeychainWrapper
+import SwiftSpinner
 
 class LoginViewController: UIViewController {
 
@@ -18,6 +19,17 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         observeKeyboard()
+        
+        NSNotificationCenter.defaultCenter().addObserverForName("didSyncAllNotification", object: nil, queue: nil) {_ in
+        
+            SwiftSpinner.hide()
+            if let window = UIApplication.sharedApplication().keyWindow
+            {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let mainVC = storyboard.instantiateViewControllerWithIdentifier("mainNavController")
+                window.rootViewController = mainVC
+            }
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -63,52 +75,49 @@ class LoginViewController: UIViewController {
         }
     }
     
+    
     @IBAction func logInButtonTapped(sender: AnyObject) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: Constants.apiBaseURL + "authentication")!)
-        request.HTTPMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let jsonDictionary:[String:String] = ["username": usernameTextField.text!,
-            "password": passwordTextField.text!]
-        do {
-            let jsonBody = try NSJSONSerialization.dataWithJSONObject(jsonDictionary, options: [])
+        SwiftSpinner.show("Logging in")
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            let request = NSMutableURLRequest(URL: NSURL(string: Constants.apiBaseURL + "authentication")!)
+            request.HTTPMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            let jsonDictionary:[String:String] = ["username": self.usernameTextField.text!,
+                                                  "password": self.passwordTextField.text!]
+            do {
+                let jsonBody = try NSJSONSerialization.dataWithJSONObject(jsonDictionary, options: [])
                 request.HTTPBody = jsonBody
-        } catch {
-            print("Error")
-        }
-        
-        
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {data, response, error in
-            guard data != nil else {
-                print("No response data")
-                return
+            } catch {
+                print("Error")
             }
             
-            do {
-                let responseString = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! String
-                
-                KeychainWrapper.setString(responseString, forKey: "authenticationToken")
-                
-                if let window = UIApplication.sharedApplication().keyWindow
-                {
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let mainVC = storyboard.instantiateViewControllerWithIdentifier("mainNavController")
-                    
-                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
-                        dispatch_async(dispatch_get_main_queue(), {
-                            window.rootViewController = mainVC
-                        })
-                    })
+            
+            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {data, response, error in
+                guard data != nil else {
+                    print("No response data")
+                    SwiftSpinner.hide()
+                    return
                 }
-                               
-
-            } catch {
                 
+                do {
+                    let responseString = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! String
+                    
+                    KeychainWrapper.setString(responseString, forKey: "authenticationToken")
+                    SwiftSpinner.show("Syncing Data")
+                    DataSynchroniser.sharedInstance.synchroniseAll()
+                    
+                } catch {
+                    
+                }
             }
+            
+            task.resume()
         }
         
-        task.resume()
+        
     }
     
 }

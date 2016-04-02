@@ -38,8 +38,9 @@ class ProfileTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.showMenu), name: "showMenu", object: nil)
-        
-        DataSynchroniser.sharedInstance.syncProfile()
+
+//        DataSynchroniser.sharedInstance.synchroniseAll()
+//        DataSynchroniser.sharedInstance.syncProfile()
 //        DataSynchroniser.sharedInstance.syncUsers()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.refreshUI), name: "userProfileUpdated", object: nil)
@@ -58,16 +59,12 @@ class ProfileTableViewController: UITableViewController {
         let request = NSFetchRequest(entityName: "UserProfile")
         let userProfile:[UserProfile] = try! dataStack.mainContext.executeFetchRequest(request) as! [UserProfile]
         
-        print(userProfile.first?.username)
         
         let requestSpots = NSFetchRequest(entityName: "Spot")
         requestSpots.predicate = NSPredicate(format: "userProfile = %@", userProfile.first!)
         let spotsVisited:[Spot] = (try! dataStack.mainContext.executeFetchRequest(requestSpots)) as! [Spot]
         
-        for spotVisited:Spot in spotsVisited
-        {
-            print(spotVisited.name)
-        }
+       
         
     }
     
