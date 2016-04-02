@@ -8,55 +8,82 @@
 
 import UIKit
 import SwiftKeychainWrapper
+import CoreData
+import DATAStack
+import Sync
+import Alamofire
 
 class DataSynchroniser: NSObject {
     
     static let sharedInstance = DataSynchroniser()
     
-    var userProfile :UserProfile?
-    
-    
     func synchroniseAll() {
+        
+    }
+    
+    func syncUsers()
+    {
+        let request = NSMutableURLRequest(URL: NSURL(string: Constants.apiBaseURL + "userprofile")!)
+        request.HTTPMethod = "GET"
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {data, response, error in
+            guard data != nil else {
+                print("No response data")
+                return
+            }
+            
+            do {
+                let response: [[String : AnyObject]] = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! [[String : AnyObject]]
+                
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let dataStack:DATAStack = appDelegate.dataStack
+                
+                Sync.changes(response, inEntityNamed: "User", dataStack: dataStack , completion: { (error) in
+                    
+                    
+                    let request = NSFetchRequest(entityName: "User")
+                    let items:[User] = ((try! dataStack.mainContext.executeFetchRequest(request)) as? [User])!
+                    print(items.first?.username)
+                    print(items.first?.riderRep)
+                    
+                })
+                
+            } catch {
+                
+            }
+        }
+        task.resume()
         
     }
     
     func syncProfile() {
         
+        
+        
         if let retrievedString: String = KeychainWrapper.stringForKey("authenticationToken") {
             
-            let request = NSMutableURLRequest(URL: NSURL(string: Constants.apiBaseURL + "userprofile/owner/")!)
-            request.HTTPMethod = "GET"
-            request.addValue("bearer \(retrievedString)", forHTTPHeaderField: "Authorization")
-            
-            
-            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {data, response, error in
-                guard data != nil else {
-                    print("No response data")
-                    return
-                }
+            Alamofire.request(.GET, Constants.apiBaseURL + "userprofile/owner/", headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON { response in
+                let data = response.result.value as! [String : AnyObject]
                 
-                do {
-                    let response = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let dataStack:DATAStack = appDelegate.dataStack
+                
+                Sync.changes([data], inEntityNamed: "UserProfile", dataStack: dataStack , completion: { (error) in
+                    //
                     
-                    print(response)
-                    
-                    guard let profile = UserProfile(json: response as! [String : AnyObject]) else
-                    {
-                        print("Issue deserializing model")
-                        
-                        return
-                    }
-                    
-                    self.userProfile = profile
+                    print(data)
+                    print("-------------------------")
+                                    
                     
                     NSNotificationCenter.defaultCenter().postNotificationName("userProfileUpdated", object: self)
                     
-                } catch {
                     
-                }
+                    
+                })
+                
+                
             }
             
-            task.resume()
         }
         
     }

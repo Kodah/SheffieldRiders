@@ -9,7 +9,8 @@
 import UIKit
 import Gloss
 import SwiftKeychainWrapper
-
+import CoreData
+import DATAStack
 
 
 class ProfileTableViewController: UITableViewController {
@@ -27,7 +28,7 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var disciplineLabel: UILabel!
     @IBOutlet weak var riderRepLabel: UILabel!
     
-    var userProfile : UserProfile?
+//    var userProfile : UserProfile?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,7 @@ class ProfileTableViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.showMenu), name: "showMenu", object: nil)
         
         DataSynchroniser.sharedInstance.syncProfile()
+//        DataSynchroniser.sharedInstance.syncUsers()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.refreshUI), name: "userProfileUpdated", object: nil)
         
@@ -50,12 +52,23 @@ class ProfileTableViewController: UITableViewController {
     
     func refreshUI(){
         
-        if let profile = DataSynchroniser.sharedInstance.userProfile {
-            self.usernameLabel.text = profile.username
-            self.quoteLabel.text = profile.quote
-            self.disciplineLabel.text = profile.discipline
-            self.riderRepLabel.text = "\(profile.riderRep)"
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let dataStack:DATAStack = appDelegate.dataStack
+        
+        let request = NSFetchRequest(entityName: "UserProfile")
+        let userProfile:[UserProfile] = try! dataStack.mainContext.executeFetchRequest(request) as! [UserProfile]
+        
+        print(userProfile.first?.username)
+        
+        let requestSpots = NSFetchRequest(entityName: "Spot")
+        requestSpots.predicate = NSPredicate(format: "userProfile = %@", userProfile.first!)
+        let spotsVisited:[Spot] = (try! dataStack.mainContext.executeFetchRequest(requestSpots)) as! [Spot]
+        
+        for spotVisited:Spot in spotsVisited
+        {
+            print(spotVisited.name)
         }
+        
     }
     
     
