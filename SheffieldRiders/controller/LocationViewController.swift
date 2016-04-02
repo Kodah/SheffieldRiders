@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import SwiftSpinner
 
 class LocationViewController: UIViewController, LocationInfoCollectionViewDelegate, CLLocationManagerDelegate {
     
@@ -36,9 +37,15 @@ class LocationViewController: UIViewController, LocationInfoCollectionViewDelega
     
     func attemptCheckin()
     {
+        SwiftSpinner.show("Checking location")
         
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            self.locationManager.requestWhenInUseAuthorization()
+            self.locationManager.startUpdatingLocation()
+        }
+        
+        
         
     }
     
@@ -53,16 +60,25 @@ class LocationViewController: UIViewController, LocationInfoCollectionViewDelega
         
         let metersFromLocation = newLocation.distanceFromLocation(trackLocation)
         
+        var atLocation = false
         if let area = location["arena"] as? Int {
             
             if (metersFromLocation == Double(area) * 1000)
             {
-                
+                atLocation = true
             }
+        }
+        SwiftSpinner.hide
+        {
+            let message = atLocation ? "Congratulations: Rep increased" : "You are not at the location"
+            let alertController = UIAlertController(title: "Check in", message:
+                message, preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
     
-
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {

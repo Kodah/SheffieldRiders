@@ -100,9 +100,6 @@ class LoginViewController: UIViewController {
                             window.rootViewController = mainVC
                         })
                     })
-                    
-                    
-                    
                 }
                                
 

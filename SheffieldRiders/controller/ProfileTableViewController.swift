@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Gloss
+import SwiftKeychainWrapper
+
+
 
 class ProfileTableViewController: UITableViewController {
 
@@ -17,14 +21,41 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var locationVisitedView: UIView!
     @IBOutlet weak var stackview: UIStackView!
     
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var quoteLabel: UILabel!
+    @IBOutlet weak var disciplineLabel: UILabel!
+    @IBOutlet weak var riderRepLabel: UILabel!
+    
+    var userProfile : UserProfile?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Profile"
-        
+                
         navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ProfileTableViewController.showMenu), name: "showMenu", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.showMenu), name: "showMenu", object: nil)
+        
+        DataSynchroniser.sharedInstance.syncProfile()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.refreshUI), name: "userProfileUpdated", object: nil)
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    func refreshUI(){
+        
+        if let profile = DataSynchroniser.sharedInstance.userProfile {
+            self.usernameLabel.text = profile.username
+            self.quoteLabel.text = profile.quote
+            self.disciplineLabel.text = profile.discipline
+            self.riderRepLabel.text = "\(profile.riderRep)"
+        }
     }
     
     
@@ -45,8 +76,4 @@ class ProfileTableViewController: UITableViewController {
         
         DropDownMenu.sharedInstance.showMenu(self.view)
     }
-
-
-    
-
 }

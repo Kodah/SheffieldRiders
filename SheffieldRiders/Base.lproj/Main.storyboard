@@ -674,12 +674,16 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="rrT-i3-bRE"/>
                     <connections>
+                        <outlet property="disciplineLabel" destination="xLd-WA-Tmy" id="frP-vn-0Lh"/>
                         <outlet property="headerCell" destination="pIK-S3-ic2" id="doc-hd-S6O"/>
                         <outlet property="locationVisitedCell" destination="9lc-pp-LbD" id="dfH-l9-P44"/>
                         <outlet property="locationVisitedView" destination="pY5-vp-AKM" id="U4s-re-Fme"/>
+                        <outlet property="quoteLabel" destination="yci-OP-djU" id="6Kn-cH-mBT"/>
                         <outlet property="rideCell" destination="Mjc-9T-Aa6" id="67J-eq-WU5"/>
+                        <outlet property="riderRepLabel" destination="F4A-lO-wBg" id="EgC-Cw-4eO"/>
                         <outlet property="stackview" destination="wj0-xI-y3U" id="Zhm-al-Ioy"/>
                         <outlet property="statisticsCell" destination="xdA-ap-3Ph" id="dKm-ss-X30"/>
+                        <outlet property="usernameLabel" destination="juR-P5-rbc" id="1NG-BO-2WH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4oR-ui-tGT" userLabel="First Responder" sceneMemberID="firstResponder"/>

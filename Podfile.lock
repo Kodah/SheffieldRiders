@@ -1,13 +1,19 @@
 PODS:
   - AZDropdownMenu (1.1.0)
+  - Gloss (0.7.1)
   - SwiftKeychainWrapper (1.0.11)
+  - SwiftSpinner (0.9.1)
 
 DEPENDENCIES:
   - AZDropdownMenu
+  - Gloss (~> 0.7)
   - SwiftKeychainWrapper
+  - SwiftSpinner
 
 SPEC CHECKSUMS:
   AZDropdownMenu: a7a08209b9317b3e7076b6f80d1bbf72dd1af9d1
+  Gloss: e674d7aa06a7e292a591d0d39a759b826daf503e
   SwiftKeychainWrapper: 011a6946923948ffa49708014dd691164d7621d1
+  SwiftSpinner: 09a60c00f4dfa2097b4deabd26f513ad077af4f1
 
 COCOAPODS: 0.39.0

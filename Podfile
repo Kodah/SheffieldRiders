@@ -5,6 +5,8 @@ use_frameworks!
 target 'SheffieldRiders' do
 	pod 'SwiftKeychainWrapper'
     pod 'AZDropdownMenu'
+    pod 'SwiftSpinner'
+    pod 'Gloss', '~> 0.7'
 end
 
 target 'SheffieldRidersTests' do
