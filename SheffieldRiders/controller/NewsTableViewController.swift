@@ -23,7 +23,7 @@ class NewsTableViewController: UITableViewController {
         
         loadJson()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showMenu", name: "showMenu", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NewsTableViewController.showMenu), name: "showMenu", object: nil)
         
     }
     
@@ -94,10 +94,4 @@ class NewsTableViewController: UITableViewController {
             }
         }
     }
-    
-    
-    
-    
-    
-    
 }

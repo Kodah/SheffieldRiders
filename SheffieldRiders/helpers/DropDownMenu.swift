@@ -21,7 +21,7 @@ class DropDownMenu : NSObject {
         buildDummyCustomMenu()
     
         let menuBut = UIButton(frame: CGRectMake(0, 0, 30, 30))
-        menuBut.addTarget(self, action: "showRightDropDown", forControlEvents: .TouchUpInside)
+        menuBut.addTarget(self, action: #selector(DropDownMenu.showRightDropDown), forControlEvents: .TouchUpInside)
         menuBut.setBackgroundImage(UIImage(named: "burgerMenu"), forState: .Normal)
         menuButton = UIBarButtonItem(customView: menuBut)        
     }

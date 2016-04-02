@@ -24,7 +24,7 @@ class ProfileTableViewController: UITableViewController {
         
         navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showMenu", name: "showMenu", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ProfileTableViewController.showMenu), name: "showMenu", object: nil)
     }
     
     

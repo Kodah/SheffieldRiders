@@ -1,0 +1,121 @@
+ [
+  {
+  "name": "Wharncliffe Woods",
+  "latitude": 53.460577,
+  "longitude": -1.549912,
+  "area": 1.2,
+  "discipline": "Downhill/Freeride",
+  "imageName": "Wharncliffe",
+  "numberOfRoutes": 10,
+  "summary": "Wharncliffe Woods is a steep and rocky wood with many hidden quarries and lots of streams just north of Grenoside, near Sheffield. It is famous as the training ground of Steve Peat. In recent years to complement the steep gnarly tech downhill runs a more flowing area full of berms and jumps known as Mini Whistler or Wharncouver has sprung up. There is also a red XC.",
+  "difficulty": {
+  "doubleBlack": 1,
+  "black": 1,
+  "red": 1,
+  "blue": 0,
+  "green": 0
+  }
+  },
+  {
+  "name": "Blacka Moor",
+  "latitude": 53.321530,
+  "longitude": -1.586449,
+  "area": 3,
+  "discipline": "Downhill/Enduro",
+  "imageName": "BlackaMoor",
+  "numberOfRoutes": 2,
+  "summary": "Sitting tight against the eastern boundary of the Peak District National Park, and only a few short miles from Sheffield, the trails on Blacka Moor are popular with locals who ride them often as quick evening blasts (even in winter – get your lights out!). It’s no exaggeration when we say there’s about a zillion ways of linking the trails on Blacka Moor, Totley Moor and Houndkirk Moor.",
+  "difficulty": {
+  "doubleBlack": 0,
+  "black": 0,
+  "red": 1,
+  "blue": 0,
+  "green": 0
+  }
+  },
+  {
+  "name": "Lady Canning",
+  "latitude": 53.346515,
+  "longitude": -1.571845,
+  "area": 3,
+  "discipline": "Enduro/XC",
+  "imageName": "LadyCanning",
+  "numberOfRoutes": 2,
+  "summary": "Lady Cannings is a new mountain bike trail in Sheffield, England. It launched in July 2015. It has a 1.4 km blue graded MTB trail on the edge of Houndkirk Moor close to the Peak National park 20 minutes from Sheffield centre. The project is the first MTB trail in England where crowd funding has been used to help drive the investment needed. The project has been led by Ride Sheffield working with Sheffield council. Bike Track specialist trail builders built the trail.",
+  "difficulty": {
+  "doubleBlack": 0,
+  "black": 0,
+  "red": 0,
+  "blue": 1,
+  "green": 0
+  }
+  },
+  {
+  "name": "Grenocide Woods",
+  "latitude": 53.452997,
+  "longitude": -1.507015,
+  "area": 1.2,
+  "discipline": "Downhill/Enduro",
+  "imageName": "GrenocideWoods",
+  "numberOfRoutes": 2,
+  "summary": "Greno Woods have been home for mountain bikers for as long as the sport has been in this country; it hosted races up until 1994 and provided the training ground for World Downhill Mountain Bike Champion Steve Peat.",
+  "difficulty": {
+  "doubleBlack": 0,
+  "black": 1,
+  "red": 1,
+  "blue": 0,
+  "green": 0
+  }
+  },
+  {
+  "name": "Parkwood Springs",
+  "latitude": 53.398529,
+  "longitude": -1.475134,
+  "area": 1,
+  "discipline": "Enduro/XC",
+  "imageName": "Parkwood Springs",
+  "numberOfRoutes": 2,
+  "summary": "The trail is a 2km route with pump sections, lips, berms, jumps, doubles and it all flows really well. It's designed as a blue graded trail (so all is rollable) with optional red lines. Hence all abilities and progression are built in. This is core given the proximity to a city centre location where many follk discovering this trail have never been to a trail centre and so need a safe, works straight out of the box, no instructions kit required trail, that offers them more as they progress as well as offering the more established community options with more bite from day one.",
+  "difficulty": {
+  "doubleBlack": 0,
+  "black": 0,
+  "red": 1,
+  "blue": 1,
+  "green": 0
+  }
+  },
+  {
+  "name": "Monkey Bumps",
+  "latitude": 53.339694,
+  "longitude": -1.500955,
+  "area": 1,
+  "discipline": "Dirt Jumping",
+  "imageName": "MonkeyBumps",
+  "numberOfRoutes": 1,
+  "summary": "Large advanced BMX style dirt jumps and berms.",
+  "difficulty": {
+  "doubleBlack": 1,
+  "black": 0,
+  "red": 0,
+  "blue": 0,
+  "green": 0
+  }
+  },
+  {
+  "name": "Bowl hills",
+  "latitude": 53.391335,
+  "longitude": -1.509283,
+  "area": 0.5,
+  "discipline": "Dirt Jumping/Pump Track",
+  "imageName": "Bowl hills",
+  "numberOfRoutes": 1,
+  "summary": "Bolehills BMX Track is in Walkley in Sheffield. It has a long impressive history having originally being built in the early 80's. 30 years on in the making and popular with both small and big wheels it's had numerous great revamps since then, featured in movies, won awards and least surprisingly has an ever active and strong welcoming community that has carved many a great rider in its time. In April 2015 they laid a sweet new surface to the track.",
+  "difficulty": {
+  "doubleBlack": 0,
+  "black": 0,
+  "red": 1,
+  "blue": 0,
+  "green": 0
+  }
+  }
+  ]

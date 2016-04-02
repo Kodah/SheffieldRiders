@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EwH-lD-AZI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EwH-lD-AZI">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -72,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGp-lv-RcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21" y="273"/>
+            <point key="canvasLocation" x="-867" y="563"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="9el-Lc-6yA">
@@ -204,7 +206,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="720" y="-407"/>
+            <point key="canvasLocation" x="-168" y="-117"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="nNo-Ls-j8w">
@@ -319,7 +321,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2382" y="-120"/>
+            <point key="canvasLocation" x="-168" y="563"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ore-Ni-NcN">
@@ -335,7 +337,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9v-aj-fA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37" y="1103"/>
+            <point key="canvasLocation" x="629" y="563"/>
         </scene>
         <!--Profile Table View Controller-->
         <scene sceneID="ewv-UU-fcG">
@@ -682,7 +684,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4oR-ui-tGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="1100"/>
+            <point key="canvasLocation" x="1408" y="560"/>
         </scene>
         <!--News Table View Controller-->
         <scene sceneID="I7O-j1-NEI">
@@ -766,7 +768,154 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8w-gr-X3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="807" y="1834"/>
+            <point key="canvasLocation" x="1399" y="1294"/>
+        </scene>
+        <!--Location Table View Controller-->
+        <scene sceneID="SLr-q0-4a7">
+            <objects>
+                <tableViewController storyboardIdentifier="LocationsViewController" id="stV-bk-drQ" customClass="LocationTableViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="fGJ-tr-8cm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" rowHeight="67" id="BWV-lb-lSk" customClass="LocationTableViewCell" customModule="SheffieldRiders" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="67"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BWV-lb-lSk" id="Hhw-RS-Kln">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="YDB-VU-GOV">
+                                            <rect key="frame" x="8" y="8" width="584" height="50"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CeV-Aj-g5e">
+                                                    <rect key="frame" x="0.0" y="0.0" width="534" height="50"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfe-Jg-F1A">
+                                                            <rect key="frame" x="0.0" y="0.0" width="534" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTA-FD-syJ">
+                                                            <rect key="frame" x="0.0" y="21" width="534" height="29"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="0.51507260101010099" green="0.51507260101010099" blue="0.51507260101010099" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="n2X-Mz-rcK">
+                                                    <rect key="frame" x="534" y="0.0" width="50" height="50"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="252" image="plusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mG9-sF-bic">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="Yhd-Zq-Ogw"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YDB-VU-GOV" firstAttribute="bottom" secondItem="Hhw-RS-Kln" secondAttribute="bottomMargin" id="Nzb-PK-iF8"/>
+                                        <constraint firstItem="YDB-VU-GOV" firstAttribute="top" secondItem="Hhw-RS-Kln" secondAttribute="topMargin" id="ed9-2m-2k1"/>
+                                        <constraint firstItem="YDB-VU-GOV" firstAttribute="leading" secondItem="Hhw-RS-Kln" secondAttribute="leadingMargin" id="haF-d6-gvN"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="YDB-VU-GOV" secondAttribute="trailing" id="xjF-YT-mbY"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="disciplineLabel" destination="OTA-FD-syJ" id="ry0-rj-ka9"/>
+                                    <outlet property="titleLabel" destination="Wfe-Jg-F1A" id="bC7-sQ-iIE"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="stV-bk-drQ" id="tno-PM-oF0"/>
+                            <outlet property="delegate" destination="stV-bk-drQ" id="Svi-m9-juQ"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="hEd-Jv-XP5" kind="show" identifier="locationDetailSegue" id="Ib4-5m-AjV"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Go6-pz-mJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1408" y="2068"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="rtH-tO-XYl">
+            <objects>
+                <viewController id="hEd-Jv-XP5" customClass="LocationViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Qd-l6-j5p"/>
+                        <viewControllerLayoutGuide type="bottom" id="FNB-OC-goc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jlu-hF-X5x">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Bsq-Ob-fDs">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myRide" translatesAutoresizingMaskIntoConstraints="NO" id="N41-9Z-xMR">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="290"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="Xfu-aQ-cL1"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Xfu-aQ-cL1"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqm-Bo-CB4">
+                                        <rect key="frame" x="0.0" y="290" width="600" height="290"/>
+                                        <subviews>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nob-um-U6c">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="245"/>
+                                                <connections>
+                                                    <segue destination="zcy-wh-4e0" kind="embed" identifier="locationDetailCollectionSegue" id="lSC-n3-865"/>
+                                                </connections>
+                                            </containerView>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="QdJ-fZ-hJb">
+                                                <rect key="frame" x="8" y="253" width="584" height="37"/>
+                                                <color key="pageIndicatorTintColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </pageControl>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="QdJ-fZ-hJb" firstAttribute="leading" secondItem="Kqm-Bo-CB4" secondAttribute="leadingMargin" id="9F5-No-sX4"/>
+                                            <constraint firstItem="QdJ-fZ-hJb" firstAttribute="top" secondItem="Nob-um-U6c" secondAttribute="bottom" constant="8" id="D5a-MD-SQv"/>
+                                            <constraint firstItem="QdJ-fZ-hJb" firstAttribute="bottom" secondItem="Kqm-Bo-CB4" secondAttribute="bottomMargin" constant="8" id="DBS-pE-5Lp"/>
+                                            <constraint firstItem="Nob-um-U6c" firstAttribute="top" secondItem="Kqm-Bo-CB4" secondAttribute="top" id="KVw-xt-hDh"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nob-um-U6c" secondAttribute="trailing" id="LqN-sp-DJp"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="QdJ-fZ-hJb" secondAttribute="trailing" id="Z8A-rZ-60j"/>
+                                            <constraint firstItem="Nob-um-U6c" firstAttribute="leading" secondItem="Kqm-Bo-CB4" secondAttribute="leading" id="ury-P6-2sA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FNB-OC-goc" firstAttribute="top" secondItem="Bsq-Ob-fDs" secondAttribute="bottom" id="6C3-Sa-Bmc"/>
+                            <constraint firstItem="Bsq-Ob-fDs" firstAttribute="top" secondItem="7Qd-l6-j5p" secondAttribute="bottom" id="Dja-J8-KVj"/>
+                            <constraint firstItem="Bsq-Ob-fDs" firstAttribute="leading" secondItem="Jlu-hF-X5x" secondAttribute="leading" id="N9I-oQ-FXP"/>
+                            <constraint firstAttribute="trailing" secondItem="Bsq-Ob-fDs" secondAttribute="trailing" id="oKO-G8-sAR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="QdJ-fZ-hJb" id="AAT-dI-8zl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lb1-KP-BTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2185" y="2068"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="Sdd-SR-OpP">
@@ -789,7 +938,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6p-Po-3hX">
                                                 <rect key="frame" x="8" y="612" width="584" height="26"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9rw-HN-OcR">
@@ -836,7 +985,480 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OwX-lP-suS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="1826"/>
+            <point key="canvasLocation" x="2185" y="1286"/>
+        </scene>
+        <!--Location Info Collection View Controller-->
+        <scene sceneID="aZS-Nb-98c">
+            <objects>
+                <collectionViewController id="zcy-wh-4e0" customClass="LocationInfoCollectionViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="VIE-DT-Axi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="245"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="1" minimumInteritemSpacing="1" id="RDG-P3-vcE" customClass="CenterCellCollectionViewFlowLayout" customModule="SheffieldRiders" customModuleProvider="target">
+                            <size key="itemSize" width="322" height="290"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="descriptionCell" id="e5g-zd-3sU" customClass="LocationDescriptionCollectionViewCell" customModule="SheffieldRiders" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="245"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="245"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJ3-WY-NJG">
+                                            <rect key="frame" x="8" y="8" width="584" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="F0t-BB-Wc8"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TR-qw-w0M">
+                                            <rect key="frame" x="8" y="37" width="584" height="200"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="gJ3-WY-NJG" secondAttribute="trailing" id="7yB-71-I27"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="4TR-qw-w0M" secondAttribute="trailing" id="GlQ-6x-xer"/>
+                                    <constraint firstItem="gJ3-WY-NJG" firstAttribute="top" secondItem="e5g-zd-3sU" secondAttribute="topMargin" id="fE2-5G-ZBS"/>
+                                    <constraint firstItem="gJ3-WY-NJG" firstAttribute="leading" secondItem="e5g-zd-3sU" secondAttribute="leadingMargin" id="iGl-dK-KGy"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="4TR-qw-w0M" secondAttribute="bottom" id="nXG-fw-DEt"/>
+                                    <constraint firstItem="4TR-qw-w0M" firstAttribute="leading" secondItem="e5g-zd-3sU" secondAttribute="leadingMargin" id="oZ1-Yt-oCT"/>
+                                    <constraint firstItem="4TR-qw-w0M" firstAttribute="top" secondItem="gJ3-WY-NJG" secondAttribute="bottom" constant="8" id="xjT-SY-bqH"/>
+                                </constraints>
+                                <size key="customSize" width="600" height="245"/>
+                                <connections>
+                                    <outlet property="summaryTextView" destination="4TR-qw-w0M" id="ZCE-gF-IcW"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="statsCell" id="lBF-Ne-bgX" customClass="LocationStatsCollectionViewCell" customModule="SheffieldRiders" customModuleProvider="target">
+                                <rect key="frame" x="601" y="0.0" width="600" height="245"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="245"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nKj-Dz-YNs">
+                                            <rect key="frame" x="16" y="8" width="268" height="29"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Riding discipline: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgD-Uw-3at">
+                                                    <rect key="frame" x="0.0" y="0.0" width="134" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downhill/Freeride" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUJ-Z6-nfH">
+                                                    <rect key="frame" x="134" y="0.0" width="134" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyB-jf-D8u">
+                                            <rect key="frame" x="16" y="45" width="153" height="21"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of tracks: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piG-BZ-G7s">
+                                                    <rect key="frame" x="0.0" y="0.0" width="142" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4l3-dg-eUF">
+                                                    <rect key="frame" x="142" y="0.0" width="11" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="piG-BZ-G7s" firstAttribute="baseline" secondItem="4l3-dg-eUF" secondAttribute="firstBaseline" id="6GH-tM-yOE"/>
+                                                <constraint firstItem="piG-BZ-G7s" firstAttribute="leading" secondItem="gyB-jf-D8u" secondAttribute="leading" id="kEa-dd-TDr"/>
+                                                <constraint firstItem="piG-BZ-G7s" firstAttribute="top" secondItem="gyB-jf-D8u" secondAttribute="top" id="zVS-q8-BF4"/>
+                                            </constraints>
+                                        </stackView>
+                                        <view contentMode="scaleToFill" horizontalHuggingPriority="247" verticalHuggingPriority="248" translatesAutoresizingMaskIntoConstraints="NO" id="TEj-pr-aaA" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="74" width="584" height="163"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="s7t-0O-jFU">
+                                                    <rect key="frame" x="8" y="8" width="568" height="147"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="k9o-Xf-g3h">
+                                                            <rect key="frame" x="0.0" y="0.0" width="568" height="26"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" text="Double Black" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6u-RB-EAM">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="26"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="254" translatesAutoresizingMaskIntoConstraints="NO" id="7kY-ST-6yv" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
+                                                                    <rect key="frame" x="109" y="0.0" width="26" height="26"/>
+                                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="15"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                            <color key="value" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="254" translatesAutoresizingMaskIntoConstraints="NO" id="iCg-pT-QJY" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
+                                                                    <rect key="frame" x="143" y="0.0" width="26" height="26"/>
+                                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="15"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                            <color key="value" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZ8-4b-jpu">
+                                                                    <rect key="frame" x="177" y="0.0" width="63" height="26"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZKA-py-2XX" customClass="InspectableLabel" customModule="SheffieldRiders" customModuleProvider="target">
+                                                                    <rect key="frame" x="248" y="0.0" width="320" height="26"/>
+                                                                    <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="8"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="7kY-ST-6yv" firstAttribute="height" secondItem="P6u-RB-EAM" secondAttribute="height" id="87O-ll-UUO"/>
+                                                                <constraint firstItem="iCg-pT-QJY" firstAttribute="leading" secondItem="7kY-ST-6yv" secondAttribute="trailing" constant="4" id="Als-N4-aVI"/>
+                                                                <constraint firstItem="7kY-ST-6yv" firstAttribute="centerY" secondItem="P6u-RB-EAM" secondAttribute="centerY" id="V32-2f-hLX"/>
+                                                                <constraint firstItem="7kY-ST-6yv" firstAttribute="leading" secondItem="P6u-RB-EAM" secondAttribute="trailing" id="gJG-vH-o9g"/>
+                                                                <constraint firstItem="iCg-pT-QJY" firstAttribute="width" secondItem="7kY-ST-6yv" secondAttribute="width" id="ko6-wq-mVI"/>
+                                                                <constraint firstItem="7kY-ST-6yv" firstAttribute="width" secondItem="P6u-RB-EAM" secondAttribute="height" multiplier="1:1" id="ldH-Wt-EAS"/>
+                                                                <constraint firstItem="iCg-pT-QJY" firstAttribute="height" secondItem="7kY-ST-6yv" secondAttribute="height" id="pcD-E4-BFl"/>
+                                                                <constraint firstItem="iCg-pT-QJY" firstAttribute="centerY" secondItem="7kY-ST-6yv" secondAttribute="centerY" id="x9A-RR-dy7"/>
+                                                            </constraints>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="gJG-vH-o9g"/>
+                                                                    <exclude reference="Als-N4-aVI"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AUc-6o-bww">
+                                                            <rect key="frame" x="0.0" y="30" width="568" height="26"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Black" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQx-QJ-GI3">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="26"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8qp-vH-kfq" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
+                                                                    <rect key="frame" x="109" y="0.0" width="26" height="26"/>
+                                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="15"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                            <color key="value" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Advanced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBc-ug-clP">
+                                                                    <rect key="frame" x="143" y="0.0" width="97" height="26"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="Unavailable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jwj-NO-Xy5" customClass="InspectableLabel" customModule="SheffieldRiders" customModuleProvider="target">
+                                                                    <rect key="frame" x="248" y="0.0" width="320" height="26"/>
+                                                                    <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.4926361908783784" colorSpace="calibratedRGB"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="8"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="8qp-vH-kfq" firstAttribute="leading" secondItem="GQx-QJ-GI3" secondAttribute="trailing" id="4rC-SJ-k94"/>
+                                                                <constraint firstItem="8qp-vH-kfq" firstAttribute="centerY" secondItem="GQx-QJ-GI3" secondAttribute="centerY" id="Ryn-ph-6MQ"/>
+                                                                <constraint firstItem="8qp-vH-kfq" firstAttribute="height" secondItem="GQx-QJ-GI3" secondAttribute="height" id="XvY-j0-pFk"/>
+                                                                <constraint firstItem="8qp-vH-kfq" firstAttribute="width" secondItem="GQx-QJ-GI3" secondAttribute="height" multiplier="1:1" id="uZP-x5-SH7"/>
+                                                            </constraints>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="4rC-SJ-k94"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="50J-nG-kC8">
+                                                            <rect key="frame" x="0.0" y="60" width="568" height="27"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B61-0h-Km2">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="27"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTU-ti-fTG" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
+                                                                    <rect key="frame" x="109" y="0.0" width="26" height="27"/>
+                                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="15"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                            <color key="value" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Intermediate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRU-8p-gtL">
+                                                                    <rect key="frame" x="143" y="0.0" width="97" height="27"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="Unavailable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wCR-AS-u5K" customClass="InspectableLabel" customModule="SheffieldRiders" customModuleProvider="target">
+                                                                    <rect key="frame" x="248" y="0.0" width="320" height="27"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="8"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="kTU-ti-fTG" firstAttribute="height" secondItem="B61-0h-Km2" secondAttribute="height" id="AO7-yF-V5e"/>
+                                                                <constraint firstItem="kTU-ti-fTG" firstAttribute="leading" secondItem="B61-0h-Km2" secondAttribute="trailing" id="a8y-jU-yKp"/>
+                                                                <constraint firstItem="kTU-ti-fTG" firstAttribute="centerY" secondItem="B61-0h-Km2" secondAttribute="centerY" id="dxH-Ru-fIj"/>
+                                                                <constraint firstItem="kTU-ti-fTG" firstAttribute="width" secondItem="B61-0h-Km2" secondAttribute="height" multiplier="1:1" id="eJK-cr-hTX"/>
+                                                            </constraints>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="a8y-jU-yKp"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YVC-qL-PmC">
+                                                            <rect key="frame" x="0.0" y="91" width="568" height="26"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tr8-hf-oF7">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="26"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cte-cC-wch" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
+                                                                    <rect key="frame" x="109" y="0.0" width="26" height="26"/>
+                                                                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="15"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                            <color key="value" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Moderate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFt-pI-zti">
+                                                                    <rect key="frame" x="143" y="0.0" width="97" height="26"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="Unavailable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bLL-Kv-T0P" customClass="InspectableLabel" customModule="SheffieldRiders" customModuleProvider="target">
+                                                                    <rect key="frame" x="248" y="0.0" width="320" height="26"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="8"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="cte-cC-wch" firstAttribute="height" secondItem="Tr8-hf-oF7" secondAttribute="height" id="8z2-Or-UAG"/>
+                                                                <constraint firstItem="cte-cC-wch" firstAttribute="width" secondItem="Tr8-hf-oF7" secondAttribute="height" multiplier="1:1" id="OgI-ZK-j26"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MTj-GS-vka">
+                                                            <rect key="frame" x="0.0" y="121" width="568" height="26"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIy-11-dYs">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="26"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffb-h9-TY9" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
+                                                                    <rect key="frame" x="109" y="0.0" width="26" height="26"/>
+                                                                    <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="15"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                            <color key="value" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Easy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sa-LU-XYJ">
+                                                                    <rect key="frame" x="143" y="0.0" width="97" height="26"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GCY-Gc-5De" customClass="InspectableLabel" customModule="SheffieldRiders" customModuleProvider="target">
+                                                                    <rect key="frame" x="248" y="0.0" width="320" height="26"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="8"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="ffb-h9-TY9" firstAttribute="leading" secondItem="OIy-11-dYs" secondAttribute="trailing" id="5Go-oT-8nf"/>
+                                                                <constraint firstItem="ffb-h9-TY9" firstAttribute="width" secondItem="OIy-11-dYs" secondAttribute="height" multiplier="1:1" id="JNU-6n-cGT"/>
+                                                                <constraint firstItem="ffb-h9-TY9" firstAttribute="centerY" secondItem="OIy-11-dYs" secondAttribute="centerY" id="Thz-Nv-cD7"/>
+                                                                <constraint firstItem="ffb-h9-TY9" firstAttribute="height" secondItem="OIy-11-dYs" secondAttribute="height" id="owV-zD-PDc"/>
+                                                            </constraints>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="5Go-oT-8nf"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="bLL-Kv-T0P" firstAttribute="width" secondItem="wCR-AS-u5K" secondAttribute="width" id="1Mh-hF-6Dj"/>
+                                                        <constraint firstItem="GCY-Gc-5De" firstAttribute="width" secondItem="bLL-Kv-T0P" secondAttribute="width" id="CG9-dV-Gls"/>
+                                                        <constraint firstItem="GQx-QJ-GI3" firstAttribute="width" secondItem="B61-0h-Km2" secondAttribute="width" id="F5i-fF-Jp5"/>
+                                                        <constraint firstItem="P6u-RB-EAM" firstAttribute="width" secondItem="GQx-QJ-GI3" secondAttribute="width" id="Gdq-9F-6SW"/>
+                                                        <constraint firstItem="B61-0h-Km2" firstAttribute="width" secondItem="Tr8-hf-oF7" secondAttribute="width" id="Pgt-pI-xXk"/>
+                                                        <constraint firstItem="Jwj-NO-Xy5" firstAttribute="width" secondItem="ZKA-py-2XX" secondAttribute="width" id="QsY-1k-g8c"/>
+                                                        <constraint firstItem="Tr8-hf-oF7" firstAttribute="width" secondItem="OIy-11-dYs" secondAttribute="width" id="Uzc-s8-nlu"/>
+                                                        <constraint firstItem="wCR-AS-u5K" firstAttribute="width" secondItem="Jwj-NO-Xy5" secondAttribute="width" id="lu0-KI-F9F"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="s7t-0O-jFU" firstAttribute="leading" secondItem="TEj-pr-aaA" secondAttribute="leading" constant="8" id="5dJ-QU-Nw1"/>
+                                                <constraint firstAttribute="height" constant="163" id="9RM-yk-mcV"/>
+                                                <constraint firstAttribute="trailing" secondItem="s7t-0O-jFU" secondAttribute="trailing" constant="8" id="azA-hM-knG"/>
+                                                <constraint firstAttribute="bottom" secondItem="s7t-0O-jFU" secondAttribute="bottom" constant="8" id="bOX-Cd-5eL"/>
+                                                <constraint firstItem="s7t-0O-jFU" firstAttribute="top" secondItem="TEj-pr-aaA" secondAttribute="top" constant="8" id="iSy-mR-SPs"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="TEj-pr-aaA" firstAttribute="bottom" secondItem="lBF-Ne-bgX" secondAttribute="bottomMargin" id="106-CB-Qqh"/>
+                                    <constraint firstItem="gyB-jf-D8u" firstAttribute="leading" secondItem="lBF-Ne-bgX" secondAttribute="leadingMargin" constant="8" id="8F5-7r-KfT"/>
+                                    <constraint firstItem="TEj-pr-aaA" firstAttribute="top" secondItem="gyB-jf-D8u" secondAttribute="bottom" constant="8" id="A0u-jv-sGD"/>
+                                    <constraint firstItem="nKj-Dz-YNs" firstAttribute="top" secondItem="lBF-Ne-bgX" secondAttribute="topMargin" id="M2D-TF-yVl"/>
+                                    <constraint firstItem="TEj-pr-aaA" firstAttribute="trailing" secondItem="lBF-Ne-bgX" secondAttribute="trailingMargin" id="qB2-dE-Sl5"/>
+                                    <constraint firstItem="gyB-jf-D8u" firstAttribute="top" secondItem="nKj-Dz-YNs" secondAttribute="bottom" constant="8" id="rvx-E9-2Jb"/>
+                                    <constraint firstItem="TEj-pr-aaA" firstAttribute="leading" secondItem="lBF-Ne-bgX" secondAttribute="leadingMargin" id="tfg-Qd-SrA"/>
+                                    <constraint firstItem="nKj-Dz-YNs" firstAttribute="leading" secondItem="lBF-Ne-bgX" secondAttribute="leadingMargin" constant="8" id="zn6-I3-OeH"/>
+                                </constraints>
+                                <size key="customSize" width="600" height="245"/>
+                                <connections>
+                                    <outlet property="blackLabel" destination="Jwj-NO-Xy5" id="6qC-RX-RkQ"/>
+                                    <outlet property="blueLabel" destination="bLL-Kv-T0P" id="KF0-IU-Ak5"/>
+                                    <outlet property="disciplineLabel" destination="eUJ-Z6-nfH" id="Tck-Qn-XhA"/>
+                                    <outlet property="doubleBlackLabel" destination="ZKA-py-2XX" id="sEX-rc-U7M"/>
+                                    <outlet property="greenLabel" destination="GCY-Gc-5De" id="GBF-I4-8la"/>
+                                    <outlet property="numTracksLabel" destination="4l3-dg-eUF" id="J00-yV-cC9"/>
+                                    <outlet property="redLabel" destination="wCR-AS-u5K" id="84w-9X-Do5"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="zcy-wh-4e0" id="d2k-eb-an9"/>
+                            <outlet property="delegate" destination="zcy-wh-4e0" id="IbG-Np-XNi"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sSF-3c-eI8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2185" y="2593.5"/>
         </scene>
     </scenes>
     <resources>

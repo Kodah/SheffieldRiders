@@ -24,6 +24,16 @@
 		7E9EDACA1C9331D3000D8863 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9EDAC91C9331D3000D8863 /* Constants.swift */; };
 		7EA394AA1CA2B29900338F4C /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA394A91CA2B29900338F4C /* DropDownMenu.swift */; };
 		7EA394B41CA3080600338F4C /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA394B31CA3080600338F4C /* NewsTableViewController.swift */; };
+		7EAF7FF81CA95DC700378700 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EAF7FF71CA95DC700378700 /* locations.json */; };
+		7EAF7FFA1CA9674700378700 /* LocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF7FF91CA9674700378700 /* LocationTableViewController.swift */; };
+		7EAF7FFE1CA983B600378700 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF7FFD1CA983B600378700 /* LocationTableViewCell.swift */; };
+		7EAF80001CA9977A00378700 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF7FFF1CA9977A00378700 /* LocationViewController.swift */; };
+		7EAF80021CA9979C00378700 /* LocationInfoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF80011CA9979C00378700 /* LocationInfoCollectionViewController.swift */; };
+		7EAF80041CA9A08400378700 /* CenterCellCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF80031CA9A08400378700 /* CenterCellCollectionViewFlowLayout.swift */; };
+		7EAF80061CA9ACA500378700 /* LocationDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF80051CA9ACA500378700 /* LocationDescriptionCollectionViewCell.swift */; };
+		7EAF80081CA9ACBB00378700 /* LocationStatsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF80071CA9ACBB00378700 /* LocationStatsCollectionViewCell.swift */; };
+		7EAF800A1CAA0FF500378700 /* InspectableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF80091CAA0FF400378700 /* InspectableView.swift */; };
+		7EAF800D1CAA11CA00378700 /* InspectableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF800C1CAA11CA00378700 /* InspectableLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +77,16 @@
 		7E9EDAC91C9331D3000D8863 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = resources/Constants.swift; sourceTree = "<group>"; };
 		7EA394A91CA2B29900338F4C /* DropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DropDownMenu.swift; path = helpers/DropDownMenu.swift; sourceTree = "<group>"; };
 		7EA394B31CA3080600338F4C /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewController.swift; path = controller/NewsTableViewController.swift; sourceTree = "<group>"; };
+		7EAF7FF71CA95DC700378700 /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = locations.json; path = assets/locations.json; sourceTree = "<group>"; };
+		7EAF7FF91CA9674700378700 /* LocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTableViewController.swift; path = controller/LocationTableViewController.swift; sourceTree = "<group>"; };
+		7EAF7FFD1CA983B600378700 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTableViewCell.swift; path = controller/LocationTableViewCell.swift; sourceTree = "<group>"; };
+		7EAF7FFF1CA9977A00378700 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationViewController.swift; path = controller/LocationViewController.swift; sourceTree = "<group>"; };
+		7EAF80011CA9979C00378700 /* LocationInfoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationInfoCollectionViewController.swift; path = controller/LocationInfoCollectionViewController.swift; sourceTree = "<group>"; };
+		7EAF80031CA9A08400378700 /* CenterCellCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CenterCellCollectionViewFlowLayout.swift; path = view/CenterCellCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		7EAF80051CA9ACA500378700 /* LocationDescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDescriptionCollectionViewCell.swift; path = view/LocationDescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		7EAF80071CA9ACBB00378700 /* LocationStatsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationStatsCollectionViewCell.swift; path = view/LocationStatsCollectionViewCell.swift; sourceTree = "<group>"; };
+		7EAF80091CAA0FF400378700 /* InspectableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InspectableView.swift; path = view/InspectableView.swift; sourceTree = "<group>"; };
+		7EAF800C1CAA11CA00378700 /* InspectableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InspectableLabel.swift; path = view/InspectableLabel.swift; sourceTree = "<group>"; };
 		8720B064D3B112C20E1DA3E9 /* Pods-SheffieldRiders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheffieldRiders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SheffieldRiders/Pods-SheffieldRiders.debug.xcconfig"; sourceTree = "<group>"; };
 		B75483DD31034D05EAD0BB20 /* Pods_SheffieldRiders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SheffieldRiders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -102,6 +122,7 @@
 			children = (
 				7E7081EF1C6B52EF00F8B44A /* Assets.xcassets */,
 				7E07BD1E1CA34D0D00124AC2 /* news.json */,
+				7EAF7FF71CA95DC700378700 /* locations.json */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -174,6 +195,12 @@
 			children = (
 				7E7081E91C6B52EF00F8B44A /* Main.storyboard */,
 				7E7081F11C6B52EF00F8B44A /* LaunchScreen.storyboard */,
+				7EAF7FFD1CA983B600378700 /* LocationTableViewCell.swift */,
+				7E07BD201CA3527A00124AC2 /* NewsTableViewCell.swift */,
+				7EAF80031CA9A08400378700 /* CenterCellCollectionViewFlowLayout.swift */,
+				7EAF80051CA9ACA500378700 /* LocationDescriptionCollectionViewCell.swift */,
+				7EAF80071CA9ACBB00378700 /* LocationStatsCollectionViewCell.swift */,
+				7EAF800B1CAA11B200378700 /* Inspectables */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -183,10 +210,12 @@
 			children = (
 				7E9EDAC51C930043000D8863 /* LoginViewController.swift */,
 				7E9EDAC71C930EDA000D8863 /* SignUpViewController.swift */,
-				7EA394B31CA3080600338F4C /* NewsTableViewController.swift */,
-				7E07BD201CA3527A00124AC2 /* NewsTableViewCell.swift */,
 				7E5853661CA36BCC00AAE8D1 /* ProfileTableViewController.swift */,
 				7E2D75661CA6054200C7E140 /* NewsViewController.swift */,
+				7EA394B31CA3080600338F4C /* NewsTableViewController.swift */,
+				7EAF7FF91CA9674700378700 /* LocationTableViewController.swift */,
+				7EAF7FFF1CA9977A00378700 /* LocationViewController.swift */,
+				7EAF80011CA9979C00378700 /* LocationInfoCollectionViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -197,6 +226,15 @@
 				7EA394A91CA2B29900338F4C /* DropDownMenu.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		7EAF800B1CAA11B200378700 /* Inspectables */ = {
+			isa = PBXGroup;
+			children = (
+				7EAF80091CAA0FF400378700 /* InspectableView.swift */,
+				7EAF800C1CAA11CA00378700 /* InspectableLabel.swift */,
+			);
+			name = Inspectables;
 			sourceTree = "<group>";
 		};
 		CB0219823A68B0DD6253D2D7 /* Frameworks */ = {
@@ -326,6 +364,7 @@
 			files = (
 				7E7081F31C6B52EF00F8B44A /* LaunchScreen.storyboard in Resources */,
 				7E7081F01C6B52EF00F8B44A /* Assets.xcassets in Resources */,
+				7EAF7FF81CA95DC700378700 /* locations.json in Resources */,
 				7E07BD1F1CA34D0D00124AC2 /* news.json in Resources */,
 				7E7081EB1C6B52EF00F8B44A /* Main.storyboard in Resources */,
 			);
@@ -401,14 +440,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E5853671CA36BCC00AAE8D1 /* ProfileTableViewController.swift in Sources */,
+				7EAF80081CA9ACBB00378700 /* LocationStatsCollectionViewCell.swift in Sources */,
 				7E9EDAC61C930043000D8863 /* LoginViewController.swift in Sources */,
 				7E7081EE1C6B52EF00F8B44A /* SheffieldRiders.xcdatamodeld in Sources */,
 				7E2D75671CA6054200C7E140 /* NewsViewController.swift in Sources */,
 				7E7081E61C6B52EF00F8B44A /* AppDelegate.swift in Sources */,
 				7E9EDAC81C930EDA000D8863 /* SignUpViewController.swift in Sources */,
+				7EAF7FFE1CA983B600378700 /* LocationTableViewCell.swift in Sources */,
+				7EAF80001CA9977A00378700 /* LocationViewController.swift in Sources */,
+				7EAF7FFA1CA9674700378700 /* LocationTableViewController.swift in Sources */,
 				7EA394B41CA3080600338F4C /* NewsTableViewController.swift in Sources */,
+				7EAF800D1CAA11CA00378700 /* InspectableLabel.swift in Sources */,
+				7EAF80061CA9ACA500378700 /* LocationDescriptionCollectionViewCell.swift in Sources */,
 				7E9EDACA1C9331D3000D8863 /* Constants.swift in Sources */,
+				7EAF800A1CAA0FF500378700 /* InspectableView.swift in Sources */,
+				7EAF80021CA9979C00378700 /* LocationInfoCollectionViewController.swift in Sources */,
 				7EA394AA1CA2B29900338F4C /* DropDownMenu.swift in Sources */,
+				7EAF80041CA9A08400378700 /* CenterCellCollectionViewFlowLayout.swift in Sources */,
 				7E07BD211CA3527A00124AC2 /* NewsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,6 +602,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SheffieldRiders/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sug.SheffieldRiders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -568,6 +617,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SheffieldRiders/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sug.SheffieldRiders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
