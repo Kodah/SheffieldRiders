@@ -39,11 +39,22 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Leaderboard"
+        
+        navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NewsTableViewController.showMenu), name: "showMenu", object: nil)
+        
         do {
             try fetchedResultsController.performFetch()
         } catch {
             print("An error occurred")
         }
+    }
+    
+    func showMenu() {
+        tableView.setContentOffset(CGPointMake(0.0, -tableView.contentInset.top), animated:true)
+        DropDownMenu.sharedInstance.showMenu(self.view)
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
@@ -83,7 +94,7 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let user = fetchedResultsController.objectAtIndexPath(indexPath) as! User
-                
+        
         if let username = user.username, rep = user.rep {
             cell.textLabel?.text = "\(username)"
             cell.detailTextLabel?.text = "\(rep)"

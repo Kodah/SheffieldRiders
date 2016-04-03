@@ -1542,6 +1542,9 @@
                             <outlet property="delegate" destination="cde-cW-6gg" id="E9X-Hd-zy4"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="rOM-7x-cp3">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                     <connections>
                         <outlet property="searchBar" destination="6U3-X4-PMv" id="ig5-BG-LdH"/>
                         <outlet property="searchDisplayController" destination="htj-dS-DSx" id="5Kz-5m-jST"/>
