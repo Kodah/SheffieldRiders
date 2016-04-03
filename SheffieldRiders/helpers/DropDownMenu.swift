@@ -77,7 +77,7 @@ class DropDownMenu : NSObject {
         dataSource.append(AZDropdownMenuItemData(title:"News", icon:UIImage(imageLiteral: "cog")))
         dataSource.append(AZDropdownMenuItemData(title:"Events", icon:UIImage(imageLiteral: "cog")))
         dataSource.append(AZDropdownMenuItemData(title:"Locations", icon:UIImage(imageLiteral: "cog")))
-        dataSource.append(AZDropdownMenuItemData(title:"Projects", icon:UIImage(imageLiteral: "cog")))
+        dataSource.append(AZDropdownMenuItemData(title:"Leaderboard", icon:UIImage(imageLiteral: "cog")))
         dataSource.append(AZDropdownMenuItemData(title:"Polls", icon:UIImage(imageLiteral: "cog")))
         return dataSource
     }

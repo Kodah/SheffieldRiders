@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    lazy var dataStack: DATAStack = DATAStack(modelName: "SheffieldRiders")
+    lazy var dataStack: DATAStack = DATAStack(modelName: "SheffieldRiders", bundle: NSBundle.mainBundle(), storeType: .SQLite)
     
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -71,7 +71,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillTerminate(application: UIApplication) {
-        self.dataStack.persistWithCompletion(nil)
+        print("exiting")
+        dataStack.persistWithCompletion {
+            print("core data saved")
+        }
         KeychainWrapper.removeObjectForKey("authenticationToken")
     }
 }

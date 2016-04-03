@@ -28,7 +28,7 @@ enum MainViewControllers : String {
     case News = "News"
     case Events = "Events"
     case Locations = "Locations"
-    case Projects = "Projects"
+    case Leaderboard = "Leaderboard"
     case polls = "Polls"
     
     func stringIdentifier () -> String {
@@ -41,8 +41,8 @@ enum MainViewControllers : String {
             return "EventsViewController"
         case Locations:
             return "LocationsViewController"
-        case Projects:
-            return "ProjectsViewController"
+        case Leaderboard:
+            return "LeaderboardViewController"
         case polls:
             return "PollsViewController"
         }
