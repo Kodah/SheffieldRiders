@@ -124,7 +124,7 @@ class SignUpViewController: UIViewController {
             
             if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
                 var errorMessages = ""
-//                print(responseString)
+
 //                for error in response?.valueForKey("errors") as! [Dictionary<String, String>] {
 //                    errorMessages.appendContentsOf(error["message"]!)
 //                }
