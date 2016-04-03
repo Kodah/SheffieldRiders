@@ -19,12 +19,12 @@ class DataSynchroniser: NSObject {
     static let sharedInstance = DataSynchroniser()
     
     func synchroniseAll() {
-        self.syncAllUsers {
+        self.syncUsers {
             NSNotificationCenter.defaultCenter().postNotificationName("didSyncAllNotification", object: nil)
         }
     }
     
-    func syncAllUsers(callBack : (() -> Void)?)
+    func syncUsers(callBack : (() -> Void)?)
     {
         print("Sync users - Started")
         
@@ -48,30 +48,30 @@ class DataSynchroniser: NSObject {
         }
     }
     
-    func syncProfile(callBack : (() -> Void)?) {
-        
-        print("Sync userprofile - Started")
-        if let retrievedString: String = KeychainWrapper.stringForKey("authenticationToken") {
-            
-            Alamofire.request(.GET, Constants.apiBaseURL + "userprofile/owner/", headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON { response in
-                let data = response.result.value as! [String : AnyObject]
-                
-                
-                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                let dataStack:DATAStack = appDelegate.dataStack
-                
-                Sync.changes([data], inEntityNamed: "UserProfile", dataStack: dataStack , completion: { (error) in
-                    
-                    print("Sync userprofile - finished")
-                    NSNotificationCenter.defaultCenter().postNotificationName("userProfileUpdated", object: self)
-                    
-                    if let callBack = callBack {
-                        
-                        callBack()
-                    }
-                    
-                })
-            }
-        }
-    }
+//    func syncProfile(callBack : (() -> Void)?) {
+//        
+//        print("Sync userprofile - Started")
+//        if let retrievedString: String = KeychainWrapper.stringForKey("authenticationToken") {
+//            
+//            Alamofire.request(.GET, Constants.apiBaseURL + "userprofile/owner/", headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON { response in
+//                let data = response.result.value as! [String : AnyObject]
+//                
+//                
+//                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//                let dataStack:DATAStack = appDelegate.dataStack
+//                
+//                Sync.changes([data], inEntityNamed: "UserProfile", dataStack: dataStack , completion: { (error) in
+//                    
+//                    print("Sync userprofile - finished")
+//                    NSNotificationCenter.defaultCenter().postNotificationName("userProfileUpdated", object: self)
+//                    
+//                    if let callBack = callBack {
+//                        
+//                        callBack()
+//                    }
+//                    
+//                })
+//            }
+//        }
+//    }
 }

@@ -46,11 +46,23 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NewsTableViewController.showMenu), name: "showMenu", object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserverForName("usersUpdated", object: nil, queue: nil) { _ in
+            try! self.fetchedResultsController.performFetch()
+            self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
+        }
+        refreshControl!.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
+        
         do {
             try fetchedResultsController.performFetch()
         } catch {
             print("An error occurred")
         }
+    }
+    
+    func refresh()
+    {
+        DataSynchroniser.sharedInstance.syncUsers(nil)
     }
     
     func showMenu() {

@@ -46,7 +46,7 @@ class ProfileTableViewController: UITableViewController {
             NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.showMenu), name: "showMenu", object: nil)
 
         }
-        NSNotificationCenter.defaultCenter().addObserverForName("userProfileUpdated", object: nil, queue: nil) { _ in
+        NSNotificationCenter.defaultCenter().addObserverForName("usersUpdated", object: nil, queue: nil) { _ in
             self.fetchProfile()
             self.updateUI()
             self.refreshControl?.endRefreshing()
@@ -121,7 +121,7 @@ class ProfileTableViewController: UITableViewController {
     
     func refresh()
     {
-        DataSynchroniser.sharedInstance.syncProfile(nil)
+        DataSynchroniser.sharedInstance.syncUsers(nil)
     }
     
     
