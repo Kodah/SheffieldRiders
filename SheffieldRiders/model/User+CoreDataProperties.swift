@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  SheffieldRiders
 //
-//  Created by Tom Sugarex on 02/04/2016.
+//  Created by Tom Sugarex on 03/04/2016.
 //  Copyright © 2016 Tom Sugarev. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,7 +14,7 @@ import CoreData
 
 extension User {
 
-    @NSManaged var riderRep: NSNumber?
+    @NSManaged var rep: NSNumber?
     @NSManaged var username: String?
 
 }

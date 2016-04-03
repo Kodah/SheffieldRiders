@@ -96,8 +96,10 @@ class ProfileTableViewController: UITableViewController {
         usernameLabel.text = userProfile?.username
         quoteLabel.text = userProfile?.quote
         disciplineLabel.text = userProfile?.discipline
-        riderRepLabel.text = "\(userProfile?.riderRep!)"
-        delegate?.reloadData(spotsVisited!)
+        riderRepLabel.text = "\(userProfile?.rep!)"
+        if let spotsVisited = spotsVisited {
+            delegate?.reloadData(spotsVisited)
+        }
     }
     
     func refresh()

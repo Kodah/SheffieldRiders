@@ -47,7 +47,7 @@ class DataSynchroniser: NSObject {
                 Sync.changes(response, inEntityNamed: "User", dataStack: dataStack , completion: { (error) in
                     
                     print("Sync users - finished")
-                    NSNotificationCenter.defaultCenter().postNotificationName("usersUpdated:", object: self)
+                    NSNotificationCenter.defaultCenter().postNotificationName("usersUpdated", object: self)
                     if let callBack = callBack {
                         callBack()
                     }
