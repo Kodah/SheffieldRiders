@@ -31,7 +31,7 @@ class LocationInfoCollectionViewController: UICollectionViewController, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+ 
     }
 
 

@@ -12,6 +12,9 @@ import SwiftKeychainWrapper
 import CoreData
 import DATAStack
 
+protocol ProfileTableViewControllerDelegate {
+    func reloadData(spots:[Spot])
+}
 
 class ProfileTableViewController: UITableViewController {
     
@@ -28,6 +31,7 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var disciplineLabel: UILabel!
     @IBOutlet weak var riderRepLabel: UILabel!
     
+    var delegate: ProfileTableViewControllerDelegate?
     var userProfile : UserProfile?
     var spotsVisited: [Spot]?
     
@@ -45,7 +49,6 @@ class ProfileTableViewController: UITableViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.showMenu), name: "showMenu", object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.fetchProfile), name: "userProfileUpdated", object: nil)
         
         NSNotificationCenter.defaultCenter().addObserverForName("userProfileUpdated", object: nil, queue: nil) { _ in
             self.fetchProfile()
@@ -55,7 +58,6 @@ class ProfileTableViewController: UITableViewController {
         
         fetchProfile()
         updateUI()
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -81,6 +83,11 @@ class ProfileTableViewController: UITableViewController {
                 let requestSpots = NSFetchRequest(entityName: "Spot")
                 requestSpots.predicate = NSPredicate(format: "userProfile = %@", userProfile)
                 spotsVisited = (try! dataStack.mainContext.executeFetchRequest(requestSpots)) as? [Spot]
+                
+                for spot in spotsVisited! {
+                    print(spot.name)
+                    print(spot.visits)
+                }
             }
         }
     }
@@ -90,6 +97,7 @@ class ProfileTableViewController: UITableViewController {
         quoteLabel.text = userProfile?.quote
         disciplineLabel.text = userProfile?.discipline
         riderRepLabel.text = "\(userProfile?.riderRep!)"
+        delegate?.reloadData(spotsVisited!)
     }
     
     func refresh()
@@ -115,4 +123,18 @@ class ProfileTableViewController: UITableViewController {
         
         DropDownMenu.sharedInstance.showMenu(self.view)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if (identifier == "spotsVisitedSegue"){
+                
+                let viewController = segue.destinationViewController as! ProfileLocationsCollectionViewController
+                delegate = viewController
+                
+            }
+        }
+        
+    }
+
+    
 }

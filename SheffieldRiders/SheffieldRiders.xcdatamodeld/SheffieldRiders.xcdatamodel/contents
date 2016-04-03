@@ -25,7 +25,11 @@
                 <entry key="hyper.remoteKey" value="_id"/>
             </userInfo>
         </attribute>
-        <attribute name="visitCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="visits" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="visitCount"/>
+            </userInfo>
+        </attribute>
         <relationship name="userProfile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserProfile" inverseName="spots" inverseEntity="UserProfile" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">

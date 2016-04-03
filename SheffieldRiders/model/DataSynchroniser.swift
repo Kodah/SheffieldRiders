@@ -70,6 +70,8 @@ class DataSynchroniser: NSObject {
             Alamofire.request(.GET, Constants.apiBaseURL + "userprofile/owner/", headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON { response in
                 let data = response.result.value as! [String : AnyObject]
                 
+                print(data)
+                
                 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 let dataStack:DATAStack = appDelegate.dataStack
                 
