@@ -10,6 +10,7 @@
 		42BFFD71F09598EDC7380F78 /* Pods_SheffieldRiders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75483DD31034D05EAD0BB20 /* Pods_SheffieldRiders.framework */; };
 		7E07BD1F1CA34D0D00124AC2 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E07BD1E1CA34D0D00124AC2 /* news.json */; };
 		7E07BD211CA3527A00124AC2 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E07BD201CA3527A00124AC2 /* NewsTableViewCell.swift */; };
+		7E0C80271CB169230017A1FD /* LeaderBoardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80261CB169230017A1FD /* LeaderBoardTableViewController.swift */; };
 		7E16BB6B1CAF3B75007DB545 /* DataSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16BB681CAF3ADA007DB545 /* DataSynchroniser.swift */; };
 		7E2D75671CA6054200C7E140 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2D75661CA6054200C7E140 /* NewsViewController.swift */; };
 		7E5853671CA36BCC00AAE8D1 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5853661CA36BCC00AAE8D1 /* ProfileTableViewController.swift */; };
@@ -66,6 +67,7 @@
 		4BA28F7DB531C99736E60883 /* Pods-SheffieldRiders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheffieldRiders.release.xcconfig"; path = "Pods/Target Support Files/Pods-SheffieldRiders/Pods-SheffieldRiders.release.xcconfig"; sourceTree = "<group>"; };
 		7E07BD1E1CA34D0D00124AC2 /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = news.json; path = assets/news.json; sourceTree = "<group>"; };
 		7E07BD201CA3527A00124AC2 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewCell.swift; path = controller/NewsTableViewCell.swift; sourceTree = "<group>"; };
+		7E0C80261CB169230017A1FD /* LeaderBoardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeaderBoardTableViewController.swift; path = controller/LeaderBoardTableViewController.swift; sourceTree = "<group>"; };
 		7E16BB681CAF3ADA007DB545 /* DataSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataSynchroniser.swift; path = model/DataSynchroniser.swift; sourceTree = "<group>"; };
 		7E2D75661CA6054200C7E140 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsViewController.swift; path = controller/NewsViewController.swift; sourceTree = "<group>"; };
 		7E5853661CA36BCC00AAE8D1 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewController.swift; path = controller/ProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				7EAF7FFF1CA9977A00378700 /* LocationViewController.swift */,
 				7EAF80011CA9979C00378700 /* LocationInfoCollectionViewController.swift */,
 				7E709A8D1CB08E0D0077BBB5 /* ProfileLocationsCollectionViewController.swift */,
+				7E0C80261CB169230017A1FD /* LeaderBoardTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				7E7081E61C6B52EF00F8B44A /* AppDelegate.swift in Sources */,
 				7E709A8B1CB05FD10077BBB5 /* User+CoreDataProperties.swift in Sources */,
 				7E9EDAC81C930EDA000D8863 /* SignUpViewController.swift in Sources */,
+				7E0C80271CB169230017A1FD /* LeaderBoardTableViewController.swift in Sources */,
 				7EAF7FFE1CA983B600378700 /* LocationTableViewCell.swift in Sources */,
 				7E709A931CB0A19F0077BBB5 /* Spot+CoreDataProperties.swift in Sources */,
 				7EAF80001CA9977A00378700 /* LocationViewController.swift in Sources */,
