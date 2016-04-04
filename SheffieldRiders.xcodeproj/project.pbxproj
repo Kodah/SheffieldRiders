@@ -19,6 +19,7 @@
 		7E0C80391CB208B50017A1FD /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80351CB208B50017A1FD /* Race.swift */; };
 		7E0C803A1CB208B50017A1FD /* Racer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80361CB208B50017A1FD /* Racer+CoreDataProperties.swift */; };
 		7E0C803B1CB208B50017A1FD /* Racer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80371CB208B50017A1FD /* Racer.swift */; };
+		7E0C803D1CB215EE0017A1FD /* UpcomingRacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C803C1CB215EE0017A1FD /* UpcomingRacesTableViewController.swift */; };
 		7E16BB6B1CAF3B75007DB545 /* DataSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16BB681CAF3ADA007DB545 /* DataSynchroniser.swift */; };
 		7E2D75671CA6054200C7E140 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2D75661CA6054200C7E140 /* NewsViewController.swift */; };
 		7E5853671CA36BCC00AAE8D1 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5853661CA36BCC00AAE8D1 /* ProfileTableViewController.swift */; };
@@ -80,6 +81,7 @@
 		7E0C80351CB208B50017A1FD /* Race.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Race.swift; path = model/Race.swift; sourceTree = "<group>"; };
 		7E0C80361CB208B50017A1FD /* Racer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Racer+CoreDataProperties.swift"; path = "model/Racer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7E0C80371CB208B50017A1FD /* Racer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Racer.swift; path = model/Racer.swift; sourceTree = "<group>"; };
+		7E0C803C1CB215EE0017A1FD /* UpcomingRacesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpcomingRacesTableViewController.swift; path = controller/UpcomingRacesTableViewController.swift; sourceTree = "<group>"; };
 		7E16BB681CAF3ADA007DB545 /* DataSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataSynchroniser.swift; path = model/DataSynchroniser.swift; sourceTree = "<group>"; };
 		7E2D75661CA6054200C7E140 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsViewController.swift; path = controller/NewsViewController.swift; sourceTree = "<group>"; };
 		7E5853661CA36BCC00AAE8D1 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewController.swift; path = controller/ProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				7E709A8D1CB08E0D0077BBB5 /* ProfileLocationsCollectionViewController.swift */,
 				7E0C80261CB169230017A1FD /* LeaderBoardTableViewController.swift */,
 				7E0C80301CB1AFFF0017A1FD /* RaceSetupViewController.swift */,
+				7E0C803C1CB215EE0017A1FD /* UpcomingRacesTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				7E2D75671CA6054200C7E140 /* NewsViewController.swift in Sources */,
 				7E7081E61C6B52EF00F8B44A /* AppDelegate.swift in Sources */,
 				7E0C802F1CB175F40017A1FD /* UserProfile.swift in Sources */,
+				7E0C803D1CB215EE0017A1FD /* UpcomingRacesTableViewController.swift in Sources */,
 				7E9EDAC81C930EDA000D8863 /* SignUpViewController.swift in Sources */,
 				7E0C80271CB169230017A1FD /* LeaderBoardTableViewController.swift in Sources */,
 				7EAF7FFE1CA983B600378700 /* LocationTableViewCell.swift in Sources */,
