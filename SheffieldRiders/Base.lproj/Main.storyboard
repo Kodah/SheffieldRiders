@@ -2072,10 +2072,11 @@
         <scene sceneID="Ffi-aD-a9I">
             <objects>
                 <tableViewController id="AyW-PA-42H" customClass="RaceTableViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="137" sectionHeaderHeight="28" sectionFooterHeight="28" id="KwL-uu-dvD">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="137" sectionHeaderHeight="28" sectionFooterHeight="28" id="KwL-uu-dvD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="137" id="cvo-25-4oO" customClass="RaceTableViewCell" customModule="SheffieldRiders" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="137"/>
@@ -2144,7 +2145,7 @@
                                                             <rect key="frame" x="0.0" y="6" width="143" height="100"/>
                                                             <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                            <state key="normal" title="Stop">
+                                                            <state key="normal" title="Start">
                                                                 <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                             <userDefinedRuntimeAttributes>

@@ -43,11 +43,13 @@ class RaceTableViewController: UITableViewController {
         dataStack = appDelegate.dataStack
         let request = NSFetchRequest(entityName: "Racer")
         request.predicate = NSPredicate(format: "race == %@", race!)
+        
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        request.sortDescriptors = [sortDescriptor]
         racers = try! dataStack!.mainContext.executeFetchRequest(request) as! [Racer]
         
     }
 
-    // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 
@@ -55,7 +57,6 @@ class RaceTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return (racers?.count)!
     }
 
@@ -74,22 +75,33 @@ class RaceTableViewController: UITableViewController {
         
         cell.nameLabel.text = racer.name
         
-        if let startDate = racer.startDate {
-            cell.startTime.text = startDate.stringValue
+        if let _ = racer.startDate {
+            cell.startTime.text = "Started!"
+            cell.backgroundColor = UIColor.greenColor()
+            cell.stopButton.enabled = true
+            cell.stopButton.backgroundColor = UIColor.redColor()
         } else {
-            cell.startTime.text = "Not started"
+            cell.startTime.text = "Not Started"
+            cell.stopButton.enabled = false
+            cell.stopButton.backgroundColor = UIColor.lightGrayColor()
         }
-        if let finishDate = racer.finishDate {
-            cell.finishTimeLabel.text = finishDate.stringValue
+        if let _ = racer.finishDate {
+            cell.finishTimeLabel.text = "Finished!"
+            cell.stopButton.backgroundColor = UIColor.greenColor()
         } else {
-            cell.finishTimeLabel.text = "Not finished"
+            cell.finishTimeLabel.text = "Not Finished"
         }
         
         if let _ = racer.startDate, _ = racer.finishDate {
-
+            cell.startTime.enabled = false
+            cell.stopButton.enabled = false
+            cell.startButton.backgroundColor = UIColor.lightGrayColor()
+            cell.stopButton.backgroundColor = UIColor.lightGrayColor()
             cell.totalTimeLabel.text = racer.raceTimeString()
+            cell.totalTimeLabel.backgroundColor = UIColor.greenColor()
         } else {
-            cell.totalTimeLabel.text = "pending"
+            cell.totalTimeLabel.text = "Pending"
+            cell.backgroundColor = UIColor.orangeColor()
         }
 
         return cell

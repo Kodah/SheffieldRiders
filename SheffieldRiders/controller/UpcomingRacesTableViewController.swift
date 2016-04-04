@@ -9,6 +9,7 @@
 import UIKit
 import DATAStack
 import CoreData
+import SwiftSpinner
 
 class UpcomingRacesTableViewController: UITableViewController {
 
@@ -21,15 +22,20 @@ class UpcomingRacesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SwiftSpinner.show("Syncing Races")
         
         formatter.dateStyle = .ShortStyle
         formatter.timeStyle = .NoStyle
 
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let dataStack:DATAStack = appDelegate.dataStack
-        let request = NSFetchRequest(entityName: "Race")
-        races = try! dataStack.mainContext.executeFetchRequest(request) as! [Race]
         
+        DataSynchroniser.sharedInstance.syncRaces { 
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let dataStack:DATAStack = appDelegate.dataStack
+            let request = NSFetchRequest(entityName: "Race")
+            self.races = try! dataStack.mainContext.executeFetchRequest(request) as! [Race]
+            self.tableView.reloadData()
+            SwiftSpinner.hide()
+        }
     }
 
 
@@ -40,7 +46,10 @@ class UpcomingRacesTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (races?.count)!
+        if let count = races?.count {
+            return count
+        }
+        return 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
