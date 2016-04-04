@@ -63,7 +63,7 @@ class DataSynchroniser: NSObject {
                 
                 Sync.changes(data, inEntityNamed: "Race", dataStack: dataStack , completion: { (error) in
                     
-                    print("Sync userprofile - finished")
+                    print("Sync races - finished")
                     NSNotificationCenter.defaultCenter().postNotificationName("racesUpdated", object: self)
                     
 

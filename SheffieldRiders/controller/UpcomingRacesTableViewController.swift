@@ -14,6 +14,7 @@ class UpcomingRacesTableViewController: UITableViewController {
 
     
     var races: [Race]?
+    var selectedRace: Race?
     var formatter = NSDateFormatter()
     
     
@@ -29,7 +30,6 @@ class UpcomingRacesTableViewController: UITableViewController {
         let request = NSFetchRequest(entityName: "Race")
         races = try! dataStack.mainContext.executeFetchRequest(request) as! [Race]
         
-        print(races?.count)
     }
 
 
@@ -54,6 +54,21 @@ class UpcomingRacesTableViewController: UITableViewController {
         cell.detailTextLabel?.text = formatter.stringFromDate(race.date!)
        
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedRace = races![indexPath.row]
+        performSegueWithIdentifier("raceSegueIdentifier", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if (identifier == "raceSegueIdentifier"){
+                
+                let viewController = segue.destinationViewController as! RaceTableViewController
+                viewController.race = selectedRace
+            }
+        }
     }
 
 }
