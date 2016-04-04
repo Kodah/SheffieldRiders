@@ -20,7 +20,9 @@ class DataSynchroniser: NSObject {
     
     func synchroniseAll() {
         self.syncUsers {
-            NSNotificationCenter.defaultCenter().postNotificationName("didSyncAllNotification", object: nil)
+            self.syncRaces {
+                NSNotificationCenter.defaultCenter().postNotificationName("didSyncAllNotification", object: nil)
+            }
         }
     }
     
@@ -48,30 +50,56 @@ class DataSynchroniser: NSObject {
         }
     }
     
-//    func syncProfile(callBack : (() -> Void)?) {
-//        
-//        print("Sync userprofile - Started")
-//        if let retrievedString: String = KeychainWrapper.stringForKey("authenticationToken") {
-//            
-//            Alamofire.request(.GET, Constants.apiBaseURL + "userprofile/owner/", headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON { response in
-//                let data = response.result.value as! [String : AnyObject]
-//                
-//                
-//                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//                let dataStack:DATAStack = appDelegate.dataStack
-//                
-//                Sync.changes([data], inEntityNamed: "UserProfile", dataStack: dataStack , completion: { (error) in
-//                    
-//                    print("Sync userprofile - finished")
-//                    NSNotificationCenter.defaultCenter().postNotificationName("userProfileUpdated", object: self)
-//                    
-//                    if let callBack = callBack {
-//                        
-//                        callBack()
-//                    }
-//                    
-//                })
-//            }
-//        }
-//    }
+    func syncRaces(callBack : (() -> Void)?){
+        print("Sync races - Started")
+        
+        if let retrievedString: String = KeychainWrapper.stringForKey("authenticationToken") {
+            
+            Alamofire.request(.GET, Constants.apiBaseURL + "race", headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON { response in
+                let data = response.result.value as! [[String : AnyObject]]
+                                
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let dataStack:DATAStack = appDelegate.dataStack
+                
+                Sync.changes(data, inEntityNamed: "Race", dataStack: dataStack , completion: { (error) in
+                    
+                    print("Sync userprofile - finished")
+                    NSNotificationCenter.defaultCenter().postNotificationName("racesUpdated", object: self)
+
+
+                    if let callBack = callBack {
+                        
+                        callBack()
+                    }
+                })
+            }
+        }
+    }
+    
+    //    func syncProfile(callBack : (() -> Void)?) {
+    //
+    //        print("Sync userprofile - Started")
+    //        if let retrievedString: String = KeychainWrapper.stringForKey("authenticationToken") {
+    //
+    //            Alamofire.request(.GET, Constants.apiBaseURL + "userprofile/owner/", headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON { response in
+    //                let data = response.result.value as! [String : AnyObject]
+    //
+    //
+    //                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    //                let dataStack:DATAStack = appDelegate.dataStack
+    //
+    //                Sync.changes([data], inEntityNamed: "UserProfile", dataStack: dataStack , completion: { (error) in
+    //
+    //                    print("Sync userprofile - finished")
+    //                    NSNotificationCenter.defaultCenter().postNotificationName("userProfileUpdated", object: self)
+    //
+    //                    if let callBack = callBack {
+    //
+    //                        callBack()
+    //                    }
+    //
+    //                })
+    //            }
+    //        }
+    //    }
 }
