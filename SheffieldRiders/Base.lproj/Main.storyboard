@@ -7,6 +7,7 @@
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -1898,6 +1899,175 @@
             </objects>
             <point key="canvasLocation" x="3026" y="-951"/>
         </scene>
+        <!--Race Results Table View Controller-->
+        <scene sceneID="YbH-A4-CZK">
+            <objects>
+                <tableViewController id="25h-Qs-LTA" customClass="RaceResultsTableViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Wf-vt-OPn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="hRf-Ji-aRq">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="234"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="podium" translatesAutoresizingMaskIntoConstraints="NO" id="LWD-jB-GOP">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="234"/>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Fl-GV-IsY" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
+                                    <rect key="frame" x="210" y="102" width="180" height="132"/>
+                                    <color key="backgroundColor" red="1" green="0.84884797869999995" blue="0.078651889380000006" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="0Fl-GV-IsY" secondAttribute="height" multiplier="15:11" id="veh-PO-vIu"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="0.52063604797979801" green="0.31165342239263943" blue="0.11379223553156408" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9c-bQ-IMH" customClass="InspectableLabel" customModule="SheffieldRiders" customModuleProvider="target">
+                                    <rect key="frame" x="210" y="102" width="180" height="0.0"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.52850506756756754" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dgC-EN-Eos" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
+                                    <rect key="frame" x="412" y="190" width="180" height="44"/>
+                                    <color key="backgroundColor" red="1" green="0.52978089302504516" blue="0.12641417121443577" alpha="1" colorSpace="calibratedRGB"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="0.52063604797979801" green="0.31165342239263943" blue="0.11379223553156408" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dxv-MO-ayT" customClass="InspectableView" customModule="SheffieldRiders" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="147" width="180" height="87"/>
+                                    <color key="backgroundColor" red="0.77708727904040398" green="0.77708727904040398" blue="0.77708727904040398" alpha="1" colorSpace="calibratedRGB"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="0.52063604797979801" green="0.31165342239263943" blue="0.11379223553156408" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paO-SN-eBh" customClass="InspectableLabel" customModule="SheffieldRiders" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="147" width="180" height="0.0"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.52850506756756754" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzR-JF-kb4" customClass="InspectableLabel" customModule="SheffieldRiders" customModuleProvider="target">
+                                    <rect key="frame" x="412" y="190" width="180" height="0.0"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.52850506756756754" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="dxv-MO-ayT" firstAttribute="width" secondItem="0Fl-GV-IsY" secondAttribute="width" id="0nX-uw-5KH"/>
+                                <constraint firstItem="dxv-MO-ayT" firstAttribute="leading" secondItem="hRf-Ji-aRq" secondAttribute="leading" constant="8" id="3tw-Jd-gBu"/>
+                                <constraint firstItem="paO-SN-eBh" firstAttribute="centerX" secondItem="dxv-MO-ayT" secondAttribute="centerX" id="7RR-65-Qwm"/>
+                                <constraint firstAttribute="bottom" secondItem="dgC-EN-Eos" secondAttribute="bottom" id="9aa-oB-Xlf"/>
+                                <constraint firstItem="LWD-jB-GOP" firstAttribute="top" secondItem="hRf-Ji-aRq" secondAttribute="top" id="Aj2-yW-pzd"/>
+                                <constraint firstItem="0Fl-GV-IsY" firstAttribute="width" secondItem="LWD-jB-GOP" secondAttribute="width" multiplier="0.3" id="Bwd-95-lCj"/>
+                                <constraint firstAttribute="bottom" secondItem="dxv-MO-ayT" secondAttribute="bottom" id="O5k-8x-cHr"/>
+                                <constraint firstItem="0Fl-GV-IsY" firstAttribute="top" secondItem="i9c-bQ-IMH" secondAttribute="bottom" id="Pbp-oP-5Su"/>
+                                <constraint firstItem="dxv-MO-ayT" firstAttribute="top" secondItem="paO-SN-eBh" secondAttribute="bottom" id="QZn-ux-oJE"/>
+                                <constraint firstItem="dgC-EN-Eos" firstAttribute="height" secondItem="0Fl-GV-IsY" secondAttribute="height" multiplier="0.33" id="Ta8-Al-6Ls"/>
+                                <constraint firstAttribute="trailing" secondItem="dgC-EN-Eos" secondAttribute="trailing" constant="8" id="U1M-fx-5hJ"/>
+                                <constraint firstItem="i9c-bQ-IMH" firstAttribute="width" secondItem="0Fl-GV-IsY" secondAttribute="width" id="U4y-iZ-Qeh"/>
+                                <constraint firstAttribute="bottom" secondItem="LWD-jB-GOP" secondAttribute="bottom" id="V3p-wk-yst"/>
+                                <constraint firstItem="0Fl-GV-IsY" firstAttribute="centerX" secondItem="LWD-jB-GOP" secondAttribute="centerX" id="eEM-WB-cG6"/>
+                                <constraint firstItem="dxv-MO-ayT" firstAttribute="height" secondItem="0Fl-GV-IsY" secondAttribute="height" multiplier="0.66" id="gWh-QI-QDr"/>
+                                <constraint firstAttribute="trailing" secondItem="LWD-jB-GOP" secondAttribute="trailing" id="jQG-v4-JVH"/>
+                                <constraint firstItem="dgC-EN-Eos" firstAttribute="top" secondItem="MzR-JF-kb4" secondAttribute="bottom" id="kUz-dh-ifw"/>
+                                <constraint firstItem="i9c-bQ-IMH" firstAttribute="centerX" secondItem="0Fl-GV-IsY" secondAttribute="centerX" id="kwd-y8-WDz"/>
+                                <constraint firstItem="MzR-JF-kb4" firstAttribute="centerX" secondItem="dgC-EN-Eos" secondAttribute="centerX" id="mWL-Uf-Xzn"/>
+                                <constraint firstItem="MzR-JF-kb4" firstAttribute="width" secondItem="dgC-EN-Eos" secondAttribute="width" id="oBf-Nx-CpD"/>
+                                <constraint firstItem="dgC-EN-Eos" firstAttribute="width" secondItem="0Fl-GV-IsY" secondAttribute="width" id="q5e-GL-VxK"/>
+                                <constraint firstAttribute="bottom" secondItem="0Fl-GV-IsY" secondAttribute="bottom" id="ruG-Ev-oTR"/>
+                                <constraint firstItem="LWD-jB-GOP" firstAttribute="leading" secondItem="hRf-Ji-aRq" secondAttribute="leading" id="t53-FF-tjr"/>
+                                <constraint firstItem="paO-SN-eBh" firstAttribute="width" secondItem="dxv-MO-ayT" secondAttribute="width" id="tOc-X1-nfp"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" textLabel="qaU-2A-3ZR" detailTextLabel="QuW-hr-zfT" rowHeight="65" style="IBUITableViewCellStyleValue1" id="Egz-WQ-suZ">
+                                <rect key="frame" x="0.0" y="262" width="600" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Egz-WQ-suZ" id="US7-aJ-aml">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qaU-2A-3ZR">
+                                            <rect key="frame" x="15" y="22" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QuW-hr-zfT">
+                                            <rect key="frame" x="543" y="22" width="42" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="25h-Qs-LTA" id="Pks-hA-ItW"/>
+                            <outlet property="delegate" destination="25h-Qs-LTA" id="SOb-f4-vqY"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="secondLabel" destination="paO-SN-eBh" id="EhO-R7-nzC"/>
+                        <outlet property="thirdLabel" destination="MzR-JF-kb4" id="cXg-KR-qIN"/>
+                        <outlet property="winnerLabel" destination="i9c-bQ-IMH" id="lRX-Z2-hIQ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xFT-iG-0L4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4500" y="-951"/>
+        </scene>
         <!--Race Table View Controller-->
         <scene sceneID="Ffi-aD-a9I">
             <objects>
@@ -2029,6 +2199,9 @@
                             <outlet property="delegate" destination="AyW-PA-42H" id="SMC-JK-7On"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="25h-Qs-LTA" kind="show" identifier="raceResultsSegue" id="pb7-Jz-aXc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pap-JF-i49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2108,6 +2281,7 @@
         <image name="myRide" width="1600" height="1067"/>
         <image name="newsPic1" width="300" height="201"/>
         <image name="plusIcon" width="512" height="512"/>
+        <image name="podium" width="1800" height="695"/>
         <image name="profilePic" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>

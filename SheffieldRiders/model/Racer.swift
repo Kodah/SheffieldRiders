@@ -11,7 +11,29 @@ import CoreData
 
 
 class Racer: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
-
+    
+    func raceTime() -> Int {
+        if let finishDateInt = finishDate?.integerValue, startDateInt = startDate?.integerValue {
+            return finishDateInt - startDateInt
+        } else{
+            return 99999999999999
+        }
+        
+    }
+    
+    func raceTimeString() -> String {
+        
+        if (startDate == nil)  {
+            return "DNS"
+        }
+        if (finishDate == nil) {
+            return "DNF"
+        } else {
+            let duration = finishDate!.intValue - startDate!.intValue
+            let minutes = duration / 60;
+            let seconds = duration % 60;
+            return NSString(format: "%d:%02d", minutes, seconds) as String
+        }
+        
+    }
 }

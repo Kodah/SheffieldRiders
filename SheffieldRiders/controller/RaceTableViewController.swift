@@ -21,6 +21,15 @@ class RaceTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let finishRaceBarButton = UIBarButtonItem(title: "Finish", style: .Done, target: self, action: #selector(finishRace))
+        navigationItem.rightBarButtonItem = finishRaceBarButton
+        navigationItem.title = "Race"
+        
+        
+    }
+    
+    func finishRace(){
+        performSegueWithIdentifier("raceResultsSegue", sender: self)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -76,13 +85,9 @@ class RaceTableViewController: UITableViewController {
             cell.finishTimeLabel.text = "Not finished"
         }
         
-        if let startDate = racer.startDate, finishDate = racer.finishDate {
-            
-            let duration = finishDate.intValue - startDate.intValue
-            let minutes = duration / 60;
-            let seconds = duration % 60;
-            let prettyDuration = NSString(format: "%d:%02d", minutes, seconds)
-            cell.totalTimeLabel.text = "\(prettyDuration)"
+        if let _ = racer.startDate, _ = racer.finishDate {
+
+            cell.totalTimeLabel.text = racer.raceTimeString()
         } else {
             cell.totalTimeLabel.text = "pending"
         }
@@ -125,6 +130,18 @@ class RaceTableViewController: UITableViewController {
     func syncData(racer: Racer) {
         // data sync upload
         DataSynchroniser.sharedInstance.updateRace(racer, callBack: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if (identifier == "raceResultsSegue"){
+                
+                let viewController = segue.destinationViewController as! RaceResultsTableViewController
+                
+                viewController.racers = racers
+            }
+        }
+        
     }
 
 }
