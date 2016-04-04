@@ -57,7 +57,7 @@ class DataSynchroniser: NSObject {
             
             Alamofire.request(.GET, Constants.apiBaseURL + "race", headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON { response in
                 let data = response.result.value as! [[String : AnyObject]]
-                                
+                
                 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 let dataStack:DATAStack = appDelegate.dataStack
                 
@@ -66,8 +66,8 @@ class DataSynchroniser: NSObject {
                     print("Sync races - finished")
                     NSNotificationCenter.defaultCenter().postNotificationName("racesUpdated", object: self)
                     
-
-
+                    
+                    
                     if let callBack = callBack {
                         
                         callBack()
@@ -77,30 +77,29 @@ class DataSynchroniser: NSObject {
         }
     }
     
-    //    func syncProfile(callBack : (() -> Void)?) {
-    //
-    //        print("Sync userprofile - Started")
-    //        if let retrievedString: String = KeychainWrapper.stringForKey("authenticationToken") {
-    //
-    //            Alamofire.request(.GET, Constants.apiBaseURL + "userprofile/owner/", headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON { response in
-    //                let data = response.result.value as! [String : AnyObject]
-    //
-    //
-    //                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    //                let dataStack:DATAStack = appDelegate.dataStack
-    //
-    //                Sync.changes([data], inEntityNamed: "UserProfile", dataStack: dataStack , completion: { (error) in
-    //
-    //                    print("Sync userprofile - finished")
-    //                    NSNotificationCenter.defaultCenter().postNotificationName("userProfileUpdated", object: self)
-    //
-    //                    if let callBack = callBack {
-    //
-    //                        callBack()
-    //                    }
-    //
-    //                })
-    //            }
-    //        }
-    //    }
+    func updateRace(racer: Racer, callBack : (() -> Void)?){
+        print("Sync races - Started")
+        
+        let url = NSURL.init(string: Constants.apiBaseURL + "race")
+        let request = NSMutableURLRequest(URL: url!)
+        request.HTTPMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        var json: [String : AnyObject] = ["remoteID" : racer.remoteID!]
+        if let startDate = racer.startDate{
+            json.add(["startDate" : startDate])
+        }
+        if let finishDate = racer.finishDate{
+            json.add(["finishDate" : finishDate])
+        }
+        
+        print(json)
+        
+        if let retrievedString: String = KeychainWrapper.stringForKey("authenticationToken") {
+            
+            Alamofire.request(.PUT, Constants.apiBaseURL + "race", parameters: json, encoding: .JSON, headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON(completionHandler: { JSON in
+                print(JSON)
+            })
+        }
+    }
 }

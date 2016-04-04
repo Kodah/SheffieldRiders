@@ -65,11 +65,27 @@ class RaceTableViewController: UITableViewController {
         
         cell.nameLabel.text = racer.name
         
-        cell.startTime.text = "\(racer.startDate!)"
+        if let startDate = racer.startDate {
+            cell.startTime.text = startDate.stringValue
+        } else {
+            cell.startTime.text = "Not started"
+        }
+        if let finishDate = racer.finishDate {
+            cell.finishTimeLabel.text = finishDate.stringValue
+        } else {
+            cell.finishTimeLabel.text = "Not finished"
+        }
         
-        cell.finishTimeLabel.text = "\(racer.finishDate!)"
-        
-        cell.totalTimeLabel.text = "\(racer.finishDate!.intValue - racer.startDate!.intValue)"
+        if let startDate = racer.startDate, finishDate = racer.finishDate {
+            
+            let duration = finishDate.intValue - startDate.intValue
+            let minutes = duration / 60;
+            let seconds = duration % 60;
+            let prettyDuration = NSString(format: "%d:%02d", minutes, seconds)
+            cell.totalTimeLabel.text = "\(prettyDuration)"
+        } else {
+            cell.totalTimeLabel.text = "pending"
+        }
 
         return cell
     }
@@ -87,6 +103,7 @@ class RaceTableViewController: UITableViewController {
         }
         fetchData()
         tableView.reloadRowsAtIndexPaths([NSIndexPath.init(forRow: button.tag, inSection: 0)], withRowAnimation: .Automatic)
+        syncData(racer)
     }
     
     func stopButtonPressed(button:UIButton) {
@@ -102,7 +119,12 @@ class RaceTableViewController: UITableViewController {
         }
         fetchData()
         tableView.reloadRowsAtIndexPaths([NSIndexPath.init(forRow: button.tag, inSection: 0)], withRowAnimation: .Automatic)
+        syncData(racer)
     }
 
+    func syncData(racer: Racer) {
+        // data sync upload
+        DataSynchroniser.sharedInstance.updateRace(racer, callBack: nil)
+    }
 
 }

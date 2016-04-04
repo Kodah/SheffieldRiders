@@ -17,7 +17,7 @@ extension Racer {
     @NSManaged var name: String?
     @NSManaged var startDate: NSNumber?
     @NSManaged var finishDate: NSNumber?
-    @NSManaged var id: String?
+    @NSManaged var remoteID: String?
     @NSManaged var race: Race?
 
 }
