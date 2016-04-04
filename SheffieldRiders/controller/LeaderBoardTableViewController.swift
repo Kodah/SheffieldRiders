@@ -16,6 +16,7 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
     var searchText = String()
     var selectedUsername: String?
     
+    
     lazy var fetchedResultsController: NSFetchedResultsController = {
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
