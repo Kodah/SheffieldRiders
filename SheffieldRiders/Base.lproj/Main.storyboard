@@ -1902,7 +1902,7 @@
         <scene sceneID="Ffi-aD-a9I">
             <objects>
                 <tableViewController id="AyW-PA-42H" customClass="RaceTableViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="137" sectionHeaderHeight="28" sectionFooterHeight="28" id="KwL-uu-dvD">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="137" sectionHeaderHeight="28" sectionFooterHeight="28" id="KwL-uu-dvD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2017,7 +2017,9 @@
                                 <connections>
                                     <outlet property="finishTimeLabel" destination="bmE-6V-SMi" id="hoM-kf-d0T"/>
                                     <outlet property="nameLabel" destination="YFw-jd-wcM" id="vR1-uf-1ff"/>
+                                    <outlet property="startButton" destination="Pj0-4y-gzl" id="OqP-ba-21j"/>
                                     <outlet property="startTime" destination="qct-XM-vwh" id="gam-IU-rm2"/>
+                                    <outlet property="stopButton" destination="1Uf-UE-bvg" id="yGr-My-u29"/>
                                     <outlet property="totalTimeLabel" destination="hk5-tM-ndH" id="ocz-8H-1uD"/>
                                 </connections>
                             </tableViewCell>

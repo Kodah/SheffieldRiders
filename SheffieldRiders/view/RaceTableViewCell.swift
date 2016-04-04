@@ -15,5 +15,7 @@ class RaceTableViewCell: UITableViewCell {
     @IBOutlet weak var finishTimeLabel: UILabel!
     @IBOutlet weak var startTime: UILabel!
     @IBOutlet weak var totalTimeLabel: UILabel!
+    @IBOutlet weak var stopButton: InspectableButton!
+    @IBOutlet weak var startButton: InspectableButton!
 
 }

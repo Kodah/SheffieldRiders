@@ -13,14 +13,22 @@
         <relationship name="racers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Racer" inverseName="race" inverseEntity="Racer" syncable="YES"/>
     </entity>
     <entity name="Racer" representedClassName=".Racer" syncable="YES">
-        <attribute name="finishDate" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="finishDate" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="finishDate"/>
+            </userInfo>
+        </attribute>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="remoteID" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
                 <entry key="hyper.remoteKey" value="_id"/>
             </userInfo>
         </attribute>
-        <attribute name="startDate" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="startDate"/>
+            </userInfo>
+        </attribute>
         <relationship name="race" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Race" inverseName="racers" inverseEntity="Race" syncable="YES"/>
     </entity>
     <entity name="Spot" representedClassName=".Spot" syncable="YES">
