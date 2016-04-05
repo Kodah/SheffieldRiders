@@ -10,12 +10,20 @@ import UIKit
 import CoreData
 import DATAStack
 
+protocol LeaderBoardTableViewControllerDelegate {
+    func didAddRaceParticipant(username: String)
+}
+
+
+
 class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsControllerDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     var searchText = String()
     var selectedUsername: String?
+    var fromRaceBuilder: Bool?
     
+    var delegate: LeaderBoardTableViewControllerDelegate?
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
         
@@ -41,11 +49,18 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Leaderboard"
+        if (fromRaceBuilder != nil) {
+            navigationItem.title = "Choose Racer"
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .Done, target: self, action: #selector(doneAddingUsers))
+            
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NewsTableViewController.showMenu), name: "showMenu", object: nil)
+        } else {
+            navigationItem.title = "Leaderboard"
+            navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
+            
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NewsTableViewController.showMenu), name: "showMenu", object: nil)
+        }
         
-        navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NewsTableViewController.showMenu), name: "showMenu", object: nil)
         
         NSNotificationCenter.defaultCenter().addObserverForName("usersUpdated", object: nil, queue: nil) { _ in
             try! self.fetchedResultsController.performFetch()
@@ -59,6 +74,10 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
         } catch {
             print("An error occurred")
         }
+    }
+    
+    func doneAddingUsers(){
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func refresh()
@@ -123,7 +142,12 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
         if let fetchedObjects = fetchedResultsController.fetchedObjects {
             let selectedUser: UserProfile = fetchedObjects[indexPath.row] as! UserProfile
             selectedUsername = selectedUser.username
-            performSegueWithIdentifier("ShowUserProfileSegue", sender: self)
+            
+            if (fromRaceBuilder != nil) {
+                delegate?.didAddRaceParticipant(selectedUsername!)
+            } else {
+                performSegueWithIdentifier("ShowUserProfileSegue", sender: self)
+            }
         }
     }
     

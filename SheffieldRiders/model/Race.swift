@@ -2,7 +2,7 @@
 //  Race.swift
 //  SheffieldRiders
 //
-//  Created by Tom Sugarex on 04/04/2016.
+//  Created by Tom Sugarex on 05/04/2016.
 //  Copyright © 2016 Tom Sugarev. All rights reserved.
 //
 

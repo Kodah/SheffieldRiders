@@ -2,7 +2,8 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Automatic">
     <entity name="Race" representedClassName=".Race" syncable="YES">
         <attribute name="creator" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="finished" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="remoteID" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
@@ -63,7 +64,7 @@
     <elements>
         <element name="Spot" positionX="-155" positionY="-234" width="128" height="105"/>
         <element name="UserProfile" positionX="-387" positionY="-264" width="128" height="120"/>
-        <element name="Race" positionX="-297" positionY="-117" width="128" height="135"/>
+        <element name="Race" positionX="-297" positionY="-117" width="128" height="150"/>
         <element name="Racer" positionX="-288" positionY="-108" width="128" height="120"/>
     </elements>
 </model>

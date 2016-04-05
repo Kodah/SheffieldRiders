@@ -24,6 +24,8 @@ class UpcomingRacesTableViewController: UITableViewController {
         
         SwiftSpinner.show("Syncing Races")
         
+        navigationItem.title = "Upcoming Races"
+        
         formatter.dateStyle = .ShortStyle
         formatter.timeStyle = .NoStyle
 
@@ -60,7 +62,11 @@ class UpcomingRacesTableViewController: UITableViewController {
         
         cell.textLabel!.text = race.title
         
-        cell.detailTextLabel?.text = formatter.stringFromDate(race.date!)
+        
+        if let dateStamp = race.date {
+            let date = NSDate.init(timeIntervalSince1970: Double(dateStamp))
+            cell.detailTextLabel?.text = formatter.stringFromDate(date)
+        }
        
         return cell
     }

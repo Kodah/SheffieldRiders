@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SwiftSpinner
 
-class RaceSetupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+
+class RaceSetupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, LeaderBoardTableViewControllerDelegate {
     
     
     @IBOutlet weak var titleTextfield: UITextField!
@@ -16,42 +18,68 @@ class RaceSetupViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var datepicker: UIDatePicker!
     @IBOutlet weak var racersTextView: UITextView!
     
+    
     var locations = [String]()
     var locationIndex = 0
-    let racers = ["ste", "tom"]
+    var racers = Set<String>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         locations = loadJsonNames()
         
-        let navButton = UIBarButtonItem(title: "Create race", style: .Done, target: self, action: #selector(uploadNewRace))
+        let navButton = UIBarButtonItem(title: "Create race", style: .Done, target: self, action: #selector(uploadNewRaceButtonTapped))
         
         navigationItem.rightBarButtonItem = navButton
         
+    }
+    
+    func didAddRaceParticipant(username: String) {
+        racers.insert(username)
         racersTextView.text = ""
         for racer in racers
         {
             let racerString = "\(racer) \n"
             racersTextView.text = racersTextView.text.stringByAppendingString(racerString)
         }
-        
     }
     
-    func uploadNewRace()
+    func uploadNewRaceButtonTapped()
     {
-        var dick: [String: AnyObject] = ["title" : titleTextfield.text!,
-                                         "location" : locations[locationIndex],
-                    "date" : datepicker.date,
-                    "racers" : racers]
-                
-        print(dick)
+        SwiftSpinner.show("Creating Race")
+        
+        let location: String = locations[locationIndex]
+        let date = Int(datepicker.date.timeIntervalSince1970)
+        var racersDic = [[String: String]]()
+        
+        for racerName in racers {
+            racersDic.append(["name" : racerName])
+        }
+        
+        
+        let raceInfo: [String: AnyObject] = ["title" : titleTextfield.text!,
+                                         "location" : location,
+                    "date" : date,
+                    "racers" : racersDic]
+        
+        DataSynchroniser.sharedInstance.uploadRace(raceInfo) { 
+            SwiftSpinner.show("Event Created")
+            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+            dispatch_after(delayTime, dispatch_get_main_queue()) {
+                SwiftSpinner.hide()
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+        }
     }
     
     @IBAction func addRacer(sender: AnyObject) {
         
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LeaderboardViewController")
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LeaderboardViewController") as! LeaderBoardTableViewController
         let navController = UINavigationController(rootViewController: viewController)
+        
+        viewController.fromRaceBuilder = true
+        viewController.delegate = self
+        
         
         presentViewController(navController, animated: true, completion: nil)
         

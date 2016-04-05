@@ -77,6 +77,23 @@ class DataSynchroniser: NSObject {
         }
     }
     
+    func uploadRace(raceInfo: [String: AnyObject], callBack : (() -> Void)?) {
+        print("Uploading race - Started")
+        
+        if let retrievedString: String = KeychainWrapper.stringForKey("authenticationToken") {
+            
+            Alamofire.request(.POST, Constants.apiBaseURL + "race", parameters: raceInfo, encoding: .JSON, headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON(completionHandler: { JSON in
+                print(JSON)
+                if let callBack = callBack {
+                    
+                    print("Uploading race - Finished")
+                    
+                    callBack()
+                }
+            })
+        }
+    }
+    
     func updateRace(racer: Racer, callBack : (() -> Void)?){
         print("Sync races - Started")
         

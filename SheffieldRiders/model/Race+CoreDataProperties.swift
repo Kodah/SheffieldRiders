@@ -2,7 +2,7 @@
 //  Race+CoreDataProperties.swift
 //  SheffieldRiders
 //
-//  Created by Tom Sugarex on 04/04/2016.
+//  Created by Tom Sugarex on 05/04/2016.
 //  Copyright © 2016 Tom Sugarev. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -16,9 +16,10 @@ extension Race {
 
     @NSManaged var title: String?
     @NSManaged var creator: String?
-    @NSManaged var id: String?
+    @NSManaged var remoteID: String?
     @NSManaged var location: String?
-    @NSManaged var date: NSDate?
+    @NSManaged var date: NSNumber?
+    @NSManaged var finished: NSNumber?
     @NSManaged var racers: NSSet?
 
 }
