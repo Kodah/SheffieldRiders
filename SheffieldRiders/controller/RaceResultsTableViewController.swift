@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SwiftSpinner
 
 class RaceResultsTableViewController: UITableViewController {
     
@@ -22,6 +23,7 @@ class RaceResultsTableViewController: UITableViewController {
             racers!.sortInPlace({$0.raceTime() < $1.raceTime()})
         }
     }
+    var race: Race?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +48,85 @@ class RaceResultsTableViewController: UITableViewController {
     
     func end()
     {
+        SwiftSpinner.show("Awarding racers")
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            self.awardRacesRaced()
+        }
+        
         
     }
+    func awardPoints()
+    {
+        
+    }
+    
+    func awardRacesRaced() {
+        var eligibleRiders = [String]()
+        if let racers = racers {
+            for racer in racers {
+                if ((racer.startDate) != nil) {
+                    eligibleRiders.append(racer.name!)
+                }
+            }
+        }
+        
+        let raceID: String = race!.remoteID!
+        
+        let body: [String: AnyObject] =
+            [
+                "raceID" : raceID,
+                "racers" : eligibleRiders
+            ]
+        
+        DataSynchroniser.sharedInstance.awardRacesRaced(body) {
+            SwiftSpinner.show("Awarding Medalists")
+            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+            dispatch_after(delayTime, dispatch_get_main_queue()) {
+                self.awardMedalists()
+            }
+            
+        }
+    }
+    
+    func awardMedalists() {
+        var body = [String:AnyObject]()
+        var medalists = [[String:AnyObject]]()
+        
+        if let racers = racers {
+            for (index, racer) in racers.enumerate() {
+                if ((racer.startDate) != nil &&
+                    (racer.finishDate) != nil &&
+                    medalists.count < 4) {
+                    medalists.append(["username" : racer.name!,
+                        "result" : index + 1])
+                }
+            }
+        }
+        let id = race!.remoteID! as String
+        body.add(["raceID" : id])
+        body.add(["medalists": medalists])
+        
+        DataSynchroniser.sharedInstance.awardMedalists(body) {
+            SwiftSpinner.hide()
+        }
+        
+    }
+    
+//    {
+//    "raceID": "57033321bb69f6a1bac9f3ee",
+//    "medalists":[
+//    {
+//    "username" : "tom",
+//    "result" : 1
+//    },
+//    {
+//    "username" : "ste",
+//    "result" : 1
+//    }
+//    ]
+//    }
+   
     
     // MARK: - Table view data source
     

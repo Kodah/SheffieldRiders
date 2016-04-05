@@ -33,6 +33,7 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
         let usersFetchRequest = NSFetchRequest(entityName: "UserProfile")
         let primarySortDescriptor = NSSortDescriptor(key: "rep", ascending: false)
         
+            
         usersFetchRequest.sortDescriptors = [primarySortDescriptor]
         
         let frc = NSFetchedResultsController(
@@ -43,17 +44,16 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
         
         frc.delegate = self
         
+        
         return frc
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if (fromRaceBuilder != nil) {
             if selectedUsernames?.count > 0 {
                 fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "NOT (username IN %@)", selectedUsernames!)
             }
-            
             navigationItem.title = "Choose Racer"
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .Done, target: self, action: #selector(doneAddingUsers))
             

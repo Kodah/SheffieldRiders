@@ -119,4 +119,38 @@ class DataSynchroniser: NSObject {
             })
         }
     }
+    
+    func awardRacesRaced(body: [String: AnyObject], callBack : (() -> Void)?) {
+        print("Uploading Points - Started")
+        
+        if let retrievedString: String = KeychainWrapper.stringForKey("authenticationToken") {
+                                                            
+            Alamofire.request(.PUT, Constants.apiBaseURL + "userprofile/racesraced", parameters: body, encoding: .JSON, headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON(completionHandler: { JSON in
+                print(JSON)
+                if let callBack = callBack {
+                    
+                    print("Uploading points - Finished")
+                    
+                    callBack()
+                }
+            })
+        }
+    }
+    
+    func awardMedalists(body: [String: AnyObject], callBack : (() -> Void)?) {
+        print("Uploading Medalist Points - Started")
+
+        if let retrievedString: String = KeychainWrapper.stringForKey("authenticationToken") {
+            
+            Alamofire.request(.PUT, Constants.apiBaseURL + "userprofile/podiums", parameters: body, encoding: .JSON, headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON(completionHandler: { JSON in
+                print(JSON)
+                if let callBack = callBack {
+                    
+                    print("Uploading Medalist Points - Finished")
+                    
+                    callBack()
+                }
+            })
+        }
+    }
 }

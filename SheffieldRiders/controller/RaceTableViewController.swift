@@ -151,6 +151,7 @@ class RaceTableViewController: UITableViewController {
                 let viewController = segue.destinationViewController as! RaceResultsTableViewController
                 
                 viewController.racers = racers
+                viewController.race = race
             }
         }
         
