@@ -24,13 +24,16 @@ class RaceResultsTableViewController: UITableViewController {
         }
     }
     var race: Race?
+    var fromPastRace = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let endBarButton = UIBarButtonItem(title: "End", style: .Done, target: self, action: #selector(end))
-        navigationItem.rightBarButtonItem = endBarButton
-        
+        if (!fromPastRace) {
+            let endBarButton = UIBarButtonItem(title: "End", style: .Done, target: self, action: #selector(end))
+            navigationItem.rightBarButtonItem = endBarButton
+        }
+
         
         if racers?.count > 0 {
             let winner =  racers![0]
@@ -112,21 +115,7 @@ class RaceResultsTableViewController: UITableViewController {
         }
         
     }
-    
-//    {
-//    "raceID": "57033321bb69f6a1bac9f3ee",
-//    "medalists":[
-//    {
-//    "username" : "tom",
-//    "result" : 1
-//    },
-//    {
-//    "username" : "ste",
-//    "result" : 1
-//    }
-//    ]
-//    }
-   
+       
     
     // MARK: - Table view data source
     

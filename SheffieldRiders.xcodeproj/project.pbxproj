@@ -13,7 +13,7 @@
 		7E0C80271CB169230017A1FD /* LeaderBoardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80261CB169230017A1FD /* LeaderBoardTableViewController.swift */; };
 		7E0C80311CB1AFFF0017A1FD /* RaceSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80301CB1AFFF0017A1FD /* RaceSetupViewController.swift */; };
 		7E0C80331CB1C3450017A1FD /* InspectableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80321CB1C3450017A1FD /* InspectableButton.swift */; };
-		7E0C803D1CB215EE0017A1FD /* UpcomingRacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C803C1CB215EE0017A1FD /* UpcomingRacesTableViewController.swift */; };
+		7E0C803D1CB215EE0017A1FD /* RacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C803C1CB215EE0017A1FD /* RacesTableViewController.swift */; };
 		7E0C803F1CB220820017A1FD /* RaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C803E1CB220820017A1FD /* RaceTableViewCell.swift */; };
 		7E0C80411CB220D40017A1FD /* RaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80401CB220D40017A1FD /* RaceTableViewController.swift */; };
 		7E0C80441CB2B1610017A1FD /* Racer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80421CB2B1610017A1FD /* Racer+CoreDataProperties.swift */; };
@@ -80,7 +80,7 @@
 		7E0C80261CB169230017A1FD /* LeaderBoardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeaderBoardTableViewController.swift; path = controller/LeaderBoardTableViewController.swift; sourceTree = "<group>"; };
 		7E0C80301CB1AFFF0017A1FD /* RaceSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaceSetupViewController.swift; path = controller/RaceSetupViewController.swift; sourceTree = "<group>"; };
 		7E0C80321CB1C3450017A1FD /* InspectableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InspectableButton.swift; path = view/InspectableButton.swift; sourceTree = "<group>"; };
-		7E0C803C1CB215EE0017A1FD /* UpcomingRacesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpcomingRacesTableViewController.swift; path = controller/UpcomingRacesTableViewController.swift; sourceTree = "<group>"; };
+		7E0C803C1CB215EE0017A1FD /* RacesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RacesTableViewController.swift; path = controller/RacesTableViewController.swift; sourceTree = "<group>"; };
 		7E0C803E1CB220820017A1FD /* RaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaceTableViewCell.swift; path = view/RaceTableViewCell.swift; sourceTree = "<group>"; };
 		7E0C80401CB220D40017A1FD /* RaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaceTableViewController.swift; path = controller/RaceTableViewController.swift; sourceTree = "<group>"; };
 		7E0C80421CB2B1610017A1FD /* Racer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Racer+CoreDataProperties.swift"; path = "model/Racer+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -285,7 +285,7 @@
 				7EAF80011CA9979C00378700 /* LocationInfoCollectionViewController.swift */,
 				7E709A8D1CB08E0D0077BBB5 /* ProfileLocationsCollectionViewController.swift */,
 				7E0C80261CB169230017A1FD /* LeaderBoardTableViewController.swift */,
-				7E0C803C1CB215EE0017A1FD /* UpcomingRacesTableViewController.swift */,
+				7E0C803C1CB215EE0017A1FD /* RacesTableViewController.swift */,
 				7E0C80301CB1AFFF0017A1FD /* RaceSetupViewController.swift */,
 				7E0C80401CB220D40017A1FD /* RaceTableViewController.swift */,
 				7E0C80461CB302100017A1FD /* RaceResultsTableViewController.swift */,
@@ -528,7 +528,7 @@
 				7E7081E61C6B52EF00F8B44A /* AppDelegate.swift in Sources */,
 				7E0C80441CB2B1610017A1FD /* Racer+CoreDataProperties.swift in Sources */,
 				7E0C80451CB2B1610017A1FD /* Racer.swift in Sources */,
-				7E0C803D1CB215EE0017A1FD /* UpcomingRacesTableViewController.swift in Sources */,
+				7E0C803D1CB215EE0017A1FD /* RacesTableViewController.swift in Sources */,
 				7E9EDAC81C930EDA000D8863 /* SignUpViewController.swift in Sources */,
 				7E0C804E1CB351FB0017A1FD /* Race+CoreDataProperties.swift in Sources */,
 				7E0C80271CB169230017A1FD /* LeaderBoardTableViewController.swift in Sources */,

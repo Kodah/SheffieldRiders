@@ -973,7 +973,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="JWO-1u-qxJ" kind="show" id="CGS-7c-DgR"/>
+                                            <segue destination="JWO-1u-qxJ" kind="show" identifier="upcomingEventsSegue" id="CGS-7c-DgR"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="1UR-kE-uax" detailTextLabel="fp5-rr-xhd" rowHeight="60" style="IBUITableViewCellStyleValue1" id="7kW-9I-xBy">
@@ -999,6 +999,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="JWO-1u-qxJ" kind="show" identifier="pastEventsSegue" id="Hog-ui-afK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1856,10 +1859,10 @@
             </objects>
             <point key="canvasLocation" x="3026" y="-1641"/>
         </scene>
-        <!--Upcoming Races Table View Controller-->
+        <!--Races Table View Controller-->
         <scene sceneID="8Zy-yt-9U9">
             <objects>
-                <tableViewController id="JWO-1u-qxJ" customClass="UpcomingRacesTableViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="JWO-1u-qxJ" customClass="RacesTableViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SMV-yW-oXD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1897,6 +1900,7 @@
                     </tableView>
                     <connections>
                         <segue destination="AyW-PA-42H" kind="show" identifier="raceSegueIdentifier" id="qFP-AU-MRT"/>
+                        <segue destination="25h-Qs-LTA" kind="show" identifier="pastRaceResultsSegue" id="ESu-V4-uOe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wa0-GO-k8U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2210,7 +2214,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pap-JF-i49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3774" y="-951"/>
+            <point key="canvasLocation" x="3762" y="-1291"/>
         </scene>
         <!--Leader Board Table View Controller-->
         <scene sceneID="02v-tV-sMt">
@@ -2290,6 +2294,8 @@
         <image name="profilePic" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="CGS-7c-DgR"/>
+        <segue reference="ESu-V4-uOe"/>
         <segue reference="y3x-hO-CUR"/>
     </inferredMetricsTieBreakers>
 </document>

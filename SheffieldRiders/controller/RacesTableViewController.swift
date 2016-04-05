@@ -11,12 +11,13 @@ import DATAStack
 import CoreData
 import SwiftSpinner
 
-class UpcomingRacesTableViewController: UITableViewController {
+class RacesTableViewController: UITableViewController {
 
     
     var races: [Race]?
     var selectedRace: Race?
     var formatter = NSDateFormatter()
+    var pastEvents = Bool()
     
     
     override func viewDidLoad() {
@@ -24,7 +25,12 @@ class UpcomingRacesTableViewController: UITableViewController {
         
         SwiftSpinner.show("Syncing Races")
         
-        navigationItem.title = "Upcoming Races"
+        if (pastEvents == true) {
+            navigationItem.title = "Past Races"
+        } else {
+            navigationItem.title = "Upcoming Races"
+        }
+        
         
         formatter.dateStyle = .ShortStyle
         formatter.timeStyle = .NoStyle
@@ -34,7 +40,7 @@ class UpcomingRacesTableViewController: UITableViewController {
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let dataStack:DATAStack = appDelegate.dataStack
             let request = NSFetchRequest(entityName: "Race")
-            request.predicate = NSPredicate(format: "finished != %@", 0)
+            request.predicate = NSPredicate(format: "finished == %@", self.pastEvents)
             self.races = try! dataStack.mainContext.executeFetchRequest(request) as! [Race]
             self.tableView.reloadData()
             SwiftSpinner.hide()
@@ -75,7 +81,8 @@ class UpcomingRacesTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedRace = races![indexPath.row]
-        performSegueWithIdentifier("raceSegueIdentifier", sender: self)
+        let identifier = pastEvents ? "pastRaceResultsSegue" : "raceSegueIdentifier"
+        performSegueWithIdentifier(identifier, sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -84,6 +91,12 @@ class UpcomingRacesTableViewController: UITableViewController {
                 
                 let viewController = segue.destinationViewController as! RaceTableViewController
                 viewController.race = selectedRace
+            } else if (identifier == "pastRaceResultsSegue"){
+                
+                let viewController = segue.destinationViewController as! RaceResultsTableViewController
+                viewController.race = selectedRace
+                viewController.racers = selectedRace?.racers?.allObjects as? [Racer]
+                viewController.fromPastRace = true;
             }
         }
     }

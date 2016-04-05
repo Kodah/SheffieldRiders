@@ -25,5 +25,17 @@ class RaceMenuTableViewController: UITableViewController {
         
         DropDownMenu.sharedInstance.showMenu(self.view)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "pastEventsSegue") {
+            let viewController = segue.destinationViewController as! RacesTableViewController
+            
+            viewController.pastEvents = true
+        } else if (segue.identifier == "upcomingEventsSegue") {
+            let viewController = segue.destinationViewController as! RacesTableViewController
+            
+            viewController.pastEvents = false
+        }
+    }
 
 }
