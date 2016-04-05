@@ -61,21 +61,35 @@ class LocationViewController: UIViewController, LocationInfoCollectionViewDelega
         let metersFromLocation = newLocation.distanceFromLocation(trackLocation)
         
         var atLocation = false
-        if let area = location["arena"] as? Int {
+        if let area = location["area"] as? Int {
             
-            if (metersFromLocation == Double(area) * 1000)
+            if (metersFromLocation <= Double(area) * 1000)
             {
                 atLocation = true
             }
         }
         SwiftSpinner.hide
         {
-            let message = atLocation ? "Congratulations: Rep increased" : "You are not at the location"
-            let alertController = UIAlertController(title: "Check in", message:
-                message, preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
+            if (atLocation) {
+                SwiftSpinner.show("Nice Your Here at \(self.location["name"]!)", animated: false)
+                
+                
+                let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC)))
+                dispatch_after(delayTime, dispatch_get_main_queue()) {
+                    SwiftSpinner.show("Increasing rep...", animated: true)
+                    
+                    let locationInfo = ["locationName" : self.location["name"]!]
+                    
+                    DataSynchroniser.sharedInstance.checkIn(locationInfo, callBack: { 
+                        SwiftSpinner.hide()
+                    })
+                }
+            }
+            else {
+                SwiftSpinner.show("You're not at \(self.location["name"]!)", animated: false).addTapHandler({
+                    SwiftSpinner.hide()
+                })
+            }
         }
     }
     

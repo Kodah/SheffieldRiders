@@ -29,11 +29,6 @@ class RaceResultsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (!fromPastRace) {
-            let endBarButton = UIBarButtonItem(title: "End", style: .Done, target: self, action: #selector(end))
-            navigationItem.rightBarButtonItem = endBarButton
-        }
-
         
         if racers?.count > 0 {
             let winner =  racers![0]
@@ -49,19 +44,15 @@ class RaceResultsTableViewController: UITableViewController {
         }
     }
     
-    func end()
-    {
-        SwiftSpinner.show("Awarding racers")
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            self.awardRacesRaced()
+    override func viewDidAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if (!fromPastRace) {
+            SwiftSpinner.show("Awarding racers")
+            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+            dispatch_after(delayTime, dispatch_get_main_queue()) {
+                self.awardRacesRaced()
+            }
         }
-        
-        
-    }
-    func awardPoints()
-    {
-        
     }
     
     func awardRacesRaced() {

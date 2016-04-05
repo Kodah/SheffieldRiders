@@ -68,9 +68,6 @@ class ProfileTableViewController: UITableViewController {
         refreshControl?.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
 
         
-        fetchProfile()
-        updateUI()
-        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let dataStack:DATAStack = appDelegate.dataStack
         let request = NSFetchRequest(entityName: "UserProfile")
@@ -79,13 +76,15 @@ class ProfileTableViewController: UITableViewController {
         for profile in profileResults {
             print("Users - ", profile.username)
         }
-        
-        
+        fetchProfile()
+        updateUI()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        refresh()
     }
+
     
     func fetchProfile(){
         if (usernameForProfile != nil) {
