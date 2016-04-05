@@ -49,9 +49,24 @@
     <entity name="UserProfile" representedClassName=".UserProfile" syncable="YES">
         <attribute name="discipline" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="quote" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="race_count" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="racesRaced"/>
+            </userInfo>
+        </attribute>
         <attribute name="rep" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES">
             <userInfo>
                 <entry key="hyper.remoteKey" value="riderRep"/>
+            </userInfo>
+        </attribute>
+        <attribute name="second" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="racesSecond"/>
+            </userInfo>
+        </attribute>
+        <attribute name="third" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="racesThird"/>
             </userInfo>
         </attribute>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES">
@@ -59,11 +74,19 @@
                 <entry key="hyper.isPrimaryKey" value="YES"/>
             </userInfo>
         </attribute>
+        <attribute name="won" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="racesWon"/>
+            </userInfo>
+        </attribute>
         <relationship name="spots" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Spot" inverseName="userProfile" inverseEntity="Spot" syncable="YES"/>
+        <userInfo>
+            <entry key="hyper.remoteKey" value="riderRep"/>
+        </userInfo>
     </entity>
     <elements>
         <element name="Spot" positionX="-155" positionY="-234" width="128" height="105"/>
-        <element name="UserProfile" positionX="-387" positionY="-264" width="128" height="120"/>
+        <element name="UserProfile" positionX="-387" positionY="-264" width="128" height="180"/>
         <element name="Race" positionX="-297" positionY="-117" width="128" height="150"/>
         <element name="Racer" positionX="-288" positionY="-108" width="128" height="120"/>
     </elements>

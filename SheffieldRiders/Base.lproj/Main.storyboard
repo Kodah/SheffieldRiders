@@ -507,14 +507,14 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INf-Lm-cqm">
                                                             <rect key="frame" x="0.0" y="0.0" width="584" height="33"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events Attended : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yre-Ll-rEb">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="33"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Races Raced:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yre-Ll-rEb">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="104" height="33"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayi-Y9-Tcg">
-                                                                    <rect key="frame" x="140" y="0.0" width="444" height="33"/>
+                                                                    <rect key="frame" x="104" y="0.0" width="480" height="33"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -524,14 +524,14 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5c-sE-d9Z">
                                                             <rect key="frame" x="0.0" y="33" width="584" height="32"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dig Days Attended : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H73-Vl-kd1">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="157" height="32"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Won: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H73-Vl-kd1">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="32"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iM5-iQ-x8C">
-                                                                    <rect key="frame" x="157" y="0.0" width="427" height="32"/>
+                                                                    <rect key="frame" x="44" y="0.0" width="540" height="32"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -541,7 +541,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1w2-r8-7eN">
                                                             <rect key="frame" x="0.0" y="65" width="584" height="33"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Races Raced : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82J-hu-RK1">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second place :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82J-hu-RK1">
                                                                     <rect key="frame" x="0.0" y="0.0" width="113" height="33"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -558,14 +558,14 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGL-lZ-jZn">
                                                             <rect key="frame" x="0.0" y="98" width="584" height="32"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Races Won : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idj-ju-Tsk">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="99" height="32"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third place :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idj-ju-Tsk">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="95" height="32"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMo-6S-cCV">
-                                                                    <rect key="frame" x="99" y="0.0" width="485" height="32"/>
+                                                                    <rect key="frame" x="95" y="0.0" width="489" height="32"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -637,6 +637,10 @@
                         <outlet property="locationVisitedCell" destination="9lc-pp-LbD" id="dfH-l9-P44"/>
                         <outlet property="locationVisitedView" destination="pY5-vp-AKM" id="U4s-re-Fme"/>
                         <outlet property="quoteLabel" destination="yci-OP-djU" id="6Kn-cH-mBT"/>
+                        <outlet property="race2ndLabel" destination="iU4-Tv-7qU" id="aB5-nB-jMD"/>
+                        <outlet property="race3rdLabel" destination="mMo-6S-cCV" id="uEi-EI-DXk"/>
+                        <outlet property="raceWonLabel" destination="iM5-iQ-x8C" id="C8L-XR-gn1"/>
+                        <outlet property="racedCountLabel" destination="Ayi-Y9-Tcg" id="njN-3Z-dN2"/>
                         <outlet property="rideCell" destination="Mjc-9T-Aa6" id="67J-eq-WU5"/>
                         <outlet property="riderRepLabel" destination="F4A-lO-wBg" id="EgC-Cw-4eO"/>
                         <outlet property="stackview" destination="h9B-Qd-gFw" id="lDh-3N-mEu"/>
@@ -808,10 +812,10 @@
             </objects>
             <point key="canvasLocation" x="1537" y="2048"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Event Type Table View Controller-->
         <scene sceneID="UGw-Bt-jIu">
             <objects>
-                <tableViewController storyboardIdentifier="EventsViewController" id="zvZ-KN-LjC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="EventsViewController" id="zvZ-KN-LjC" customClass="EventTypeTableViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gmC-Ca-Ul2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -907,10 +911,10 @@
             </objects>
             <point key="canvasLocation" x="1537" y="-951"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Race Menu Table View Controller-->
         <scene sceneID="iD3-T9-twP">
             <objects>
-                <tableViewController id="T2j-rb-OV2" sceneMemberID="viewController">
+                <tableViewController id="T2j-rb-OV2" customClass="RaceMenuTableViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fvf-g6-8jg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

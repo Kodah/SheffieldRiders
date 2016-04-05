@@ -34,6 +34,7 @@ class UpcomingRacesTableViewController: UITableViewController {
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let dataStack:DATAStack = appDelegate.dataStack
             let request = NSFetchRequest(entityName: "Race")
+            request.predicate = NSPredicate(format: "finished != %@", 0)
             self.races = try! dataStack.mainContext.executeFetchRequest(request) as! [Race]
             self.tableView.reloadData()
             SwiftSpinner.hide()
@@ -62,6 +63,7 @@ class UpcomingRacesTableViewController: UITableViewController {
         
         cell.textLabel!.text = race.title
         
+        print(race.finished)
         
         if let dateStamp = race.date {
             let date = NSDate.init(timeIntervalSince1970: Double(dateStamp))
