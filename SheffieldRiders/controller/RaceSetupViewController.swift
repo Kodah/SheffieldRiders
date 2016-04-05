@@ -79,6 +79,7 @@ class RaceSetupViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         viewController.fromRaceBuilder = true
         viewController.delegate = self
+        viewController.selectedUsernames = Array(racers)
         
         
         presentViewController(navController, animated: true, completion: nil)

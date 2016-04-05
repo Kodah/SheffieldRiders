@@ -22,7 +22,7 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
     var searchText = String()
     var selectedUsername: String?
     var fromRaceBuilder: Bool?
-    
+    var selectedUsernames: [String]?
     var delegate: LeaderBoardTableViewControllerDelegate?
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
@@ -50,6 +50,10 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
         super.viewDidLoad()
         
         if (fromRaceBuilder != nil) {
+            if selectedUsernames?.count > 0 {
+                fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "NOT (username IN %@)", selectedUsernames!)
+            }
+            
             navigationItem.title = "Choose Racer"
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .Done, target: self, action: #selector(doneAddingUsers))
             
@@ -94,11 +98,19 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
         print(searchText)
         
         if searchText.characters.count > 0 {
-            let filter = NSPredicate(format: "username CONTAINS[c] %@", searchText)
-            fetchedResultsController.fetchRequest.predicate = filter
+            if selectedUsernames?.count > 0 {
+                fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "NOT (username IN %@) AND username CONTAINS[c] %@", selectedUsernames!, searchText)
+            } else {
+                fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "username CONTAINS[c] %@", searchText)
+            }
         }
         else {
-            fetchedResultsController.fetchRequest.predicate = nil
+            if selectedUsernames?.count > 0 {
+                fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "NOT (username IN %@)", selectedUsernames!)
+            } else {
+                fetchedResultsController.fetchRequest.predicate = nil
+            }
+            
         }
         
         
@@ -145,6 +157,7 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
             
             if (fromRaceBuilder != nil) {
                 delegate?.didAddRaceParticipant(selectedUsername!)
+                self.dismissViewControllerAnimated(true, completion: nil)
             } else {
                 performSegueWithIdentifier("ShowUserProfileSegue", sender: self)
             }
