@@ -73,12 +73,12 @@ class DropDownMenu : NSObject {
     
     private func createDatasource() -> [AZDropdownMenuItemData] {
         var dataSource: [AZDropdownMenuItemData] = []
-        dataSource.append(AZDropdownMenuItemData(title:"Profile", icon:UIImage(imageLiteral: "cog")))
-        dataSource.append(AZDropdownMenuItemData(title:"News", icon:UIImage(imageLiteral: "cog")))
-        dataSource.append(AZDropdownMenuItemData(title:"Events", icon:UIImage(imageLiteral: "cog")))
-        dataSource.append(AZDropdownMenuItemData(title:"Locations", icon:UIImage(imageLiteral: "cog")))
-        dataSource.append(AZDropdownMenuItemData(title:"Leaderboard", icon:UIImage(imageLiteral: "cog")))
-        dataSource.append(AZDropdownMenuItemData(title:"Polls", icon:UIImage(imageLiteral: "cog")))
+        dataSource.append(AZDropdownMenuItemData(title:"Profile", icon:UIImage(imageLiteral: "wheel")))
+        dataSource.append(AZDropdownMenuItemData(title:"News", icon:UIImage(imageLiteral: "wheel")))
+        dataSource.append(AZDropdownMenuItemData(title:"Events", icon:UIImage(imageLiteral: "wheel")))
+        dataSource.append(AZDropdownMenuItemData(title:"Locations", icon:UIImage(imageLiteral: "wheel")))
+        dataSource.append(AZDropdownMenuItemData(title:"Leaderboard", icon:UIImage(imageLiteral: "wheel")))
+        dataSource.append(AZDropdownMenuItemData(title:"Polls", icon:UIImage(imageLiteral: "wheel")))
         return dataSource
     }
 }

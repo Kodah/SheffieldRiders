@@ -46,6 +46,12 @@ class ProfileTableViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Profile"
+        let navigationBarHeight: CGFloat = self.navigationController!.navigationBar.frame.height
+        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+        
+        let total = navigationBarHeight + statusBarHeight
+
+        tableView.contentInset = UIEdgeInsetsMake(total,0,0,0);
         
         if (usernameForProfile == nil) {
             navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
@@ -57,8 +63,9 @@ class ProfileTableViewController: UITableViewController {
             self.updateUI()
             self.refreshControl?.endRefreshing()
         }
-        refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl!.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.attributedTitle
+        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl?.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
 
         
         fetchProfile()

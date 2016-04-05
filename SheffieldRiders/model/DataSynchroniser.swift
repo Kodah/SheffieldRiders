@@ -65,9 +65,7 @@ class DataSynchroniser: NSObject {
                     
                     print("Sync races - finished")
                     NSNotificationCenter.defaultCenter().postNotificationName("racesUpdated", object: self)
-                    
-                    
-                    
+                                        
                     if let callBack = callBack {
                         
                         callBack()

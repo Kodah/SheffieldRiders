@@ -25,9 +25,16 @@ class RaceTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = finishRaceBarButton
         navigationItem.title = "Race"
         
-        
+        refreshControl?.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
     }
     
+    func refresh(){
+        DataSynchroniser.sharedInstance.syncRaces { 
+            self.fetchData()
+            self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
+        }
+    }
     func finishRace(){
         performSegueWithIdentifier("raceResultsSegue", sender: self)
     }
@@ -73,35 +80,33 @@ class RaceTableViewController: UITableViewController {
         
         let racer = racers![indexPath.row]
         
+        cell.totalTimeLabel.text = "Pending"
+        cell.backgroundColor = UIColor.lightGrayColor()
+        
         cell.nameLabel.text = racer.name
+        cell.startTime.text = "Not Started"
+        cell.finishTimeLabel.text = "Not Finished"
+        cell.stopButton.enabled = false
         
-        if let _ = racer.startDate {
-            cell.startTime.text = "Started!"
-            cell.backgroundColor = UIColor.greenColor()
-            cell.stopButton.enabled = true
-            cell.stopButton.backgroundColor = UIColor.redColor()
-        } else {
-            cell.startTime.text = "Not Started"
-            cell.stopButton.enabled = false
-            cell.stopButton.backgroundColor = UIColor.lightGrayColor()
-        }
-        if let _ = racer.finishDate {
-            cell.finishTimeLabel.text = "Finished!"
-            cell.stopButton.backgroundColor = UIColor.greenColor()
-        } else {
-            cell.finishTimeLabel.text = "Not Finished"
-        }
-        
-        if let _ = racer.startDate, _ = racer.finishDate {
+        if (racer.startDate != nil && racer.finishDate != nil) {
             cell.startTime.enabled = false
             cell.stopButton.enabled = false
+            cell.backgroundColor = UIColor.greenColor()
             cell.startButton.backgroundColor = UIColor.lightGrayColor()
             cell.stopButton.backgroundColor = UIColor.lightGrayColor()
             cell.totalTimeLabel.text = racer.raceTimeString()
             cell.totalTimeLabel.backgroundColor = UIColor.greenColor()
-        } else {
-            cell.totalTimeLabel.text = "Pending"
+            cell.startTime.text = "Started!"
+            cell.finishTimeLabel.text = "Finished!"
+            
+        }
+        else if (racer.startDate != nil && racer.finishDate == nil)
+        {
+            cell.startTime.text = "Started!"
             cell.backgroundColor = UIColor.orangeColor()
+            cell.stopButton.enabled = true
+            cell.stopButton.backgroundColor = UIColor.redColor()
+            cell.finishTimeLabel.text = "Not Finished"
         }
 
         return cell
