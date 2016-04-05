@@ -82,6 +82,8 @@ class LoginViewController: UIViewController {
         
         SwiftSpinner.show("Logging in")
         
+        view.endEditing(true)
+        
         let jsonDictionary:[String:String] = ["username": self.usernameTextField.text!,
                                               "password": self.passwordTextField.text!]
         
@@ -96,7 +98,7 @@ class LoginViewController: UIViewController {
                 DataSynchroniser.sharedInstance.synchroniseAll()
                 
             } else {
-                SwiftSpinner.show(responseJSON as! String, animated: false).addTapHandler({
+                SwiftSpinner.show("Failed", animated: false).addTapHandler({
                     SwiftSpinner.hide()
                 })
             }
