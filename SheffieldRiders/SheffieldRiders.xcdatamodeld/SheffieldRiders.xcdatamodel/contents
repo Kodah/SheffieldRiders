@@ -1,4 +1,93 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="Race" representedClassName=".Race" syncable="YES">
+        <attribute name="creator" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="finished" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remoteID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="_id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="racers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Racer" inverseName="race" inverseEntity="Racer" syncable="YES"/>
+    </entity>
+    <entity name="Racer" representedClassName=".Racer" syncable="YES">
+        <attribute name="finishDate" optional="YES" attributeType="Integer 32" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="finishDate"/>
+            </userInfo>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remoteID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="_id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="startDate" optional="YES" attributeType="Integer 32" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="startDate"/>
+            </userInfo>
+        </attribute>
+        <relationship name="race" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Race" inverseName="racers" inverseEntity="Race" syncable="YES"/>
+    </entity>
+    <entity name="Spot" representedClassName=".Spot" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remoteID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="_id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="visits" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="visitCount"/>
+            </userInfo>
+        </attribute>
+        <relationship name="userProfile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserProfile" inverseName="spots" inverseEntity="UserProfile" syncable="YES"/>
+    </entity>
+    <entity name="UserProfile" representedClassName=".UserProfile" syncable="YES">
+        <attribute name="discipline" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quote" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="race_count" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="racesRaced"/>
+            </userInfo>
+        </attribute>
+        <attribute name="rep" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="riderRep"/>
+            </userInfo>
+        </attribute>
+        <attribute name="second" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="racesSecond"/>
+            </userInfo>
+        </attribute>
+        <attribute name="third" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="racesThird"/>
+            </userInfo>
+        </attribute>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="hyper.isPrimaryKey" value="YES"/>
+            </userInfo>
+        </attribute>
+        <attribute name="won" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="hyper.remoteKey" value="racesWon"/>
+            </userInfo>
+        </attribute>
+        <relationship name="spots" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Spot" inverseName="userProfile" inverseEntity="Spot" syncable="YES"/>
+        <userInfo>
+            <entry key="hyper.remoteKey" value="riderRep"/>
+        </userInfo>
+    </entity>
+    <elements>
+        <element name="Spot" positionX="-155" positionY="-234" width="128" height="105"/>
+        <element name="UserProfile" positionX="-387" positionY="-264" width="128" height="180"/>
+        <element name="Race" positionX="-297" positionY="-117" width="128" height="150"/>
+        <element name="Racer" positionX="-288" positionY="-108" width="128" height="120"/>
+    </elements>
 </model>
