@@ -9,6 +9,7 @@
 import UIKit
 import SwiftKeychainWrapper
 import SwiftSpinner
+import Alamofire
 
 class LoginViewController: UIViewController {
 
@@ -80,46 +81,27 @@ class LoginViewController: UIViewController {
     @IBAction func logInButtonTapped(sender: AnyObject) {
         
         SwiftSpinner.show("Logging in")
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            let request = NSMutableURLRequest(URL: NSURL(string: Constants.apiBaseURL + "authentication")!)
-            request.HTTPMethod = "POST"
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let jsonDictionary:[String:String] = ["username": self.usernameTextField.text!,
+                                              "password": self.passwordTextField.text!]
+        
+        Alamofire.request(.POST, Constants.apiBaseURL + "authentication", parameters: jsonDictionary, encoding: .JSON, headers: nil).responseJSON(completionHandler: { JSON in
             
-            let jsonDictionary:[String:String] = ["username": self.usernameTextField.text!,
-                                                  "password": self.passwordTextField.text!]
-            do {
-                let jsonBody = try NSJSONSerialization.dataWithJSONObject(jsonDictionary, options: [])
-                request.HTTPBody = jsonBody
-            } catch {
-                print("Error")
-            }
-            
-            
-            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {data, response, error in
-                guard data != nil else {
-                    print("No response data")
-                    SwiftSpinner.hide()
-                    return
-                }
+            let responseJSON = try! NSJSONSerialization.JSONObjectWithData(JSON.data!, options: .AllowFragments)
+            if (JSON.response?.statusCode == 200) {
                 
-                do {
-                    let responseString = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! String
-                    
-                    NSUserDefaults.standardUserDefaults().setObject(self.usernameTextField.text, forKey: Constants.LoggedInUser)
-                    KeychainWrapper.setString(responseString, forKey: "authenticationToken")
-                    SwiftSpinner.show("Syncing Data")
-                    DataSynchroniser.sharedInstance.synchroniseAll()
-                    
-                } catch {
-                    
-                }
+                NSUserDefaults.standardUserDefaults().setObject(self.usernameTextField.text, forKey: Constants.LoggedInUser)
+                KeychainWrapper.setString(responseJSON as! String, forKey: "authenticationToken")
+                SwiftSpinner.show("Syncing Data")
+                DataSynchroniser.sharedInstance.synchroniseAll()
+                
+            } else {
+                SwiftSpinner.show(responseJSON as! String, animated: false).addTapHandler({
+                    SwiftSpinner.hide()
+                })
             }
-            
-            task.resume()
-        }
-        
-        
-    }
     
+            print("login - Finished")
+        })
+    }
 }

@@ -115,7 +115,7 @@ class SignUpViewController: UIViewController {
                 })
             }
             
-            print("Uploading points - Finished")
+            print("Signup - Finished")
 
         })
     }

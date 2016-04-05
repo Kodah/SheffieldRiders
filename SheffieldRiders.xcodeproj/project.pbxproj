@@ -167,13 +167,6 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
-		7E16BB631CAF23CC007DB545 /* Gloss */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Gloss;
-			sourceTree = "<group>";
-		};
 		7E16BB761CAF5D9C007DB545 /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				7E16BB761CAF5D9C007DB545 /* ManagedObjects */,
-				7E16BB631CAF23CC007DB545 /* Gloss */,
 				7E7081EC1C6B52EF00F8B44A /* SheffieldRiders.xcdatamodeld */,
 				7E16BB681CAF3ADA007DB545 /* DataSynchroniser.swift */,
 			);

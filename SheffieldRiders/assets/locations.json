@@ -117,5 +117,22 @@
   "blue": 0,
   "green": 0
   }
+  },
+  {
+  "name": "Cantor",
+  "latitude": 53.376058,
+  "longitude": -1.468944,
+  "area": 1,
+  "discipline": "BEng Software Engineering",
+  "imageName": "SHU",
+  "numberOfRoutes": 100,
+  "summary": "Sheffield Hallam University (SHU) is a public university in Sheffield, South Yorkshire, England. It is based on two sites; City Campus is located in the city centre, close to Sheffield railway station, and Collegiate Crescent Campus is about two miles away, adjacent to Ecclesall Road in south-west Sheffield.The university is the sixth largest university in the UK (out of 165) with 31,530 students 4,494 staff and 708 courses.",
+  "difficulty": {
+  "doubleBlack": 1,
+  "black": 1,
+  "red": 1,
+  "blue": 1,
+  "green": 1
+  }
   }
   ]
