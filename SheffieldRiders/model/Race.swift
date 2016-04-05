@@ -1,5 +1,5 @@
 //
-//  UserProfile.swift
+//  Race.swift
 //  SheffieldRiders
 //
 //  Created by Tom Sugarex on 05/04/2016.
@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class UserProfile: NSManagedObject {
+class Race: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 

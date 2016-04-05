@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftSpinner
 
 class SignUpViewController: UIViewController {
     
@@ -86,8 +87,7 @@ class SignUpViewController: UIViewController {
             
             reqBody = [
                 "username": username!,
-                "password": password!,
-                "email": "ste@s.com"
+                "password": password!
             ]
         }
         return reqBody
@@ -95,48 +95,29 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpButtonTapped(sender: UIButton) {
         
-        
-        let request = NSMutableURLRequest(URL: NSURL(string: Constants.apiBaseURL + "register")!)
-        request.HTTPMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
         let dic = createRequestBody()
-        do {
-            
-            let jsonData = try NSJSONSerialization.dataWithJSONObject(dic, options: NSJSONWritingOptions.PrettyPrinted)
-            
-            request.HTTPBody = jsonData
-        } catch let error as NSError {
-            print(error)
-        }
+        SwiftSpinner.show("Attempting registeration")
         
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
-            guard error == nil && data != nil else {
-                print("error=\(error)")
-                return
+        Alamofire.request(.POST, Constants.apiBaseURL + "register", parameters: dic, encoding: .JSON, headers: nil).responseJSON(completionHandler: { JSON in
+            
+            let responseJSON = try! NSJSONSerialization.JSONObjectWithData(JSON.data!, options: .AllowFragments)
+            if (JSON.response?.statusCode == 200) {
+                
+                
+                SwiftSpinner.show(responseJSON.description, animated: false).addTapHandler({
+                    SwiftSpinner.hide()
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                    
+                })
+            } else {
+                SwiftSpinner.show("Server Error").addTapHandler({
+                    SwiftSpinner.hide()
+                })
             }
             
-            do{
-                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
+            print("Uploading points - Finished")
 
-            } catch {}
-//            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            
-            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-                var errorMessages = ""
-
-//                for error in response?.valueForKey("errors") as! [Dictionary<String, String>] {
-//                    errorMessages.appendContentsOf(error["message"]!)
-//                }
-//                
-//                let alert = UIAlertController(title: "Error", message: errorMessages, preferredStyle: UIAlertControllerStyle.Alert)
-//                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-//                self.presentViewController(alert, animated: true, completion: nil)
-            }
-            
-        }
-        task.resume()
-        
+        })
     }
     
 }

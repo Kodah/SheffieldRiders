@@ -11,8 +11,20 @@
 		7E07BD1F1CA34D0D00124AC2 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E07BD1E1CA34D0D00124AC2 /* news.json */; };
 		7E07BD211CA3527A00124AC2 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E07BD201CA3527A00124AC2 /* NewsTableViewCell.swift */; };
 		7E0C80271CB169230017A1FD /* LeaderBoardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80261CB169230017A1FD /* LeaderBoardTableViewController.swift */; };
-		7E0C802E1CB175F40017A1FD /* UserProfile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C802C1CB175F40017A1FD /* UserProfile+CoreDataProperties.swift */; };
-		7E0C802F1CB175F40017A1FD /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C802D1CB175F40017A1FD /* UserProfile.swift */; };
+		7E0C80311CB1AFFF0017A1FD /* RaceSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80301CB1AFFF0017A1FD /* RaceSetupViewController.swift */; };
+		7E0C80331CB1C3450017A1FD /* InspectableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80321CB1C3450017A1FD /* InspectableButton.swift */; };
+		7E0C803D1CB215EE0017A1FD /* RacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C803C1CB215EE0017A1FD /* RacesTableViewController.swift */; };
+		7E0C803F1CB220820017A1FD /* RaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C803E1CB220820017A1FD /* RaceTableViewCell.swift */; };
+		7E0C80411CB220D40017A1FD /* RaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80401CB220D40017A1FD /* RaceTableViewController.swift */; };
+		7E0C80441CB2B1610017A1FD /* Racer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80421CB2B1610017A1FD /* Racer+CoreDataProperties.swift */; };
+		7E0C80451CB2B1610017A1FD /* Racer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80431CB2B1610017A1FD /* Racer.swift */; };
+		7E0C80471CB302100017A1FD /* RaceResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80461CB302100017A1FD /* RaceResultsTableViewController.swift */; };
+		7E0C804E1CB351FB0017A1FD /* Race+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C804C1CB351FB0017A1FD /* Race+CoreDataProperties.swift */; };
+		7E0C804F1CB351FB0017A1FD /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C804D1CB351FB0017A1FD /* Race.swift */; };
+		7E0C80511CB354B90017A1FD /* EventTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80501CB354B90017A1FD /* EventTypeTableViewController.swift */; };
+		7E0C80531CB355800017A1FD /* RaceMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80521CB355800017A1FD /* RaceMenuTableViewController.swift */; };
+		7E0C805A1CB367E20017A1FD /* UserProfile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80581CB367E20017A1FD /* UserProfile+CoreDataProperties.swift */; };
+		7E0C805B1CB367E20017A1FD /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C80591CB367E20017A1FD /* UserProfile.swift */; };
 		7E16BB6B1CAF3B75007DB545 /* DataSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E16BB681CAF3ADA007DB545 /* DataSynchroniser.swift */; };
 		7E2D75671CA6054200C7E140 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2D75661CA6054200C7E140 /* NewsViewController.swift */; };
 		7E5853671CA36BCC00AAE8D1 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5853661CA36BCC00AAE8D1 /* ProfileTableViewController.swift */; };
@@ -66,8 +78,20 @@
 		7E07BD1E1CA34D0D00124AC2 /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = news.json; path = assets/news.json; sourceTree = "<group>"; };
 		7E07BD201CA3527A00124AC2 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewCell.swift; path = controller/NewsTableViewCell.swift; sourceTree = "<group>"; };
 		7E0C80261CB169230017A1FD /* LeaderBoardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeaderBoardTableViewController.swift; path = controller/LeaderBoardTableViewController.swift; sourceTree = "<group>"; };
-		7E0C802C1CB175F40017A1FD /* UserProfile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserProfile+CoreDataProperties.swift"; path = "model/UserProfile+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7E0C802D1CB175F40017A1FD /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfile.swift; path = model/UserProfile.swift; sourceTree = "<group>"; };
+		7E0C80301CB1AFFF0017A1FD /* RaceSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaceSetupViewController.swift; path = controller/RaceSetupViewController.swift; sourceTree = "<group>"; };
+		7E0C80321CB1C3450017A1FD /* InspectableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InspectableButton.swift; path = view/InspectableButton.swift; sourceTree = "<group>"; };
+		7E0C803C1CB215EE0017A1FD /* RacesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RacesTableViewController.swift; path = controller/RacesTableViewController.swift; sourceTree = "<group>"; };
+		7E0C803E1CB220820017A1FD /* RaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaceTableViewCell.swift; path = view/RaceTableViewCell.swift; sourceTree = "<group>"; };
+		7E0C80401CB220D40017A1FD /* RaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaceTableViewController.swift; path = controller/RaceTableViewController.swift; sourceTree = "<group>"; };
+		7E0C80421CB2B1610017A1FD /* Racer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Racer+CoreDataProperties.swift"; path = "model/Racer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7E0C80431CB2B1610017A1FD /* Racer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Racer.swift; path = model/Racer.swift; sourceTree = "<group>"; };
+		7E0C80461CB302100017A1FD /* RaceResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaceResultsTableViewController.swift; path = controller/RaceResultsTableViewController.swift; sourceTree = "<group>"; };
+		7E0C804C1CB351FB0017A1FD /* Race+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Race+CoreDataProperties.swift"; path = "model/Race+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7E0C804D1CB351FB0017A1FD /* Race.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Race.swift; path = model/Race.swift; sourceTree = "<group>"; };
+		7E0C80501CB354B90017A1FD /* EventTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTypeTableViewController.swift; path = controller/EventTypeTableViewController.swift; sourceTree = "<group>"; };
+		7E0C80521CB355800017A1FD /* RaceMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaceMenuTableViewController.swift; path = controller/RaceMenuTableViewController.swift; sourceTree = "<group>"; };
+		7E0C80581CB367E20017A1FD /* UserProfile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserProfile+CoreDataProperties.swift"; path = "model/UserProfile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7E0C80591CB367E20017A1FD /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfile.swift; path = model/UserProfile.swift; sourceTree = "<group>"; };
 		7E16BB681CAF3ADA007DB545 /* DataSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataSynchroniser.swift; path = model/DataSynchroniser.swift; sourceTree = "<group>"; };
 		7E2D75661CA6054200C7E140 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsViewController.swift; path = controller/NewsViewController.swift; sourceTree = "<group>"; };
 		7E5853661CA36BCC00AAE8D1 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewController.swift; path = controller/ProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -153,8 +177,12 @@
 		7E16BB761CAF5D9C007DB545 /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
-				7E0C802C1CB175F40017A1FD /* UserProfile+CoreDataProperties.swift */,
-				7E0C802D1CB175F40017A1FD /* UserProfile.swift */,
+				7E0C80581CB367E20017A1FD /* UserProfile+CoreDataProperties.swift */,
+				7E0C80591CB367E20017A1FD /* UserProfile.swift */,
+				7E0C804C1CB351FB0017A1FD /* Race+CoreDataProperties.swift */,
+				7E0C804D1CB351FB0017A1FD /* Race.swift */,
+				7E0C80421CB2B1610017A1FD /* Racer+CoreDataProperties.swift */,
+				7E0C80431CB2B1610017A1FD /* Racer.swift */,
 				7E709A911CB0A19F0077BBB5 /* Spot+CoreDataProperties.swift */,
 				7E709A921CB0A19F0077BBB5 /* Spot.swift */,
 			);
@@ -238,6 +266,7 @@
 				7EAF80051CA9ACA500378700 /* LocationDescriptionCollectionViewCell.swift */,
 				7EAF80071CA9ACBB00378700 /* LocationStatsCollectionViewCell.swift */,
 				7E709A8F1CB093750077BBB5 /* SpotVisitedCollectionViewCell.swift */,
+				7E0C803E1CB220820017A1FD /* RaceTableViewCell.swift */,
 				7EAF800B1CAA11B200378700 /* Inspectables */,
 			);
 			name = View;
@@ -256,6 +285,12 @@
 				7EAF80011CA9979C00378700 /* LocationInfoCollectionViewController.swift */,
 				7E709A8D1CB08E0D0077BBB5 /* ProfileLocationsCollectionViewController.swift */,
 				7E0C80261CB169230017A1FD /* LeaderBoardTableViewController.swift */,
+				7E0C803C1CB215EE0017A1FD /* RacesTableViewController.swift */,
+				7E0C80301CB1AFFF0017A1FD /* RaceSetupViewController.swift */,
+				7E0C80401CB220D40017A1FD /* RaceTableViewController.swift */,
+				7E0C80461CB302100017A1FD /* RaceResultsTableViewController.swift */,
+				7E0C80501CB354B90017A1FD /* EventTypeTableViewController.swift */,
+				7E0C80521CB355800017A1FD /* RaceMenuTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -273,6 +308,7 @@
 			children = (
 				7EAF80091CAA0FF400378700 /* InspectableView.swift */,
 				7EAF800C1CAA11CA00378700 /* InspectableLabel.swift */,
+				7E0C80321CB1C3450017A1FD /* InspectableButton.swift */,
 			);
 			name = Inspectables;
 			sourceTree = "<group>";
@@ -480,32 +516,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E709A8E1CB08E0D0077BBB5 /* ProfileLocationsCollectionViewController.swift in Sources */,
+				7E0C804F1CB351FB0017A1FD /* Race.swift in Sources */,
+				7E0C803F1CB220820017A1FD /* RaceTableViewCell.swift in Sources */,
 				7E5853671CA36BCC00AAE8D1 /* ProfileTableViewController.swift in Sources */,
+				7E0C805A1CB367E20017A1FD /* UserProfile+CoreDataProperties.swift in Sources */,
+				7E0C80471CB302100017A1FD /* RaceResultsTableViewController.swift in Sources */,
 				7EAF80081CA9ACBB00378700 /* LocationStatsCollectionViewCell.swift in Sources */,
 				7E9EDAC61C930043000D8863 /* LoginViewController.swift in Sources */,
 				7E7081EE1C6B52EF00F8B44A /* SheffieldRiders.xcdatamodeld in Sources */,
 				7E2D75671CA6054200C7E140 /* NewsViewController.swift in Sources */,
 				7E7081E61C6B52EF00F8B44A /* AppDelegate.swift in Sources */,
-				7E0C802F1CB175F40017A1FD /* UserProfile.swift in Sources */,
+				7E0C80441CB2B1610017A1FD /* Racer+CoreDataProperties.swift in Sources */,
+				7E0C80451CB2B1610017A1FD /* Racer.swift in Sources */,
+				7E0C803D1CB215EE0017A1FD /* RacesTableViewController.swift in Sources */,
 				7E9EDAC81C930EDA000D8863 /* SignUpViewController.swift in Sources */,
+				7E0C804E1CB351FB0017A1FD /* Race+CoreDataProperties.swift in Sources */,
 				7E0C80271CB169230017A1FD /* LeaderBoardTableViewController.swift in Sources */,
 				7EAF7FFE1CA983B600378700 /* LocationTableViewCell.swift in Sources */,
+				7E0C80311CB1AFFF0017A1FD /* RaceSetupViewController.swift in Sources */,
 				7E709A931CB0A19F0077BBB5 /* Spot+CoreDataProperties.swift in Sources */,
 				7EAF80001CA9977A00378700 /* LocationViewController.swift in Sources */,
-				7E0C802E1CB175F40017A1FD /* UserProfile+CoreDataProperties.swift in Sources */,
 				7EAF7FFA1CA9674700378700 /* LocationTableViewController.swift in Sources */,
 				7EA394B41CA3080600338F4C /* NewsTableViewController.swift in Sources */,
 				7EAF800D1CAA11CA00378700 /* InspectableLabel.swift in Sources */,
 				7EAF80061CA9ACA500378700 /* LocationDescriptionCollectionViewCell.swift in Sources */,
 				7E16BB6B1CAF3B75007DB545 /* DataSynchroniser.swift in Sources */,
 				7E709A941CB0A19F0077BBB5 /* Spot.swift in Sources */,
+				7E0C80331CB1C3450017A1FD /* InspectableButton.swift in Sources */,
 				7E9EDACA1C9331D3000D8863 /* Constants.swift in Sources */,
 				7EAF800A1CAA0FF500378700 /* InspectableView.swift in Sources */,
 				7EAF80021CA9979C00378700 /* LocationInfoCollectionViewController.swift in Sources */,
+				7E0C80511CB354B90017A1FD /* EventTypeTableViewController.swift in Sources */,
 				7EA394AA1CA2B29900338F4C /* DropDownMenu.swift in Sources */,
 				7E709A901CB093750077BBB5 /* SpotVisitedCollectionViewCell.swift in Sources */,
 				7EAF80041CA9A08400378700 /* CenterCellCollectionViewFlowLayout.swift in Sources */,
+				7E0C80531CB355800017A1FD /* RaceMenuTableViewController.swift in Sources */,
+				7E0C80411CB220D40017A1FD /* RaceTableViewController.swift in Sources */,
 				7E07BD211CA3527A00124AC2 /* NewsTableViewCell.swift in Sources */,
+				7E0C805B1CB367E20017A1FD /* UserProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

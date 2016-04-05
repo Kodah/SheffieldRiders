@@ -10,11 +10,20 @@ import UIKit
 import CoreData
 import DATAStack
 
+protocol LeaderBoardTableViewControllerDelegate {
+    func didAddRaceParticipant(username: String)
+}
+
+
+
 class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsControllerDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     var searchText = String()
     var selectedUsername: String?
+    var fromRaceBuilder: Bool?
+    var selectedUsernames: [String]?
+    var delegate: LeaderBoardTableViewControllerDelegate?
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
         
@@ -24,6 +33,7 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
         let usersFetchRequest = NSFetchRequest(entityName: "UserProfile")
         let primarySortDescriptor = NSSortDescriptor(key: "rep", ascending: false)
         
+            
         usersFetchRequest.sortDescriptors = [primarySortDescriptor]
         
         let frc = NSFetchedResultsController(
@@ -34,17 +44,27 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
         
         frc.delegate = self
         
+        
         return frc
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (fromRaceBuilder != nil) {
+            if selectedUsernames?.count > 0 {
+                fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "NOT (username IN %@)", selectedUsernames!)
+            }
+            navigationItem.title = "Choose Racer"
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .Done, target: self, action: #selector(doneAddingUsers))
+            
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NewsTableViewController.showMenu), name: "showMenu", object: nil)
+        } else {
+            navigationItem.title = "Leaderboard"
+            navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
+            
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NewsTableViewController.showMenu), name: "showMenu", object: nil)
+        }
         
-        navigationItem.title = "Leaderboard"
-        
-        navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NewsTableViewController.showMenu), name: "showMenu", object: nil)
         
         NSNotificationCenter.defaultCenter().addObserverForName("usersUpdated", object: nil, queue: nil) { _ in
             try! self.fetchedResultsController.performFetch()
@@ -58,6 +78,10 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
         } catch {
             print("An error occurred")
         }
+    }
+    
+    func doneAddingUsers(){
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func refresh()
@@ -74,11 +98,19 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
         print(searchText)
         
         if searchText.characters.count > 0 {
-            let filter = NSPredicate(format: "username CONTAINS[c] %@", searchText)
-            fetchedResultsController.fetchRequest.predicate = filter
+            if selectedUsernames?.count > 0 {
+                fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "NOT (username IN %@) AND username CONTAINS[c] %@", selectedUsernames!, searchText)
+            } else {
+                fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "username CONTAINS[c] %@", searchText)
+            }
         }
         else {
-            fetchedResultsController.fetchRequest.predicate = nil
+            if selectedUsernames?.count > 0 {
+                fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "NOT (username IN %@)", selectedUsernames!)
+            } else {
+                fetchedResultsController.fetchRequest.predicate = nil
+            }
+            
         }
         
         
@@ -122,7 +154,13 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
         if let fetchedObjects = fetchedResultsController.fetchedObjects {
             let selectedUser: UserProfile = fetchedObjects[indexPath.row] as! UserProfile
             selectedUsername = selectedUser.username
-            performSegueWithIdentifier("ShowUserProfileSegue", sender: self)
+            
+            if (fromRaceBuilder != nil) {
+                delegate?.didAddRaceParticipant(selectedUsername!)
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                performSegueWithIdentifier("ShowUserProfileSegue", sender: self)
+            }
         }
     }
     

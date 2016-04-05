@@ -31,6 +31,12 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var disciplineLabel: UILabel!
     @IBOutlet weak var riderRepLabel: UILabel!
     
+    @IBOutlet weak var racedCountLabel: UILabel!
+    @IBOutlet weak var raceWonLabel: UILabel!
+    @IBOutlet weak var race2ndLabel: UILabel!
+    @IBOutlet weak var race3rdLabel: UILabel!
+    
+    
     var delegate: ProfileTableViewControllerDelegate?
     var userProfile : UserProfile?
     var spotsVisited: [Spot]?
@@ -53,8 +59,7 @@ class ProfileTableViewController: UITableViewController {
         }
         refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl!.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
-        
-        print(usernameForProfile)
+
         
         fetchProfile()
         updateUI()
@@ -99,6 +104,7 @@ class ProfileTableViewController: UITableViewController {
         let profileResults:[UserProfile] = try! dataStack.mainContext.executeFetchRequest(request) as! [UserProfile]
         
         userProfile = profileResults.first
+        print(userProfile)
         
         if let userProfile = userProfile {
             let requestSpots = NSFetchRequest(entityName: "Spot")
@@ -110,13 +116,20 @@ class ProfileTableViewController: UITableViewController {
     
     func updateUI() {
         
-        usernameLabel.text = userProfile?.username
-        quoteLabel.text = userProfile?.quote
-        disciplineLabel.text = userProfile?.discipline
-        riderRepLabel.text = "\(userProfile?.rep!)"
-        if let spotsVisited = spotsVisited {
-            delegate?.reloadData(spotsVisited)
+        if let profile = userProfile {
+            usernameLabel.text = profile.username
+            quoteLabel.text = profile.quote
+            disciplineLabel.text = profile.discipline
+            riderRepLabel.text = "\(profile.rep!)"
+            if let spotsVisited = spotsVisited {
+                delegate?.reloadData(spotsVisited)
+            }
+            racedCountLabel.text = "\(profile.race_count!)"
+            raceWonLabel.text = "\(profile.won!)"
+            race2ndLabel.text = "\(profile.second!)"
+            race3rdLabel.text = "\(profile.third!)"
         }
+
     }
     
     func refresh()
