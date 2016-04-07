@@ -16,7 +16,7 @@ class Racer: NSManagedObject {
         if let finishDateInt = finishDate?.integerValue, startDateInt = startDate?.integerValue {
             return finishDateInt - startDateInt
         } else{
-            return 99999999999999
+            return 99999
         }
         
     }
