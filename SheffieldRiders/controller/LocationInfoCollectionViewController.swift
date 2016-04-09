@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 private let descriptionCellIdentifier = "descriptionCell"
 private let statsCellIdentifier = "statsCell"
@@ -52,6 +53,27 @@ class LocationInfoCollectionViewController: UICollectionViewController, UICollec
     }
     
     
+
+    @IBAction func openMap(sender: AnyObject) {
+        
+        if let latitude: Double = location["latitude"] as? Double, longitude: Double = location["longitude"] as? Double, name: String = location["name"] as? String {
+            let latitute:CLLocationDegrees =  latitude
+            let longitude:CLLocationDegrees =  longitude
+            
+            let regionDistance:CLLocationDistance = 10000
+            let coordinates = CLLocationCoordinate2DMake(latitute, longitude)
+            let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+            let options = [
+                MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate: regionSpan.center),
+                MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpan.span)
+            ]
+            let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+            let mapItem = MKMapItem(placemark: placemark)
+            mapItem.name = "\(name)"
+            mapItem.openInMapsWithLaunchOptions(options)
+        }
+
+    }
     
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
