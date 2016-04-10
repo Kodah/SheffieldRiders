@@ -31,22 +31,24 @@ class DataSynchroniser: NSObject {
         print("Sync users - Started")
         
         Alamofire.request(.GET, Constants.apiBaseURL + "userprofile").responseJSON { response in
-            let data = response.result.value as! [[String : AnyObject]]
-            
-            
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            let dataStack:DATAStack = appDelegate.dataStack
-            
-            Sync.changes(data, inEntityNamed: "UserProfile", dataStack: dataStack , completion: { (error) in
+            if let data = response.result.value as? [[String : AnyObject]] {
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let dataStack:DATAStack = appDelegate.dataStack
                 
-                print("Sync users - finished")
-                NSNotificationCenter.defaultCenter().postNotificationName("usersUpdated", object: self)
-                
-                if let callBack = callBack {
+                Sync.changes(data, inEntityNamed: "UserProfile", dataStack: dataStack , completion: { (error) in
                     
-                    callBack()
-                }
-            })
+                    print("Sync users - finished")
+                    NSNotificationCenter.defaultCenter().postNotificationName("usersUpdated", object: self)
+                    
+                })
+            } else
+            {
+                print("Sync failed")
+            }
+            if let callBack = callBack {
+                
+                callBack()
+            }
         }
     }
     
@@ -56,21 +58,21 @@ class DataSynchroniser: NSObject {
         if let retrievedString: String = KeychainWrapper.stringForKey("authenticationToken") {
             
             Alamofire.request(.GET, Constants.apiBaseURL + "race", headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON { response in
-                let data = response.result.value as! [[String : AnyObject]]
-                
-                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                let dataStack:DATAStack = appDelegate.dataStack
-                
-                Sync.changes(data, inEntityNamed: "Race", dataStack: dataStack , completion: { (error) in
+                if let data = response.result.value as? [[String : AnyObject]] {
+                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                    let dataStack:DATAStack = appDelegate.dataStack
                     
-                    print("Sync races - finished")
-                    NSNotificationCenter.defaultCenter().postNotificationName("racesUpdated", object: self)
-                                        
-                    if let callBack = callBack {
+                    Sync.changes(data, inEntityNamed: "Race", dataStack: dataStack , completion: { (error) in
                         
-                        callBack()
-                    }
-                })
+                        print("Sync races - finished")
+                        NSNotificationCenter.defaultCenter().postNotificationName("racesUpdated", object: self)
+                        
+                    })
+                }
+                if let callBack = callBack {
+                    
+                    callBack()
+                }
             }
         }
     }
@@ -138,7 +140,7 @@ class DataSynchroniser: NSObject {
         print("Uploading Points - Started")
         
         if let retrievedString: String = KeychainWrapper.stringForKey("authenticationToken") {
-                                                            
+            
             Alamofire.request(.PUT, Constants.apiBaseURL + "userprofile/racesraced", parameters: body, encoding: .JSON, headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON(completionHandler: { JSON in
                 print(JSON)
                 if let callBack = callBack {
@@ -153,7 +155,7 @@ class DataSynchroniser: NSObject {
     
     func awardMedalists(body: [String: AnyObject], callBack : (() -> Void)?) {
         print("Uploading Medalist Points - Started")
-
+        
         if let retrievedString: String = KeychainWrapper.stringForKey("authenticationToken") {
             
             Alamofire.request(.PUT, Constants.apiBaseURL + "userprofile/podiums", parameters: body, encoding: .JSON, headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON(completionHandler: { JSON in
