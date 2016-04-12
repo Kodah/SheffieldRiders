@@ -34,6 +34,5 @@ class Racer: NSManagedObject {
             let seconds = duration % 60;
             return NSString(format: "%d:%02d", minutes, seconds) as String
         }
-        
     }
 }
