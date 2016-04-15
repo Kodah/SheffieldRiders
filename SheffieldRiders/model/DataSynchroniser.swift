@@ -169,4 +169,42 @@ class DataSynchroniser: NSObject {
             })
         }
     }
+    
+    func updateQuote(quote: String, callBack : (() -> Void)?) {
+        print("update quote")
+        
+        if let retrievedString: String = KeychainWrapper.stringForKey("authenticationToken") {
+            
+            let body: [String : AnyObject] = ["quote": quote]
+            
+            Alamofire.request(.PUT, Constants.apiBaseURL + "userprofile/quote", parameters: body, encoding: .JSON, headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON(completionHandler: { JSON in
+                print(JSON)
+                if let callBack = callBack {
+                    
+                    print("Update quote- Finished")
+                    
+                    callBack()
+                }
+            })
+        }
+    }
+    
+    func updateDiscipline(discipline: String, callBack : (() -> Void)?) {
+        print("update discipline")
+        
+        if let retrievedString: String = KeychainWrapper.stringForKey("authenticationToken") {
+            
+            let body = ["discipline": discipline]
+            
+            Alamofire.request(.PUT, Constants.apiBaseURL + "userprofile/discipline", parameters: body, encoding: .JSON, headers: ["Authorization":"bearer \(retrievedString)" ]).responseJSON(completionHandler: { JSON in
+                print(JSON)
+                if let callBack = callBack {
+                    
+                    print("Update discipline- Finished")
+                    
+                    callBack()
+                }
+            })
+        }
+    }
 }

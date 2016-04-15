@@ -56,6 +56,7 @@
 		7EAF80081CA9ACBB00378700 /* LocationStatsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF80071CA9ACBB00378700 /* LocationStatsCollectionViewCell.swift */; };
 		7EAF800A1CAA0FF500378700 /* InspectableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF80091CAA0FF400378700 /* InspectableView.swift */; };
 		7EAF800D1CAA11CA00378700 /* InspectableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF800C1CAA11CA00378700 /* InspectableLabel.swift */; };
+		7EC9C2401CC154FC0011F635 /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC9C23F1CC154FC0011F635 /* UpdateProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		7EAF80071CA9ACBB00378700 /* LocationStatsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationStatsCollectionViewCell.swift; path = view/LocationStatsCollectionViewCell.swift; sourceTree = "<group>"; };
 		7EAF80091CAA0FF400378700 /* InspectableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InspectableView.swift; path = view/InspectableView.swift; sourceTree = "<group>"; };
 		7EAF800C1CAA11CA00378700 /* InspectableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InspectableLabel.swift; path = view/InspectableLabel.swift; sourceTree = "<group>"; };
+		7EC9C23F1CC154FC0011F635 /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateProfileViewController.swift; path = controller/UpdateProfileViewController.swift; sourceTree = "<group>"; };
 		8720B064D3B112C20E1DA3E9 /* Pods-SheffieldRiders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheffieldRiders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SheffieldRiders/Pods-SheffieldRiders.debug.xcconfig"; sourceTree = "<group>"; };
 		B75483DD31034D05EAD0BB20 /* Pods_SheffieldRiders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SheffieldRiders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -289,6 +291,7 @@
 				7E0C80461CB302100017A1FD /* RaceResultsTableViewController.swift */,
 				7E0C80501CB354B90017A1FD /* EventTypeTableViewController.swift */,
 				7E0C80521CB355800017A1FD /* RaceMenuTableViewController.swift */,
+				7EC9C23F1CC154FC0011F635 /* UpdateProfileViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				7EAF80041CA9A08400378700 /* CenterCellCollectionViewFlowLayout.swift in Sources */,
 				7E0C80531CB355800017A1FD /* RaceMenuTableViewController.swift in Sources */,
 				7E0C80411CB220D40017A1FD /* RaceTableViewController.swift in Sources */,
+				7EC9C2401CC154FC0011F635 /* UpdateProfileViewController.swift in Sources */,
 				7E07BD211CA3527A00124AC2 /* NewsTableViewCell.swift in Sources */,
 				7E0C805B1CB367E20017A1FD /* UserProfile.swift in Sources */,
 			);

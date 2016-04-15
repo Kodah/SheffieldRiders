@@ -657,6 +657,7 @@
                         <outlet property="stackview" destination="h9B-Qd-gFw" id="lDh-3N-mEu"/>
                         <outlet property="statisticsCell" destination="xdA-ap-3Ph" id="dKm-ss-X30"/>
                         <outlet property="usernameLabel" destination="juR-P5-rbc" id="1NG-BO-2WH"/>
+                        <segue destination="GAr-sB-DLH" kind="presentation" identifier="editProfileSegue" id="3II-Qw-3eP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4oR-ui-tGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1099,6 +1100,118 @@
             </objects>
             <point key="canvasLocation" x="4866" y="3080"/>
         </scene>
+        <!--Update Profile View Controller-->
+        <scene sceneID="ke1-Yl-iXe">
+            <objects>
+                <viewController id="GAr-sB-DLH" customClass="UpdateProfileViewController" customModule="SheffieldRiders" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yz2-vA-P5K"/>
+                        <viewControllerLayoutGuide type="bottom" id="DOU-ri-zRS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uGS-jm-2gB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundLogin" translatesAutoresizingMaskIntoConstraints="NO" id="BsH-1Q-yHA">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkL-Le-2IW">
+                                <rect key="frame" x="20" y="73" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ij-Rv-9Rv">
+                                <rect key="frame" x="20" y="44" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.57776988636363635" green="0.34881295036346621" blue="0.19977690963728995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discipline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mH-2h-vKb">
+                                <rect key="frame" x="20" y="111" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.57776988636363635" green="0.34881295036346621" blue="0.19977690963728995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oCU-Bj-u5J">
+                                <rect key="frame" x="20" y="140" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbZ-uS-aKQ" customClass="InspectableButton" customModule="SheffieldRiders" customModuleProvider="target">
+                                <rect key="frame" x="262" y="178" width="76" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="  Update  ">
+                                    <color key="titleColor" red="0.64163115530303028" green="0.43584240703786237" blue="0.19483203022378454" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.5725490196078431" green="0.36078431372549019" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="updateTapped:" destination="GAr-sB-DLH" eventType="touchUpInside" id="Lec-Zo-eqk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37d-ic-ZFf" customClass="InspectableButton" customModule="SheffieldRiders" customModuleProvider="target">
+                                <rect key="frame" x="262" y="219" width="76" height="33"/>
+                                <state key="normal" title="  Cancel  "/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.054901960784313725" green="0.37254901960784315" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="GAr-sB-DLH" eventType="touchUpInside" id="Aqq-Ik-5IO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Ij-Rv-9Rv" secondAttribute="trailing" id="1Cg-T3-E79"/>
+                            <constraint firstAttribute="trailing" secondItem="BsH-1Q-yHA" secondAttribute="trailing" id="4UV-gY-43W"/>
+                            <constraint firstItem="DOU-ri-zRS" firstAttribute="top" secondItem="BsH-1Q-yHA" secondAttribute="bottom" id="6eq-As-KPZ"/>
+                            <constraint firstItem="0mH-2h-vKb" firstAttribute="leading" secondItem="uGS-jm-2gB" secondAttribute="leadingMargin" id="7wR-sW-x8h"/>
+                            <constraint firstItem="37d-ic-ZFf" firstAttribute="height" secondItem="SbZ-uS-aKQ" secondAttribute="height" id="H7t-HQ-d5x"/>
+                            <constraint firstItem="37d-ic-ZFf" firstAttribute="top" secondItem="SbZ-uS-aKQ" secondAttribute="bottom" constant="8" id="Kc3-dc-V4p"/>
+                            <constraint firstItem="oCU-Bj-u5J" firstAttribute="top" secondItem="0mH-2h-vKb" secondAttribute="bottom" constant="8" id="LyC-Nl-krW"/>
+                            <constraint firstItem="fkL-Le-2IW" firstAttribute="top" secondItem="8Ij-Rv-9Rv" secondAttribute="bottom" constant="8" id="O6T-yg-H7I"/>
+                            <constraint firstItem="0mH-2h-vKb" firstAttribute="trailing" secondItem="uGS-jm-2gB" secondAttribute="trailingMargin" id="UuP-65-EKs"/>
+                            <constraint firstItem="oCU-Bj-u5J" firstAttribute="leading" secondItem="uGS-jm-2gB" secondAttribute="leadingMargin" id="V6U-RS-fIG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fkL-Le-2IW" secondAttribute="trailing" id="a4t-2k-U4u"/>
+                            <constraint firstItem="37d-ic-ZFf" firstAttribute="width" secondItem="SbZ-uS-aKQ" secondAttribute="width" id="cdY-Xd-7Os"/>
+                            <constraint firstItem="BsH-1Q-yHA" firstAttribute="top" secondItem="Yz2-vA-P5K" secondAttribute="bottom" id="eIR-Ci-ZGO"/>
+                            <constraint firstItem="0mH-2h-vKb" firstAttribute="top" secondItem="fkL-Le-2IW" secondAttribute="bottom" constant="8" id="hGw-g1-yiM"/>
+                            <constraint firstItem="8Ij-Rv-9Rv" firstAttribute="leading" secondItem="uGS-jm-2gB" secondAttribute="leadingMargin" id="pKO-a7-98h"/>
+                            <constraint firstItem="oCU-Bj-u5J" firstAttribute="trailing" secondItem="uGS-jm-2gB" secondAttribute="trailingMargin" id="q0E-2w-WzB"/>
+                            <constraint firstItem="SbZ-uS-aKQ" firstAttribute="top" secondItem="oCU-Bj-u5J" secondAttribute="bottom" constant="8" id="uuw-RV-bsq"/>
+                            <constraint firstItem="BsH-1Q-yHA" firstAttribute="leading" secondItem="uGS-jm-2gB" secondAttribute="leading" id="vYH-Rd-RiI"/>
+                            <constraint firstItem="SbZ-uS-aKQ" firstAttribute="centerX" secondItem="oCU-Bj-u5J" secondAttribute="centerX" id="vgd-vt-a1N"/>
+                            <constraint firstItem="37d-ic-ZFf" firstAttribute="centerX" secondItem="SbZ-uS-aKQ" secondAttribute="centerX" id="x2b-q2-sBu"/>
+                            <constraint firstItem="8Ij-Rv-9Rv" firstAttribute="top" secondItem="Yz2-vA-P5K" secondAttribute="bottom" constant="24" id="xpB-rx-MFC"/>
+                            <constraint firstItem="fkL-Le-2IW" firstAttribute="leading" secondItem="uGS-jm-2gB" secondAttribute="leadingMargin" id="yPI-PG-siG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="disciplineTextField" destination="oCU-Bj-u5J" id="4wj-dv-qzc"/>
+                        <outlet property="quoteTextField" destination="fkL-Le-2IW" id="5jg-v6-ZfH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aZl-8n-Zsn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4826" y="1408"/>
+        </scene>
         <!--Profile Locations Collection View Controller-->
         <scene sceneID="8KC-yh-yXH">
             <objects>
@@ -1180,7 +1293,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9eU-9M-U4q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4840" y="1656.5"/>
+            <point key="canvasLocation" x="4818" y="1856.5"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="Sdd-SR-OpP">
@@ -2349,6 +2462,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="ESu-V4-uOe"/>
         <segue reference="CGS-7c-DgR"/>
-        <segue reference="y3x-hO-CUR"/>
+        <segue reference="xKS-hh-HT0"/>
     </inferredMetricsTieBreakers>
 </document>

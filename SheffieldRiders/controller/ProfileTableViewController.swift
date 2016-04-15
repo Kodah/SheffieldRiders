@@ -56,6 +56,9 @@ class ProfileTableViewController: UITableViewController {
         if (usernameForProfile == nil) {
             navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
             NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.showMenu), name: "showMenu", object: nil)
+            
+            let rightBarButton = UIBarButtonItem(title: "Edit", style: .Done, target: self, action: #selector(self.editProfile))
+            navigationItem.rightBarButtonItem = rightBarButton
 
         }
         NSNotificationCenter.defaultCenter().addObserverForName("usersUpdated", object: nil, queue: nil) { _ in
@@ -85,6 +88,9 @@ class ProfileTableViewController: UITableViewController {
         refresh()
     }
 
+    func editProfile(){
+        self.performSegueWithIdentifier("editProfileSegue", sender: self)
+    }
     
     func fetchProfile(){
         if (usernameForProfile != nil) {
@@ -165,6 +171,18 @@ class ProfileTableViewController: UITableViewController {
                 
                 let viewController = segue.destinationViewController as! ProfileLocationsCollectionViewController
                 delegate = viewController
+                
+            }
+        }
+        if let identifier = segue.identifier {
+            if (identifier == "editProfileSegue"){
+                
+                let viewController = segue.destinationViewController as! UpdateProfileViewController
+                
+                if let profile = userProfile {
+                    viewController.quote = profile.quote
+                    viewController.discipline = profile.discipline
+                }
                 
             }
         }
