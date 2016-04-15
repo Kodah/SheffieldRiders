@@ -14,6 +14,11 @@ private let reuseIdentifier = "Cell"
 class ProfileLocationsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, ProfileTableViewControllerDelegate {
 
     var spotsVisited: [Spot]?
+    {
+        didSet {
+            spotsVisited!.sortInPlace({$0.visits!.intValue > $1.visits!.intValue})
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
