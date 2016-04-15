@@ -15,14 +15,9 @@ class EventTypeTableViewController: UITableViewController {
         
         navigationItem.title = "Event Type"
 
-        
-
-    }
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.showMenu), name: "showMenu", object: nil)
+
     }
     
     func showMenu() {
