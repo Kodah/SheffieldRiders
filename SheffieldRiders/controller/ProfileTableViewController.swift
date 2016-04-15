@@ -74,13 +74,19 @@ class ProfileTableViewController: UITableViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let dataStack:DATAStack = appDelegate.dataStack
         let request = NSFetchRequest(entityName: "UserProfile")
-        let profileResults:[UserProfile] = try! dataStack.mainContext.executeFetchRequest(request) as! [UserProfile]
         
-        for profile in profileResults {
-            print("Users - ", profile.username)
+        do {
+            let profileResults:[UserProfile] = try dataStack.mainContext.executeFetchRequest(request) as! [UserProfile]
+            
+            for profile in profileResults {
+                print("Users - ", profile.username)
+            }
+            fetchProfile()
+            updateUI()
+        } catch {
+            print("fetch errored")
         }
-        fetchProfile()
-        updateUI()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -113,17 +119,23 @@ class ProfileTableViewController: UITableViewController {
         let request = NSFetchRequest(entityName: "UserProfile")
         request.predicate = NSPredicate(format: "username == %@", username)
         request.fetchLimit = 1
-        let profileResults:[UserProfile] = try! dataStack.mainContext.executeFetchRequest(request) as! [UserProfile]
         
-        userProfile = profileResults.first
-        print(userProfile)
-        
-        if let userProfile = userProfile {
-            let requestSpots = NSFetchRequest(entityName: "Spot")
-            requestSpots.predicate = NSPredicate(format: "userProfile = %@", userProfile)
-            spotsVisited = (try! dataStack.mainContext.executeFetchRequest(requestSpots)) as? [Spot]
+        do {
+            let profileResults:[UserProfile] = try dataStack.mainContext.executeFetchRequest(request) as! [UserProfile]
             
+            userProfile = profileResults.first
+            print(userProfile)
+            
+            if let userProfile = userProfile {
+                let requestSpots = NSFetchRequest(entityName: "Spot")
+                requestSpots.predicate = NSPredicate(format: "userProfile = %@", userProfile)
+                spotsVisited = (try? dataStack.mainContext.executeFetchRequest(requestSpots)) as? [Spot]
+                
+            }
+        } catch {
+            print("Fetch failed")
         }
+        
     }
     
     func updateUI() {

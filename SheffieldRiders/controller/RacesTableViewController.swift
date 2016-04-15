@@ -41,7 +41,7 @@ class RacesTableViewController: UITableViewController {
             let dataStack:DATAStack = appDelegate.dataStack
             let request = NSFetchRequest(entityName: "Race")
             request.predicate = NSPredicate(format: "finished == %@", self.pastEvents)
-            self.races = try! dataStack.mainContext.executeFetchRequest(request) as! [Race]
+            self.races = try? dataStack.mainContext.executeFetchRequest(request) as! [Race]
             self.tableView.reloadData()
             SwiftSpinner.hide()
         }
