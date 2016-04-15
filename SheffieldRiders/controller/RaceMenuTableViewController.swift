@@ -14,16 +14,6 @@ class RaceMenuTableViewController: UITableViewController {
         super.viewDidLoad()
         navigationItem.title = "Race Menu"
         
-        
-        navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.showMenu), name: "showMenu", object: nil)
-    }
-    
-    func showMenu() {
-        
-        tableView.setContentOffset(CGPointMake(0.0, -tableView.contentInset.top), animated:true)
-        
-        DropDownMenu.sharedInstance.showMenu(self.view)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

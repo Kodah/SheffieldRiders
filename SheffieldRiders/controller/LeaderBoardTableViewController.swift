@@ -90,7 +90,7 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
     }
     
     func showMenu() {
-        tableView.setContentOffset(CGPointMake(0.0, -tableView.contentInset.top), animated:true)
+
         DropDownMenu.sharedInstance.showMenu(self.view)
     }
     
