@@ -22,13 +22,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundLogin" translatesAutoresizingMaskIntoConstraints="NO" id="hEk-mc-wTc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rZ9-ey-t6M">
                                 <rect key="frame" x="80" y="484" width="440" height="76"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocp-NG-gHc">
                                         <rect key="frame" x="0.0" y="0.0" width="440" height="30"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Sign up"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Sign up">
+                                            <color key="titleColor" red="0.79904513888888884" green="0.4896046378284491" blue="0.10174661156720485" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
@@ -40,6 +46,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i18-nt-4jf">
                                         <rect key="frame" x="0.0" y="46" width="440" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Log in">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -50,11 +57,11 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oPn-DJ-thq">
-                                <rect key="frame" x="152" y="290" width="296" height="21"/>
+                                <rect key="frame" x="143" y="247" width="315" height="21"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Sheffield Riders Advocacy" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcm-ZL-YcV">
-                                        <rect key="frame" x="0.0" y="0.0" width="296" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -63,10 +70,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="oPn-DJ-thq" firstAttribute="centerY" secondItem="5L7-VL-ief" secondAttribute="centerY" id="4rH-hy-kba"/>
+                            <constraint firstItem="hEk-mc-wTc" firstAttribute="leading" secondItem="5L7-VL-ief" secondAttribute="leading" id="27L-lz-EDd"/>
+                            <constraint firstItem="oPn-DJ-thq" firstAttribute="centerY" secondItem="5L7-VL-ief" secondAttribute="centerY" constant="-42.5" id="4rH-hy-kba"/>
                             <constraint firstItem="oPn-DJ-thq" firstAttribute="centerX" secondItem="5L7-VL-ief" secondAttribute="centerX" id="9JX-Aw-R6A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rZ9-ey-t6M" secondAttribute="trailing" constant="60" id="ULk-Op-qgE"/>
                             <constraint firstItem="rZ9-ey-t6M" firstAttribute="leading" secondItem="5L7-VL-ief" secondAttribute="leadingMargin" constant="60" id="bVs-sV-Pl1"/>
+                            <constraint firstItem="hEk-mc-wTc" firstAttribute="top" secondItem="5L7-VL-ief" secondAttribute="top" id="jTp-nd-nbV"/>
+                            <constraint firstItem="GDi-Vj-eLp" firstAttribute="top" secondItem="hEk-mc-wTc" secondAttribute="bottom" id="jU1-qB-Rbx"/>
+                            <constraint firstAttribute="trailing" secondItem="hEk-mc-wTc" secondAttribute="trailing" id="kuz-03-UwU"/>
                             <constraint firstItem="GDi-Vj-eLp" firstAttribute="top" secondItem="rZ9-ey-t6M" secondAttribute="bottom" constant="40" id="qmc-tV-UUQ"/>
                         </constraints>
                     </view>
@@ -1073,6 +1084,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="N41-9Z-xMR" id="o1X-Vf-dJc"/>
                         <outlet property="pageControl" destination="QdJ-fZ-hJb" id="AAT-dI-8zl"/>
                     </connections>
                 </viewController>
@@ -1102,16 +1114,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newsPic1" translatesAutoresizingMaskIntoConstraints="NO" id="rcS-6U-CDb">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cantor" translatesAutoresizingMaskIntoConstraints="NO" id="rcS-6U-CDb">
                                             <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5YQ-it-7CJ">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKR-Vi-mN6">
+                                            <rect key="frame" x="-1" y="0.0" width="136" height="135"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.70489336993243246" colorSpace="calibratedRGB"/>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5YQ-it-7CJ" customClass="OutlineTextLabel" customModule="SheffieldRiders" customModuleProvider="target">
                                             <rect key="frame" x="8" y="38" width="119" height="89"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="3dg-sw-HFt">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="3dg-sw-HFt" customClass="OutlineTextLabel" customModule="SheffieldRiders" customModuleProvider="target">
                                             <rect key="frame" x="8" y="8" width="119" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1129,6 +1145,10 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="3dg-sw-HFt" secondAttribute="trailing" id="MiM-ww-8uA"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="5YQ-it-7CJ" secondAttribute="trailing" id="NIe-nh-n1C"/>
                                     <constraint firstItem="3dg-sw-HFt" firstAttribute="top" secondItem="Ih7-v3-9rp" secondAttribute="topMargin" id="QEa-nj-Zk5"/>
+                                    <constraint firstItem="LKR-Vi-mN6" firstAttribute="centerY" secondItem="rcS-6U-CDb" secondAttribute="centerY" id="aTm-Em-5CS"/>
+                                    <constraint firstItem="LKR-Vi-mN6" firstAttribute="height" secondItem="rcS-6U-CDb" secondAttribute="height" id="ea4-ES-6pF"/>
+                                    <constraint firstItem="LKR-Vi-mN6" firstAttribute="width" secondItem="rcS-6U-CDb" secondAttribute="width" id="lYU-w7-KKX"/>
+                                    <constraint firstItem="LKR-Vi-mN6" firstAttribute="centerX" secondItem="rcS-6U-CDb" secondAttribute="centerX" id="luU-Zt-q6Q"/>
                                     <constraint firstItem="rcS-6U-CDb" firstAttribute="leading" secondItem="Ih7-v3-9rp" secondAttribute="leading" id="swv-kY-m0L"/>
                                     <constraint firstItem="5YQ-it-7CJ" firstAttribute="top" secondItem="3dg-sw-HFt" secondAttribute="bottom" constant="8" id="xfr-nY-2E4"/>
                                     <constraint firstAttribute="bottom" secondItem="rcS-6U-CDb" secondAttribute="bottom" id="yHe-Cf-wn8"/>
@@ -1140,6 +1160,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="countLabel" destination="5YQ-it-7CJ" id="Lrq-CH-N0X"/>
+                                    <outlet property="image" destination="rcS-6U-CDb" id="fwb-qS-KQ2"/>
                                     <outlet property="nameLabel" destination="3dg-sw-HFt" id="EuQ-E3-v3V"/>
                                 </connections>
                             </collectionViewCell>
@@ -2311,8 +2332,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Cantor" width="534" height="534"/>
+        <image name="backgroundLogin" width="1667" height="1550"/>
         <image name="myRide" width="1600" height="1067"/>
-        <image name="newsPic1" width="300" height="201"/>
         <image name="plusIcon" width="512" height="512"/>
         <image name="podium" width="1800" height="695"/>
         <image name="profilePic" width="160" height="160"/>

@@ -15,6 +15,7 @@ class LocationViewController: UIViewController, LocationInfoCollectionViewDelega
     var location = Dictionary<String, NSObject>()
     var locationManager: CLLocationManager = CLLocationManager()
 
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var pageControl: UIPageControl!
     
     override func viewDidLoad() {
@@ -24,6 +25,10 @@ class LocationViewController: UIViewController, LocationInfoCollectionViewDelega
         locationManager.distanceFilter = 100.0;
         locationManager.delegate = self
 
+        if let image = UIImage(named: location["imageName"] as! String) {
+            imageView.image = image
+        }
+        
         navigationItem.title = location["name"] as? String
         
         let checkinBarButton = UIBarButtonItem(title: "Check in", style: .Plain, target: self, action: #selector(self.attemptCheckin))
@@ -73,15 +78,16 @@ class LocationViewController: UIViewController, LocationInfoCollectionViewDelega
             if (atLocation) {
                 SwiftSpinner.show("Nice Your Here at \(self.location["name"]!)", animated: false)
                 
-                
                 let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC)))
                 dispatch_after(delayTime, dispatch_get_main_queue()) {
-                    SwiftSpinner.show("Increasing rep...", animated: true)
-                    
-                    let locationInfo = ["locationName" : self.location["name"]!]
-                    
-                    DataSynchroniser.sharedInstance.checkIn(locationInfo, callBack: { 
-                        SwiftSpinner.hide()
+                    SwiftSpinner.show("Remember to respect the trails!", animated: false).addTapHandler({ 
+                        SwiftSpinner.show("Increasing rep...", animated: true)
+                        
+                        let locationInfo = ["locationName" : self.location["name"]!]
+                        
+                        DataSynchroniser.sharedInstance.checkIn(locationInfo, callBack: {
+                            SwiftSpinner.hide()
+                        })
                     })
                 }
             }

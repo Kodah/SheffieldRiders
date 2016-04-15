@@ -49,6 +49,7 @@ class ProfileLocationsCollectionViewController: UICollectionViewController, UICo
         if let spots = spotsVisited {
             let spot = spots[indexPath.row]
             cell.nameLabel.text = spot.name
+            cell.image.image = UIImage(named: spot.name!)
             if let visits = spot.visits
             {
                 cell.countLabel.text = "\(visits)"
