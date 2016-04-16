@@ -16,7 +16,12 @@ protocol ProfileTableViewControllerDelegate {
     func reloadData(spots:[Spot])
 }
 
-class ProfileTableViewController: UITableViewController {
+enum ImageChosen : Int {
+    case ProfileImageButton = 0
+    case MyRideImageButton = 1
+}
+
+class ProfileTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var headerCell: UITableViewCell!
     @IBOutlet weak var locationVisitedCell: UITableViewCell!
@@ -25,6 +30,8 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var locationVisitedView: UIView!
     @IBOutlet weak var stackview: UIStackView!
     
+    @IBOutlet weak var profilePictureButton: UIButton!
+    @IBOutlet weak var MyRidePictureButton: UIButton!
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var quoteLabel: UILabel!
@@ -42,6 +49,14 @@ class ProfileTableViewController: UITableViewController {
     var spotsVisited: [Spot]?
     var usernameForProfile: String?
     
+    
+    
+    var imageChosenTag :ImageChosen = ImageChosen.ProfileImageButton
+    
+    var imagePicker: UIImagePickerController!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +67,12 @@ class ProfileTableViewController: UITableViewController {
         let total = navigationBarHeight + statusBarHeight
 
         tableView.contentInset = UIEdgeInsetsMake(total,0,0,0);
+        
+        MyRidePictureButton.imageView?.contentMode = .ScaleAspectFill
+
+        
+        imagePicker =  UIImagePickerController()
+        imagePicker.delegate = self
         
         if (usernameForProfile == nil) {
             navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
@@ -91,7 +112,7 @@ class ProfileTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        refresh()
+//        refresh()
     }
 
     func editProfile(){
@@ -161,6 +182,7 @@ class ProfileTableViewController: UITableViewController {
         DataSynchroniser.sharedInstance.syncUsers(nil)
     }
     
+
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
@@ -176,6 +198,63 @@ class ProfileTableViewController: UITableViewController {
     func showMenu() {
         DropDownMenu.sharedInstance.showMenu(self.view)
     }
+    
+    
+    @IBAction func profilePicTapped(sender: UIButton) {
+        imageChosenTag = ImageChosen(rawValue: sender.tag)!
+        let alert = UIAlertController(title: "Edit Picture", message: "Choose/take profile picture", preferredStyle: .ActionSheet) // 1
+        let photosAction = UIAlertAction(title: "Photos", style: .Default) { (alert: UIAlertAction!) -> Void in
+            self.openPhotos()
+        }
+        
+        let cameraAction = UIAlertAction(title: "Camera", style: .Default) { (alert: UIAlertAction!) -> Void in
+            self.openCamera()
+        }
+        
+        alert.addAction(cameraAction)
+        alert.addAction(photosAction)
+        presentViewController(alert, animated: true, completion:nil)
+        
+    }
+    
+    func openPhotos(){
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .PhotoLibrary
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func openCamera(){
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .Camera
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+
+    func imagePickerController(
+        picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
+
+        switch imageChosenTag {
+        case ImageChosen.ProfileImageButton:
+            profilePictureButton.setImage(chosenImage, forState: .Normal)
+            break
+        case ImageChosen.MyRideImageButton:
+            MyRidePictureButton.setImage(chosenImage, forState: .Normal)
+        default:
+            break
+        }
+        
+
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {

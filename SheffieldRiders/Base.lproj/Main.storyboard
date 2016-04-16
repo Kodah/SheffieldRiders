@@ -372,12 +372,27 @@
                                                 <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundLogin" translatesAutoresizingMaskIntoConstraints="NO" id="U1h-Xe-s9Y">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="139"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePic" translatesAutoresizingMaskIntoConstraints="NO" id="czt-wX-87J">
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsk-bj-qBZ" userLabel="profileImageButton" customClass="InspectableButton" customModule="SheffieldRiders" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="123" height="123"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="123" id="A1l-LK-VPy"/>
+                                                        <constraint firstAttribute="width" constant="123" id="u5e-gl-IGq"/>
                                                     </constraints>
-                                                </imageView>
+                                                    <state key="normal" title="Button" image="profilePic"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.10196078431372549" green="0.14117647058823529" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="profilePicTapped:" destination="kCK-ag-ZHh" eventType="touchUpInside" id="8d3-jr-rdS"/>
+                                                    </connections>
+                                                </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YER-VL-pJO">
                                                     <rect key="frame" x="139" y="8" width="453" height="123"/>
                                                     <subviews>
@@ -451,24 +466,18 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstItem="tsk-bj-qBZ" firstAttribute="top" secondItem="Ex8-Co-zoe" secondAttribute="topMargin" id="Mez-6g-VoM"/>
                                                 <constraint firstItem="U1h-Xe-s9Y" firstAttribute="top" secondItem="Ex8-Co-zoe" secondAttribute="top" id="NTD-eg-CfI"/>
-                                                <constraint firstItem="YER-VL-pJO" firstAttribute="centerX" secondItem="czt-wX-87J" secondAttribute="centerX" id="Nwe-5N-X0U"/>
+                                                <constraint firstItem="tsk-bj-qBZ" firstAttribute="bottom" secondItem="Ex8-Co-zoe" secondAttribute="bottomMargin" id="V8I-GV-qQE"/>
                                                 <constraint firstItem="YER-VL-pJO" firstAttribute="top" secondItem="Ex8-Co-zoe" secondAttribute="topMargin" id="YL3-KB-g6L"/>
-                                                <constraint firstItem="YER-VL-pJO" firstAttribute="height" secondItem="czt-wX-87J" secondAttribute="height" id="d9J-QL-75T"/>
-                                                <constraint firstItem="YER-VL-pJO" firstAttribute="leading" secondItem="czt-wX-87J" secondAttribute="trailing" constant="8" id="e5p-Kq-XSU"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="YER-VL-pJO" secondAttribute="trailing" id="fgp-d3-lAo"/>
                                                 <constraint firstAttribute="trailing" secondItem="U1h-Xe-s9Y" secondAttribute="trailing" id="in7-02-4s3"/>
-                                                <constraint firstItem="czt-wX-87J" firstAttribute="bottom" secondItem="Ex8-Co-zoe" secondAttribute="bottomMargin" id="rjB-tf-2N5"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="tsk-bj-qBZ" secondAttribute="leading" id="kto-Om-pF4"/>
+                                                <constraint firstItem="YER-VL-pJO" firstAttribute="leading" secondItem="tsk-bj-qBZ" secondAttribute="trailing" constant="8" id="neZ-6W-Nsq"/>
+                                                <constraint firstItem="tsk-bj-qBZ" firstAttribute="height" secondItem="YER-VL-pJO" secondAttribute="height" id="qTy-x2-hEY"/>
                                                 <constraint firstItem="U1h-Xe-s9Y" firstAttribute="leading" secondItem="Ex8-Co-zoe" secondAttribute="leading" id="sM1-4L-X8S"/>
                                                 <constraint firstAttribute="bottom" secondItem="U1h-Xe-s9Y" secondAttribute="bottom" id="wke-Vr-8eh"/>
-                                                <constraint firstItem="czt-wX-87J" firstAttribute="leading" secondItem="Ex8-Co-zoe" secondAttribute="leadingMargin" id="xp2-QK-Mjj"/>
-                                                <constraint firstItem="czt-wX-87J" firstAttribute="top" secondItem="Ex8-Co-zoe" secondAttribute="topMargin" id="zAO-SM-NLD"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="Nwe-5N-X0U"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="183" id="9lc-pp-LbD">
@@ -608,21 +617,36 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="258"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Ride" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epM-Fu-3H6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="My Ride" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epM-Fu-3H6">
                                                     <rect key="frame" x="8" y="8" width="584" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="myRide" translatesAutoresizingMaskIntoConstraints="NO" id="Yue-m4-L5p">
-                                                    <rect key="frame" x="8" y="37" width="584" height="213"/>
-                                                </imageView>
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zrp-C7-64o" customClass="InspectableButton" customModule="SheffieldRiders" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="29" width="584" height="229"/>
+                                                    <state key="normal" title="Button" image="myRide"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.10196078431372549" green="0.14117647058823529" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="profilePicTapped:" destination="kCK-ag-ZHh" eventType="touchUpInside" id="mCA-3R-CUa"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Yue-m4-L5p" firstAttribute="leading" secondItem="EYU-gm-kiz" secondAttribute="leadingMargin" id="Nsk-ze-EYx"/>
-                                                <constraint firstItem="Yue-m4-L5p" firstAttribute="trailing" secondItem="EYU-gm-kiz" secondAttribute="trailingMargin" id="O1M-a9-sQn"/>
-                                                <constraint firstItem="Yue-m4-L5p" firstAttribute="top" secondItem="epM-Fu-3H6" secondAttribute="bottom" constant="8" id="OBF-GS-sqe"/>
-                                                <constraint firstItem="Yue-m4-L5p" firstAttribute="bottom" secondItem="EYU-gm-kiz" secondAttribute="bottomMargin" id="aTv-fz-GZ2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Zrp-C7-64o" secondAttribute="trailing" id="1aD-AS-PdJ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Zrp-C7-64o" secondAttribute="bottom" constant="-8" id="2z6-JN-Srt"/>
+                                                <constraint firstItem="Zrp-C7-64o" firstAttribute="leading" secondItem="EYU-gm-kiz" secondAttribute="leadingMargin" id="BiA-lC-IAD"/>
+                                                <constraint firstItem="Zrp-C7-64o" firstAttribute="top" secondItem="epM-Fu-3H6" secondAttribute="bottom" id="UoM-tu-Wsv"/>
                                                 <constraint firstItem="epM-Fu-3H6" firstAttribute="top" secondItem="EYU-gm-kiz" secondAttribute="topMargin" id="akd-tX-YE6"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="epM-Fu-3H6" secondAttribute="trailing" id="h2G-g4-Mk8"/>
                                                 <constraint firstItem="epM-Fu-3H6" firstAttribute="leading" secondItem="EYU-gm-kiz" secondAttribute="leadingMargin" id="xef-Gg-k5q"/>
@@ -643,10 +667,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
+                        <outlet property="MyRidePictureButton" destination="Zrp-C7-64o" id="OzH-tX-GX0"/>
                         <outlet property="disciplineLabel" destination="xLd-WA-Tmy" id="frP-vn-0Lh"/>
                         <outlet property="headerCell" destination="pIK-S3-ic2" id="doc-hd-S6O"/>
                         <outlet property="locationVisitedCell" destination="9lc-pp-LbD" id="dfH-l9-P44"/>
                         <outlet property="locationVisitedView" destination="pY5-vp-AKM" id="U4s-re-Fme"/>
+                        <outlet property="profilePictureButton" destination="tsk-bj-qBZ" id="2vy-aP-bxq"/>
                         <outlet property="quoteLabel" destination="yci-OP-djU" id="6Kn-cH-mBT"/>
                         <outlet property="race2ndLabel" destination="iU4-Tv-7qU" id="aB5-nB-jMD"/>
                         <outlet property="race3rdLabel" destination="mMo-6S-cCV" id="uEi-EI-DXk"/>
@@ -1864,7 +1890,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSF-3c-eI8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5589" y="3235.5"/>
+            <point key="canvasLocation" x="5578" y="3257.5"/>
         </scene>
         <!--Race Setup View Controller-->
         <scene sceneID="U5M-V9-T7U">
