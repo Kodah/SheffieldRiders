@@ -100,15 +100,24 @@ class SignUpViewController: UIViewController {
         
         Alamofire.request(.POST, Constants.apiBaseURL + "register", parameters: dic, encoding: .JSON, headers: nil).responseJSON(completionHandler: { JSON in
             
-            let responseJSON = try! NSJSONSerialization.JSONObjectWithData(JSON.data!, options: .AllowFragments)
-            if (JSON.response?.statusCode == 200) {
-                
-                
-                SwiftSpinner.show(responseJSON.description, animated: false).addTapHandler({
-                    SwiftSpinner.hide()
-                    self.dismissViewControllerAnimated(true, completion: nil)
+            if let json = JSON.data {
+
+                let responseJSON = try? NSJSONSerialization.JSONObjectWithData(json, options: .AllowFragments)
+                if (JSON.response?.statusCode == 200) {
                     
-                })
+                    if let responseJSON = responseJSON {
+                        SwiftSpinner.show(responseJSON.description, animated: false).addTapHandler({
+                            SwiftSpinner.hide()
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                            
+                        })
+                    }
+                    
+                } else {
+                    SwiftSpinner.show("Server Error").addTapHandler({
+                        SwiftSpinner.hide()
+                    })
+                }
             } else {
                 SwiftSpinner.show("Server Error").addTapHandler({
                     SwiftSpinner.hide()

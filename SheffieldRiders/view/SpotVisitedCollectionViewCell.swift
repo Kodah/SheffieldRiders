@@ -10,6 +10,7 @@ import UIKit
 
 class SpotVisitedCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
 }

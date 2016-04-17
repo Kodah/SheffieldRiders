@@ -67,9 +67,13 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
         
         
         NSNotificationCenter.defaultCenter().addObserverForName("usersUpdated", object: nil, queue: nil) { _ in
-            try! self.fetchedResultsController.performFetch()
-            self.tableView.reloadData()
-            self.refreshControl?.endRefreshing()
+            do {
+                try self.fetchedResultsController.performFetch()
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+            } catch {
+                print("Fetch failed")
+            }
         }
         refreshControl!.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
         
@@ -90,7 +94,7 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
     }
     
     func showMenu() {
-        tableView.setContentOffset(CGPointMake(0.0, -tableView.contentInset.top), animated:true)
+
         DropDownMenu.sharedInstance.showMenu(self.view)
     }
     
@@ -113,9 +117,13 @@ class LeaderBoardTableViewController: UITableViewController,NSFetchedResultsCont
             
         }
         
+        do {
+            try fetchedResultsController.performFetch()
+            tableView.reloadData()
+        } catch {
+            print("Fetch failed")
+        }
         
-        try! fetchedResultsController.performFetch()
-        tableView.reloadData()
         
     }
     

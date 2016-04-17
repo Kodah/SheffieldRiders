@@ -53,7 +53,7 @@ class RaceTableViewController: UITableViewController {
         
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         request.sortDescriptors = [sortDescriptor]
-        racers = try! dataStack!.mainContext.executeFetchRequest(request) as! [Racer]
+        racers = try? dataStack!.mainContext.executeFetchRequest(request) as! [Racer]
         
     }
 

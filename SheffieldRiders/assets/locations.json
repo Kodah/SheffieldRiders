@@ -51,12 +51,12 @@
   }
   },
   {
-  "name": "Grenocide Woods",
+  "name": "Grenoside Woods",
   "latitude": 53.452997,
   "longitude": -1.507015,
   "area": 1.2,
   "discipline": "Downhill/Enduro",
-  "imageName": "GrenocideWoods",
+  "imageName": "Grenocide",
   "numberOfRoutes": 2,
   "summary": "Greno Woods have been home for mountain bikers for as long as the sport has been in this country; it hosted races up until 1994 and provided the training ground for World Downhill Mountain Bike Champion Steve Peat.",
   "difficulty": {
@@ -73,7 +73,7 @@
   "longitude": -1.475134,
   "area": 1,
   "discipline": "Enduro/XC",
-  "imageName": "Parkwood Springs",
+  "imageName": "ParkwoodSprings",
   "numberOfRoutes": 2,
   "summary": "The trail is a 2km route with pump sections, lips, berms, jumps, doubles and it all flows really well. It's designed as a blue graded trail (so all is rollable) with optional red lines. Hence all abilities and progression are built in. This is core given the proximity to a city centre location where many follk discovering this trail have never been to a trail centre and so need a safe, works straight out of the box, no instructions kit required trail, that offers them more as they progress as well as offering the more established community options with more bite from day one.",
   "difficulty": {
@@ -102,12 +102,12 @@
   }
   },
   {
-  "name": "Bowl hills",
+  "name": "Bole hills",
   "latitude": 53.391335,
   "longitude": -1.509283,
   "area": 0.5,
   "discipline": "Dirt Jumping/Pump Track",
-  "imageName": "Bowl hills",
+  "imageName": "BowlHills",
   "numberOfRoutes": 1,
   "summary": "Bolehills BMX Track is in Walkley in Sheffield. It has a long impressive history having originally being built in the early 80's. 30 years on in the making and popular with both small and big wheels it's had numerous great revamps since then, featured in movies, won awards and least surprisingly has an ever active and strong welcoming community that has carved many a great rider in its time. In April 2015 they laid a sweet new surface to the track.",
   "difficulty": {
@@ -124,7 +124,7 @@
   "longitude": -1.468944,
   "area": 1,
   "discipline": "BEng Software Engineering",
-  "imageName": "SHU",
+  "imageName": "Cantor",
   "numberOfRoutes": 100,
   "summary": "Sheffield Hallam University (SHU) is a public university in Sheffield, South Yorkshire, England. It is based on two sites; City Campus is located in the city centre, close to Sheffield railway station, and Collegiate Crescent Campus is about two miles away, adjacent to Ecclesall Road in south-west Sheffield.The university is the sixth largest university in the UK (out of 165) with 31,530 students 4,494 staff and 708 courses.",
   "difficulty": {

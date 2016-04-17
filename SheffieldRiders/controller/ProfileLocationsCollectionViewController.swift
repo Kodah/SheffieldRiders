@@ -14,6 +14,11 @@ private let reuseIdentifier = "Cell"
 class ProfileLocationsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, ProfileTableViewControllerDelegate {
 
     var spotsVisited: [Spot]?
+    {
+        didSet {
+            spotsVisited!.sortInPlace({$0.visits!.intValue > $1.visits!.intValue})
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +54,7 @@ class ProfileLocationsCollectionViewController: UICollectionViewController, UICo
         if let spots = spotsVisited {
             let spot = spots[indexPath.row]
             cell.nameLabel.text = spot.name
+            cell.image.image = UIImage(named: spot.name!)
             if let visits = spot.visits
             {
                 cell.countLabel.text = "\(visits)"

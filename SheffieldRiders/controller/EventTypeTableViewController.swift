@@ -15,11 +15,11 @@ class EventTypeTableViewController: UITableViewController {
         
         navigationItem.title = "Event Type"
 
-        
         navigationItem.leftBarButtonItem = DropDownMenu.sharedInstance.menuButton
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.showMenu), name: "showMenu", object: nil)
-    }
 
+    }
+    
     func showMenu() {
        
         DropDownMenu.sharedInstance.showMenu(self.view)

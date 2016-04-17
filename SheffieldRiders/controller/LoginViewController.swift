@@ -12,7 +12,7 @@ import SwiftSpinner
 import Alamofire
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var keyboardHeight: NSLayoutConstraint!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
         observeKeyboard()
         
         NSNotificationCenter.defaultCenter().addObserverForName("didSyncAllNotification", object: nil, queue: nil) {_ in
-        
+            
             SwiftSpinner.hide()
             if let window = UIApplication.sharedApplication().keyWindow
             {
@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
         }
         
     }
-
+    
     func keyboardWillHide(notification: NSNotification){
         let info : NSDictionary = notification.userInfo!
         let animationDuration: NSTimeInterval = (info.objectForKey(UIKeyboardAnimationDurationUserInfoKey)?.doubleValue)!
@@ -89,21 +89,27 @@ class LoginViewController: UIViewController {
         
         Alamofire.request(.POST, Constants.apiBaseURL + "authentication", parameters: jsonDictionary, encoding: .JSON, headers: nil).responseJSON(completionHandler: { JSON in
             
-            let responseJSON = try! NSJSONSerialization.JSONObjectWithData(JSON.data!, options: .AllowFragments)
-            if (JSON.response?.statusCode == 200) {
-                
-                NSUserDefaults.standardUserDefaults().setObject(self.usernameTextField.text, forKey: Constants.LoggedInUser)
-                KeychainWrapper.setString(responseJSON as! String, forKey: "authenticationToken")
-                SwiftSpinner.show("Syncing Data")
-                DataSynchroniser.sharedInstance.synchroniseAll()
-                
+            if let json = JSON.data {
+                let responseJSON = try? NSJSONSerialization.JSONObjectWithData(json, options: .AllowFragments)
+                if (JSON.response?.statusCode == 200) {
+                    
+                    NSUserDefaults.standardUserDefaults().setObject(self.usernameTextField.text, forKey: Constants.LoggedInUser)
+                    KeychainWrapper.setString(responseJSON as! String, forKey: "authenticationToken")
+                    SwiftSpinner.show("Syncing Data")
+                    DataSynchroniser.sharedInstance.synchroniseAll()
+                    
+                } else {
+                    SwiftSpinner.show("Failed", animated: false).addTapHandler({
+                        SwiftSpinner.hide()
+                    })
+                }
             } else {
                 SwiftSpinner.show("Failed", animated: false).addTapHandler({
                     SwiftSpinner.hide()
                 })
             }
-    
             print("login - Finished")
         })
     }
+
 }
